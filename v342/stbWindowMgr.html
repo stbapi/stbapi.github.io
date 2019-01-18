@@ -1124,7 +1124,7 @@
 
     
 
-    <h4 class="name" id=".windowInfo"><span class="type-signature">(static) </span>windowInfo<span class="signature">(windowId)</span><span class="type-signature"> &rarr; {<a href="stbWindowMgr.html#~windowAttributes">stbWindowMgr~windowAttributes</a>}</span></h4>
+    <h4 class="name" id=".windowInfo"><span class="type-signature">(static) </span>windowInfo<span class="signature">(windowId)</span><span class="type-signature"> &rarr; {string}</span></h4>
 
     
 
@@ -1180,6 +1180,15 @@
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>{
+    "errCode": 0,
+    "errMsg": "",
+    "result": {stbWindowMgr~windowAttributes} // current parameters of the window
+}</code></pre>
 
 
 
@@ -1249,7 +1258,7 @@
 
         
 <div class="param-desc">
-    <p>current parameters of the window</p>
+    <p>attributes of element in <strong>JSON</strong> format</p>
 </div>
 
 
@@ -1260,7 +1269,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="stbWindowMgr.html#~windowAttributes">stbWindowMgr~windowAttributes</a></span>
+<span class="param-type">string</span>
 
 
     </dd>

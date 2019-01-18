@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>Tutorial: Embedded Internet Browser management - Documentation</title>
+    <title>Tutorial: features - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -33,7 +33,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Tutorial: Embedded Internet Browser management</h1>
+    <h1 class="page-title">Tutorial: features</h1>
     
 
     <section>
@@ -41,76 +41,36 @@
 <header>
     
 
-    <h2>Embedded Internet Browser management</h2>
+    <h2>features</h2>
 </header>
 
 <article>
-    <p>Web browser consists of two special windows:</p>
-<ul>
-<li><code>Web Face</code> to build browser UI and control <code>Wild Web</code> window</li>
-<li><code>Wild Web</code> to load and render web content itself</li>
-</ul>
-<p>Create <code>Web Face</code> window with browser UI implementation:</p>
-<pre class="prettyprint source lang-js"><code>var webFaceId = stbWindowMgr.openWebFace(url1);</code></pre><p>Correct its attributes if necessary:</p>
-<pre class="prettyprint source lang-js"><code>stbWindowMgr.setWebFaceInitAttr(JSON.stringify({
-    url: url2,
-    x: 20,
-    y: 20,
-    width: 640,
-    height: 480,
-    visible: true,
-    backgroundColor: '#000'
-}));</code></pre><p>Create <code>Wild Web</code> window and load given URL:</p>
-<pre class="prettyprint source lang-js"><code>// created window will be invisible by default
-// and its content is inaccessible outside this window
-var wildWebId = stbWindowMgr.initWebWindow('http://google.com/');</code></pre><p>Now it's possible to load any local or remote web page:</p>
-<pre class="prettyprint source lang-js"><code>// without address `file:///home/pages/blank/index.html` is loaded
-stbWindowMgr.LoadUrl(uri);</code></pre><p>Resize <code>Wild Web</code> window using given coordinates:</p>
-<pre class="prettyprint source lang-js"><code>// x, y, width and height of new window
-stbWindowMgr.resizeWebWindow(20, 20, 500, 300);</code></pre><p>Make <code>Wild Web</code> window active (move it above the <code>Web Face</code>):</p>
-<pre class="prettyprint source lang-js"><code>stbWindowMgr.raiseWebWindow();</code></pre><p>Make <code>Web Face</code> window active (move it above the <code>Wild Web</code>):</p>
-<pre class="prettyprint source lang-js"><code>stbWindowMgr.raiseWebFaceWindow();</code></pre><p>Control mouse cursor with keyboard or remote control navigation keys:</p>
-<pre class="prettyprint source lang-js"><code>// turn virtual mouse on
-stbWindowMgr.setVirtualMouseMode(true);
+    <p>STB API aimed to be consistent and comprehensively documented, but the nature of objects and their corresponding methods<br>is becoming obsolete during the time when new APIs occured.</p>
+<p>For safe and predictable usage of STB API functionality and as a best practice it's recommended to check presence of objects<br>and even methods before first use. Especially for new API objects which can be absent in old firmwares.</p>
+<p>There are two main techniques for reducing errors associated with object and their methods presence.</p>
+<p>Check API version (suitable when using some features which exist since particular version). Be attentive when using API features<br>which presented only on supported devices, use additional checking in this case:</p>
+<pre class="prettyprint source lang-js"><code>var apiVersion = +gSTB.Version().split(';')[0].split(':')[1].trim();
 
-// turn virtual mouse off
-stbWindowMgr.setVirtualMouseMode(false);</code></pre><p>It's possible to reload current page or stop its loading:</p>
-<pre class="prettyprint source lang-js"><code>stbWebWindow.ReloadDocument();
-stbWebWindow.StopLoading();</code></pre><p>Navigate through the browsing history:</p>
-<pre class="prettyprint source lang-js"><code>// step back
-stbWebWindow.NavigateBack();
+if ( apiVersion &lt; 343 ) {
+    console.log('API version on STB hasn\'t features of 343 and above');
+} else {
+    // use modern API features which are totally supported in current API across all devices
+    stbNfs.findServers(function ( error, data ) { /* code*/ });
 
-// step forward
-stbWebWindow.NavigateForward();</code></pre><p>Set zoom ratio for embedded web browser:</p>
-<pre class="prettyprint source lang-js"><code>// in percent
-stbWebWindow.SetZoomFactor(50);</code></pre><p>Control full screen mode:</p>
-<pre class="prettyprint source lang-js"><code>// maximized mode
-stbWebWindow.SetFullScreenMode(true);
-
-// normal mode
-stbWebWindow.SetFullScreenMode(false);</code></pre><p>Get info of currently loaded web page:</p>
-<pre class="prettyprint source lang-js"><code>stbWindowMgr.getCurrWebUrl();
-stbWindowMgr.getCurrentTitle();</code></pre><p>Check if <code>Wild Web</code> window exists:</p>
-<pre class="prettyprint source lang-js"><code>if ( stbWindowMgr.IsWebWindowExist() ) {
-    console.log('Wild Web window exists.');
-}</code></pre><p>Track page loading progress:</p>
-<pre class="prettyprint source lang-js"><code>stbEvent.onWebBrowserProgress = function ( progress, status ) {
-    console.log(progress);
-
-    if ( progress === 100 ) {
-        console.log('Loading is completed.');
+    // but still checking API features whose presence defined by device model
+    if ( stbBluetooth && stbBluetooth.startDiscovery ) {
+        stbBluetooth.startDiscovery({duration: 20});
     }
-};</code></pre><p>Track clicking on a media link:</p>
-<pre class="prettyprint source lang-js"><code>stbEvent.onMediaAvailable = function ( mimeType, uri ) {
-    console.log('MIME type of media file: ' + mimeType);
-    console.log('URI of media file: ' + uri);
-};</code></pre><p>Track a moment when <code>Wild Web</code> window is activated:</p>
-<pre class="prettyprint source lang-js"><code>stbEvent.onWindowActivated = function () {
-    console.log('Wild Web window is activated.');
-};</code></pre><p>Close browser windows:</p>
-<pre class="prettyprint source lang-js"><code>stbWindowMgr.closeWindow(wildWebId);
-stbWindowMgr.closeWindow(webFaceId);</code></pre><p>Alternatively <code>Web Face</code> window can close itself:</p>
-<pre class="prettyprint source lang-js"><code>stbWebWindow.close();</code></pre>
+}</code></pre><p>Alternative approach is checking presence of particular objects and methods immediately:</p>
+<pre class="prettyprint source lang-js"><code>if ( stbNfs && stbNfs.findServers ) {
+    console.log('Functionality is available, use it!');
+}</code></pre><p>To prevent crash of code that uses unstable API it's possible to wrap whole code in <code>try/catch</code>. This isn't a recommended way<br>to handle API's features, rather one of possible:</p>
+<pre class="prettyprint source lang-js"><code>try {
+    stbUPnP.init();
+    stbUPnP.getServerListSync();
+} catch ( error ) {
+    console.log('stbUPnP API is unavailable: ' + error.message);
+}</code></pre>
 </article>
 
 </section>

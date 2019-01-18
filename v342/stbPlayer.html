@@ -705,7 +705,7 @@ console.log(stbPlayerManager.list[0].statistics.decodingErrors);</code></pre>
 <div class="description">
     <p>Number (PID) of the current audio track [0..0x1fff].</p>
 <p>This property should be accessed after the <code>event 2</code> occurs (see description of events).</p>
-<p>On set if a specified track is absent the sound is disabled.</p>
+<p>On set if a specified track is absent the PID will be ignored.</p>
 <p>The list of all audio tracks determined by the player can be received with <a href="stbPlayer.html#.audioTracks"><code>stbPlayer.audioTracks</code></a>.</p>
 </div>
 
@@ -8674,7 +8674,7 @@ stbPlayer.setViewport({width: 500});</code></pre>
 
             
 
-            <td class="description last"><p>address of the content to be played.</p>
+            <td class="description last"><p>address of the content to be played</p>
 <p>Depends on the type (see more detailed information in <a href="tutorial-media-formats.html">Media content formats</a> tutorial).</p></td>
         </tr>
 
@@ -8799,7 +8799,8 @@ stbPlayer.setViewport({width: 500});</code></pre>
 
             
 
-            <td class="description last"><p>audio track number to play</p></td>
+            <td class="description last"><p>audio track number to play</p>
+<p>In case audioPID is specified and valid, it's chosen for playback. Otherwise audio track is chosen corresponding to <a href="stbPlayer.html#.audioLanguages"><code>stbPlayer.audioLanguages</code></a>.<br>By default the first valid audio track is chosen.</p></td>
         </tr>
 
     

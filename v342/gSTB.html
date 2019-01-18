@@ -12885,7 +12885,7 @@ gSTB.LoadUserData('test');</code></pre>
 </tr>
 <tr>
 <td> atrack:anum</td>
-<td>Sets the number(PID) of audio track (optional parameter).</td>
+<td>Sets the number(PID) of audio track (optional parameter). See property audioPID in <a href="stbPlayer.html#.play"><code>stbPlayer.play</code></a>.</td>
 </tr>
 <tr>
 <td> vtrack:vnum</td>
@@ -15481,7 +15481,7 @@ gSTB.SetAspect(0x50);</code></pre>
             
 
             <td class="description last"><p>sets the number or PID of the audio track to be played in the current content</p>
-<p>if such track is absent the sound will be disabled</p></td>
+<p>if such track is absent the PID will be ignored</p></td>
         </tr>
 
     
@@ -27252,6 +27252,7 @@ gSTB.SetSyslogLevel(5);</code></pre>
 <div class="description">
     <p>Show the virtual keyboard on the screen.</p>
 <p>User can switch virtual keyboard from english symbols to symbols of the language that is set as the local language in Service Menu.</p>
+<p><strong>Warning</strong>: this function does not work when real keyboard was activated.</p>
 </div>
 
 
