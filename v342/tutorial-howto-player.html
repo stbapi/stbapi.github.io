@@ -64,14 +64,17 @@ player.onPlayStart = function () {
 });</code></pre><p>Player manipulations on user input:</p>
 <pre class="prettyprint source lang-js"><code>window.addEventListener('keydown', function ( event ) {
     switch ( event.keyCode ) {
-        case 107: // volume up
+        case 107:
+            console.log('keydown: volume up');
             player.volume++;
             break;
-        case 109: // volume down
+        case 109:
+            console.log('keydown: volume down');
             player.volume--;
             break;
         case 83:
-            if ( event.altKey ) { // stop
+            if ( event.altKey ) {
+                console.log('keydown: stop');
                 player.stop();
             }
             break;

@@ -51,16 +51,14 @@
         throw new Error(error);
     }
 
-    // list of found groups:
-    console.log(data);
+    console.log('list of found groups:', data);
 });</code></pre><p>Start group scanning to find all available servers:</p>
 <pre class="prettyprint source lang-js"><code>stbSmb.findServers({group: groupName}, function ( error, data ) {
     if ( error ) {
         throw new Error(error);
     }
 
-    // list of found servers:
-    console.log(data);
+    console.log('list of found servers:', data);
 });</code></pre><p>Start scanning to find all available exports on the given server:</p>
 <pre class="prettyprint source lang-js"><code>stbSmb.findShares(
     {
@@ -73,8 +71,7 @@
             throw new Error(error);
         }
 
-        // list of found shares:
-        console.log(data);
+        console.log('list of found shares:', data);
     }
 );</code></pre><p>Resolve IP for the given export name in the specific SMB group:</p>
 <pre class="prettyprint source lang-js"><code>stbSmb.findIp({server: serverIp}, function ( error, data ) {
@@ -82,8 +79,7 @@
         throw new Error(error);
     }
 
-    // resolved server IP:
-    console.log(data);
+    console.log('resolved server IP:', data);
 });</code></pre>
 </article>
 

@@ -52,13 +52,16 @@ pvrManager.SetMaxRecordingCnt(max);</code></pre><p>Event model initialization:</
     onEvent: function ( event, info ) {
         switch ( event ) {
             case 39:
-                console.log('Task started recording.');
+                console.log('Task started recording. Info data:', info);
+                // {&quot;id&quot;:0}
                 break;
             case 34:
-                console.log('Task has been finished successfully.');
+                console.log('Task has been finished successfully. Info data:', info);
+                // {&quot;id&quot;:0}
                 break;
             case 35:
-                console.log('Task has been finished with error.');
+                console.log('Task has been finished with error. Info data:', info);
+                // {&quot;id&quot;:0}
                 break;
         }
     }
@@ -70,8 +73,8 @@ pvrManager.SetMaxRecordingCnt(max);</code></pre><p>Event model initialization:</
 <pre class="prettyprint source lang-js"><code>var tasks   = JSON.parse(pvrManager.GetAllTasks()),
     task1Id = tasks[0].id,
     task2Id = tasks[1].id;</code></pre><p>Get task information by id:</p>
-<pre class="prettyprint source lang-js"><code>console.log(pvrManager.GetTaskByID(task1Id));</code></pre><p>Get task list by identifier list:</p>
-<pre class="prettyprint source lang-js"><code>console.log(pvrManager.GetTasksByIDs(JSON.stringify([task1Id, task2Id])));</code></pre><p>Remove recording task by id:</p>
+<pre class="prettyprint source lang-js"><code>console.log('task information by id:', pvrManager.GetTaskByID(task1Id));</code></pre><p>Get task list by identifier list:</p>
+<pre class="prettyprint source lang-js"><code>console.log('task list by identifier list:', pvrManager.GetTasksByIDs(JSON.stringify([task1Id, task2Id])));</code></pre><p>Remove recording task by id:</p>
 <pre class="prettyprint source lang-js"><code>// do not remove any files
 pvrManager.RemoveTask(task2Id, 0);
 

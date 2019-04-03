@@ -95,7 +95,8 @@ stbWindowMgr.getCurrentTitle();</code></pre><p>Check if <code>Wild Web</code> wi
     console.log('Wild Web window exists.');
 }</code></pre><p>Track page loading progress:</p>
 <pre class="prettyprint source lang-js"><code>stbEvent.onWebBrowserProgress = function ( progress, status ) {
-    console.log(progress);
+    console.log('onWebBrowserProgress progress:', progress);
+    console.log('onWebBrowserProgress status:', status);
 
     if ( progress === 100 ) {
         console.log('Loading is completed.');

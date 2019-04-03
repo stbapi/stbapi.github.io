@@ -51,12 +51,12 @@
 <pre class="prettyprint source lang-js"><code>var name = stbStorage.key(32);
 
 if ( name ) {
-    console.log(stbStorage.getItem(name));
+    console.log('item value:', stbStorage.getItem(name));
 } else {
-    console.log('Key was not found!');
+    console.log('key was not found');
 }</code></pre><p>Remove some item:</p>
 <pre class="prettyprint source lang-js"><code>stbStorage.removeItem('key');</code></pre><p>Get all stored items amount:</p>
-<pre class="prettyprint source lang-js"><code>console.log(stbStorage.length);</code></pre><p>Clear all items:</p>
+<pre class="prettyprint source lang-js"><code>console.log('all stored items amount:', stbStorage.length);</code></pre><p>Clear all items:</p>
 <pre class="prettyprint source lang-js"><code>stbStorage.clear();</code></pre>
 </article>
 

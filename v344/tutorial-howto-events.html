@@ -48,8 +48,8 @@
     <p>Event model in JavaScript assumes the possibility for API user to receive different subsystems events indicating some changes.<br>To get these events define <a href="stbEvent.html">stbEvent</a> object in the global scope so WebKit can trigger its handlers:</p>
 <pre class="prettyprint source lang-js"><code>window.stbEvent = {
     onEvent: function ( event, info ) {
-        console.log('event: ' + event);
-        console.log('event additional info: ' + info);
+        console.log('event:', event);
+        console.log('event additional info:', info);
     },
     event: 0
 };</code></pre>

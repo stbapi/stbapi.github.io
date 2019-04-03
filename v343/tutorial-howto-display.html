@@ -49,12 +49,12 @@
 <pre class="prettyprint source lang-js"><code>console.log(stbDisplayManager.list);</code></pre><p>Get information about first available display:</p>
 <pre class="prettyprint source lang-js"><code>var display = stbDisplayManager.list[0];
 
-console.log(display.type);
-console.log(display.height);
-console.log(display.width);</code></pre><p>Detect state HDMI device with one of the following methods:</p>
+console.log('display.type:', display.type);
+console.log('display.height:', display.height);
+console.log('display.width:', display.width);</code></pre><p>Detect state HDMI device with one of the following methods:</p>
 <pre class="prettyprint source lang-js"><code>// legacy
 window.stbEvent = {
-    onEvent: function ( event, info ) {
+    onEvent: function ( event ) {
         switch ( event ) {
             case 32:
                 console.log('HDMI device has been connected.');

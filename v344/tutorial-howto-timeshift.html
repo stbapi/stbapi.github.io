@@ -54,14 +54,9 @@ timeShift.SetMaxDuration(durationSec);
 timeShift.SetSlidingMode(true);</code></pre><p>Event model initialization:</p>
 <pre class="prettyprint source lang-js"><code>window.stbEvent = {
     onEvent: function ( event, info ) {
-        // external protocol event
-        if ( event === 36 ) {            
+        if ( event === 36 ) {
             info = JSON.parse(info);
-            if ( info.ident === 'TimeShift' ) {
-                console.log('TimeShift mode is enabled. Info object contains information about TimeShift status changes.');
-                console.log(info);
-                console.log('TimeShift event: ' + info.event_code);
-            }            
+            console.log('TimeShift mode is enabled. TimeShift data:', info);
         }
     }
 };</code></pre><p>Work with TimeShift event:</p>

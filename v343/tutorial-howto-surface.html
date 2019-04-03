@@ -46,7 +46,7 @@
 
 <article>
     <p>Get all available instances in the system:</p>
-<pre class="prettyprint source lang-js"><code>console.log(stbSurfaceManager.list);</code></pre><p>Set order information for all surfaces with operation check status:</p>
+<pre class="prettyprint source lang-js"><code>console.log('all available instances in the system:', stbSurfaceManager.list);</code></pre><p>Set order information for all surfaces with operation check status:</p>
 <pre class="prettyprint source lang-js"><code>if ( !stbSurfaceManager.setOrder([s3, s2, s1]) ) {
     console.log('Was not able to reorder!');
 }</code></pre><p>Switch two given surfaces:</p>
@@ -57,16 +57,20 @@ stbSurfaceManager.swap(stbSurfaceManager.list[1], stbSurfaceManager.list[0]);</c
 
 window.addEventListener('keydown', function ( event ) {
     switch ( event.keyCode ) {
-        case 37: // bottom
+        case 37:
+            console.log('keydown: bottom');
             intance.moveBottom();
             break;
-        case 38: // up
+        case 38:
+            console.log('keydown: up');
             instance.moveUp();
             break;
-        case 39: // top
+        case 39:
+            console.log('keydown: top');
             intance.moveTop();
             break;
-        case 40: // down
+        case 40:
+            console.log('keydown: down');
             instance.moveDown();
             break;
     }

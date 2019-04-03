@@ -51,15 +51,13 @@ window.moveTo(x, y);
 
 // sets the window width and height values
 window.resizeTo(width, height);</code></pre><p>At any time you can access the current screen geometry:</p>
-<pre class="prettyprint source lang-js"><code>console.log(window.screen.width);
-console.log(window.screen.height);</code></pre><p>Set web proxy configuration with operation check status:</p>
+<pre class="prettyprint source lang-js"><code>console.log('window.screen.width:', window.screen.width);
+console.log('window.screen.height:', window.screen.height);</code></pre><p>Set web proxy configuration with operation check status:</p>
 <pre class="prettyprint source lang-js"><code>if ( !stbBrowser.setProxy('http://16.16.16.16:3128', 'msn.com .nm.ru 10.0.0.1/24 192.168.2.*') ) {
     console.log('Was not able to set proxy configuration!');
 }</code></pre><p>Get browser current web proxy configuration:</p>
-<pre class="prettyprint source lang-js"><code>// proxy address
-console.log(stbBrowser.proxy);
-// proxy exclude list (delimited by spaces)
-console.log(stbBrowser.proxyExcludeList);</code></pre><p>Disable sending all requests through proxy and start sending them directly:</p>
+<pre class="prettyprint source lang-js"><code>console.log('proxy address:', stbBrowser.proxy);
+console.log('proxy exclude list (delimited by spaces):', stbBrowser.proxyExcludeList);</code></pre><p>Disable sending all requests through proxy and start sending them directly:</p>
 <pre class="prettyprint source lang-js"><code>stbBrowser.resetProxy();</code></pre>
 </article>
 

@@ -399,6 +399,7 @@ output.list[0];</code></pre>
 
 <div class="description">
     <p>Add link with this audio output.</p>
+<p>Added object will replace previous one.</p>
 </div>
 
 
@@ -413,9 +414,13 @@ output.list[0];</code></pre>
     
     <pre class="prettyprint"><code>// get audio output #0 instance
 var output = stbAudioManager.list[0];
+// link to player #0
+output.list[0]
 // get audio source #1 instance
 var player = stbPlayerManager.list[1];
-output.add(player);</code></pre>
+output.add(player);
+// link to player #1
+output.list[0]</code></pre>
 
 
 

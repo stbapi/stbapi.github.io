@@ -46,11 +46,9 @@
 
 <article>
     <p>Get info about banks available for update:</p>
-<pre class="prettyprint source lang-js"><code>// return total number of banks
-console.log(stbUpdate.GetFlashBankCount());
+<pre class="prettyprint source lang-js"><code>console.log('total number of banks:', stbUpdate.GetFlashBankCount());
 
-// return memory bank number, that has been used for current software boot
-console.log(stbUpdate.getActiveBank());</code></pre><p>Start a metadata inspection for <code>Update Image</code> file:</p>
+console.log('memory bank number used for current software boot:', stbUpdate.getActiveBank());</code></pre><p>Start a metadata inspection for <code>Update Image</code> file:</p>
 <pre class="prettyprint source lang-js"><code>var uri = 'http://test.com/imageupdate',
     pathFolder = '/media/usbdisk/mag200/imageupdate';
 
@@ -59,14 +57,11 @@ stbUpdate.startCheck(pathFolder);</code></pre><p>Check operation status code:</p
 <pre class="prettyprint source lang-js"><code>if ( stbUpdate.getStatus() !== 21 ) {
     console.log('Operation has failed! See status codes description.');
 }</code></pre><p>Get information about <code>Update Image</code> file (in case status is successful):</p>
-<pre class="prettyprint source lang-js"><code>// return timestamp of &quot;Update Image&quot;
-console.log(stbUpdate.getImageDateStr());
+<pre class="prettyprint source lang-js"><code>console.log('timestamp of &quot;Update Image&quot;:', stbUpdate.getImageDateStr());
 
-// return description of &quot;Update Image&quot; file
-console.log(stbUpdate.getImageDescStr());
+console.log('description of &quot;Update Image&quot; file:', stbUpdate.getImageDescStr());
 
-// return version of &quot;Update Image&quot; file
-console.log(stbUpdate.getImageVersionStr());</code></pre><p>Different methods to update:</p>
+console.log('version of &quot;Update Image&quot; file:', stbUpdate.getImageVersionStr());</code></pre><p>Different methods to update:</p>
 <pre class="prettyprint source lang-js"><code>// start a software update using &quot;Update Image&quot; file
 stbUpdate.startUpdate(inactiveBank, uri);
 stbUpdate.startUpdate(inactiveBank, pathFolder);
@@ -74,14 +69,11 @@ stbUpdate.startUpdate(inactiveBank, pathFolder);
 // start an automatic software update procedure
 stbUpdate.startAutoUpdate(uri, true);
 stbUpdate.startAutoUpdate(pathFolder, true);</code></pre><p>Get update status:</p>
-<pre class="prettyprint source lang-js"><code>// return the last available status code for an update operation
-console.log(stbUpdate.getStatus());
+<pre class="prettyprint source lang-js"><code>console.log('the last available status code for an update operation:', stbUpdate.getStatus());
 
-// return a progress indicator value for pending update operation
-console.log(stbUpdate.getPercents());
+console.log('progress indicator value for pending update operation:', stbUpdate.getPercents());
 
-// return the last available status for an update operation
-console.log(stbUpdate.getStatusStr());</code></pre>
+console.log('the last available status for an update operation:', stbUpdate.getStatusStr());</code></pre>
 </article>
 
 </section>

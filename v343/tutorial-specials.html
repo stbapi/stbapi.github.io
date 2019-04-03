@@ -58,9 +58,9 @@
 <pre class="prettyprint source lang-js"><code>if ( !stbWindowMgr.IsWebVkWindowExist() ) {
     console.log('Virtual Keyboard window is not exists!');
 }</code></pre><p>Return state of virtual keyboard visibility:</p>
-<pre class="prettyprint source lang-js"><code>console.log(gSTB.IsVirtualKeyboardActive());</code></pre><p>Set manual position for <code>Virtual Keyboard</code> window:</p>
+<pre class="prettyprint source lang-js"><code>console.log('state of virtual keyboard visibility:', gSTB.IsVirtualKeyboardActive());</code></pre><p>Set manual position for <code>Virtual Keyboard</code> window:</p>
 <pre class="prettyprint source lang-js"><code>stbWindowMgr.SetVirtualKeyboardCoord('topleft');</code></pre><p>Get URL of built-in keyboard implementation:</p>
-<pre class="prettyprint source lang-js"><code>console.log(stbWindowMgr.getVirtualKeyboardImplUrl());</code></pre><p>Visibility of <code>Virtual Keyboard</code> window can be managed manually, by <code>KB</code> remote control button, and programmatically.<br>Functioning modes of corresponding button are described in the head of this document.</p>
+<pre class="prettyprint source lang-js"><code>console.log('URL of built-in keyboard implementation:', stbWindowMgr.getVirtualKeyboardImplUrl());</code></pre><p>Visibility of <code>Virtual Keyboard</code> window can be managed manually, by <code>KB</code> remote control button, and programmatically.<br>Functioning modes of corresponding button are described in the head of this document.</p>
 <pre class="prettyprint source lang-js"><code>// enable Silent mode:
 gSTB.EnableVKButton(true);
 

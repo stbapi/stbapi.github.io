@@ -53,43 +53,35 @@ input.antennaPower = true;
 
 // turn off
 input.antennaPower = false;</code></pre><p>Get information about input:</p>
-<pre class="prettyprint source lang-js"><code>// current state of this tunner
-console.log(input.state);
+<pre class="prettyprint source lang-js"><code>console.log('current state of this tuner:', input.state);
 
-// signal level
-console.log(input.signalLevel);
+console.log('signal level:', input.signalLevel);
 
-// signal quality
-console.log(input.signalQuality);
+console.log('signal quality:', input.signalQuality);
 
-// get supported scan types for this tunner
-console.log(input.supportedScanTypes);
+console.log('supported scan types for this tuner:', input.supportedScanTypes);
 
-// get currently supported scan types for this tunner
-console.log(input.currentScanTypes);
+console.log('currently supported scan types for this tuner:', input.currentScanTypes);
 
-// get bit error rate
-console.log(input.bitErrorRate);</code></pre><p>Set current scan type for this input:</p>
-<pre class="prettyprint source lang-js"><code>// DVB-C signal
-console.log(input.setSignalType(1));
+console.log('bit error rate:', input.bitErrorRate);</code></pre><p>Set current scan type for this input:</p>
+<pre class="prettyprint source lang-js"><code>console.log('DVB-C signal:', input.setSignalType(1));
 
-// DVB-T signal
-console.log(input.setSignalType(2));
+console.log('DVB-T signal:', input.setSignalType(2));
 
-// DVB-T2 signal (not available for MAG270)
-console.log(input.setSignalType(3));
+console.log('DVB-T2 signal (not available for MAG270):', input.setSignalType(3));
 
-// DVB-S/DVB-S2 signal
-console.log(input.setSignalType(4));</code></pre><p>Set event listeners to handle received data:</p>
+console.log('DVB-S/DVB-S2 signal:', input.setSignalType(4));</code></pre><p>Set event listeners to handle received data:</p>
 <pre class="prettyprint source lang-js"><code>input.onScanProgress = function ( info ) {
-    console.log('DVB channels scanning is in progress.');
+    console.log('DVB channels scanning is in progress:', info);
+    // {&quot;state&quot;:&quot;searching&quot;,&quot;channel&quot;:0,&quot;frequency&quot;:51000,&quot;progress&quot;:0,&quot;inputIndex&quot;:0,&quot;polarization&quot;:&quot;H&quot;}
 };
 
 input.onChannelFound = function ( info ) {
-    console.log('DVB channel is found.');
+    console.log('DVB channel is found:', info);
+    // {&quot;frequency&quot;:474000,&quot;inputIndex&quot;:0,&quot;bandwidth&quot;:4000,&quot;polarization&quot;:&quot;H&quot;,&quot;modulation&quot;:-1,&quot;symbolRate&quot;:6875800,&quot;id&quot;:&quot;C.0.000474.06875-01&quot;,&quot;type&quot;:1,&quot;uri&quot;:&quot;dvb://C.0.000474.06875-01&quot;,&quot;scrambled&quot;:false,&quot;name&quot;:&quot;MEGA&quot;,&quot;provider&quot;:&quot;&quot;,&quot;isRadio&quot;:false,&quot;channelNumber&quot;:0}
 };
 
-input.onAntennaPower = function ( info ) {
+input.onAntennaPower = function () {
     console.log('DVB antenna is powered off.');
 };</code></pre><p>Start channel scanning (parameters explanation see in <a href="stbDvbInput.html#.startScan"><code>stbDvbInput.startScan</code></a> method):</p>
 <pre class="prettyprint source lang-js"><code>input.startScan({
@@ -112,9 +104,8 @@ input.onAntennaPower = function ( info ) {
 <pre class="prettyprint source lang-js"><code>input.stopScan();</code></pre><p>Make a new channel list as a subset of parent list:</p>
 <pre class="prettyprint source lang-js"><code>var channelList1, channelList2;
 
-// any channel with LCN less then 123
 channelList1 = stbDvbManager.createChannelList(['lt', 'channelNumber', 123]);
-console.log(channelList1);
+console.log('any channels with LCN less than 123:', channelList1);
 
 channelList2 = stbDvbManager.createChannelList();
 console.log(channelList2);</code></pre><p>Root list of all available channels from all inputs:</p>
@@ -127,10 +118,10 @@ console.log(channelList2);</code></pre><p>Root list of all available channels fr
 if ( !channelList2.remove(5) ) {
     console.log('Was not able to remove a channel!');
 }</code></pre><p>Get channel detailed info:</p>
-<pre class="prettyprint source lang-js"><code>console.log(channelList2.getChannel(5));
-console.log(channelList2.getChannel('ccid:0.12.1'));</code></pre><p>Get channel range:</p>
-<pre class="prettyprint source lang-js"><code>console.log(channelList2.slice(1, 5));</code></pre><p>Get the channel index in this channel list:</p>
-<pre class="prettyprint source lang-js"><code>console.log(channelList2.indexOf('ccid:0.12.1'));</code></pre><p>Remove all channels from this channel list:</p>
+<pre class="prettyprint source lang-js"><code>console.log('channel detailed info:', channelList2.getChannel(5));
+console.log('channel detailed info:', channelList2.getChannel('ccid:0.12.1'));</code></pre><p>Get channel range:</p>
+<pre class="prettyprint source lang-js"><code>console.log('channel range:', channelList2.slice(1, 5));</code></pre><p>Get the channel index in this channel list:</p>
+<pre class="prettyprint source lang-js"><code>console.log('the channel index in this channel list:', channelList2.indexOf('ccid:0.12.1'));</code></pre><p>Remove all channels from this channel list:</p>
 <pre class="prettyprint source lang-js"><code>channelList2.clear();</code></pre>
 </article>
 

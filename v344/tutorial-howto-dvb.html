@@ -45,38 +45,45 @@
 </header>
 
 <article>
-    <p>Get all available instances in the system:</p>
-<pre class="prettyprint source lang-js"><code>console.log(stbDvbManager.inputs);</code></pre><p>Get the first available input:</p>
+    <p>Get array of all available instances in the system:</p>
+<pre class="prettyprint source lang-js"><code>console.log('array of all available instances in the system:', stbDvbManager.inputs);</code></pre><p>Get the first available input:</p>
 <pre class="prettyprint source lang-js"><code>var input = stbDvbManager.inputs[0];</code></pre><p>Get information about whether input can change <code>antennaPower</code>:</p>
-<pre class="prettyprint source lang-js"><code>console.log(input.capabilities.antennaPower);</code></pre><p>Manual control of antenna power state:</p>
+<pre class="prettyprint source lang-js"><code>console.log('information about whether input can change &quot;antennaPower&quot;:', input.capabilities.antennaPower);</code></pre><p>Manual control of antenna power state:</p>
 <pre class="prettyprint source lang-js"><code>// turn on
 input.antennaPower = true;
 
 // turn off
 input.antennaPower = false;</code></pre><p>Get information about input:</p>
-<pre class="prettyprint source lang-js"><code>// get supported scan types for this tuner
-console.log(input.supportedScanTypes);
+<pre class="prettyprint source lang-js"><code>console.log('current state of this tuner:', input.state);
 
-// get currently supported scan types for this tuner
-console.log(input.currentScanTypes);</code></pre><p>Set current scan type for this input:</p>
-<pre class="prettyprint source lang-js"><code>// DVB-C signal
-console.log(input.setSignalType(input.TYPE_DVB_C));</code></pre><p>Device may require reboot to apply changed signal type. To determine this check flag:</p>
-<pre class="prettyprint source lang-js"><code>if ( input.capabilities.requireReboot ) {
-    gSTB.ExecAction('reboot');
-}</code></pre><p>Set event listeners to handle received data:</p>
+console.log('signal level:', input.signalLevel);
+
+console.log('signal quality:', input.signalQuality);
+
+console.log('supported scan types for this tuner:', input.supportedScanTypes);
+
+console.log('currently supported scan types for this tuner:', input.currentScanTypes);
+
+console.log('bit error rate:', input.bitErrorRate);</code></pre><p>Set current scan type for this input:</p>
+<pre class="prettyprint source lang-js"><code>console.log('DVB-C set signal type:', input.setSignalType(1));
+
+console.log('DVB-T set signal type:', input.setSignalType(2));
+
+console.log('DVB-T2  set signal type (not available for MAG270):', input.setSignalType(3));
+
+console.log('DVB-S/DVB-S2  set signal type:', input.setSignalType(4));</code></pre><p>Set event listeners to handle received data:</p>
 <pre class="prettyprint source lang-js"><code>input.onScanProgress = function ( info ) {
-    console.log('DVB channels scanning is in progress.');
-    console.log(info);
+    console.log('DVB channels scanning is in progress:', info);
+    // {&quot;state&quot;:&quot;searching&quot;,&quot;channel&quot;:0,&quot;frequency&quot;:51000,&quot;progress&quot;:0,&quot;inputIndex&quot;:0,&quot;polarization&quot;:&quot;H&quot;}
 };
 
 input.onChannelFound = function ( info ) {
-    console.log('DVB channel is found.');
-    console.log(info);
+    console.log('DVB channel is found:', info);
+    // {&quot;frequency&quot;:474000,&quot;inputIndex&quot;:0,&quot;bandwidth&quot;:4000,&quot;polarization&quot;:&quot;H&quot;,&quot;modulation&quot;:-1,&quot;symbolRate&quot;:6875800,&quot;id&quot;:&quot;C.0.000474.06875-01&quot;,&quot;type&quot;:1,&quot;uri&quot;:&quot;dvb://C.0.000474.06875-01&quot;,&quot;scrambled&quot;:false,&quot;name&quot;:&quot;MEGA&quot;,&quot;provider&quot;:&quot;&quot;,&quot;isRadio&quot;:false,&quot;channelNumber&quot;:0}
 };
 
-input.onAntennaPower = function ( status ) {
-    console.log('DVB antenna powered was changed.');
-    console.log(status);
+input.onAntennaPower = function () {
+    console.log('DVB antenna power is off.');
 };</code></pre><p>Start channel scanning (parameters explanation see in <a href="stbDvbInput.html#.startScan"><code>stbDvbInput.startScan</code></a> method):</p>
 <pre class="prettyprint source lang-js"><code>input.startScan({
     from: 10,
@@ -88,19 +95,23 @@ input.onAntennaPower = function ( status ) {
     scanMode: 0,
     frequency: 12,
     networkId: 0
+});</code></pre><p>Tune receiver to specified frequency (parameters explanation see in <code>stbDvbInput.tune</code> method):</p>
+<pre class="prettyprint source lang-js"><code>input.tune({
+    frequency: 10,
+    polarization: 'V',
+    symbolRate: 2,
+    type: 2
 });</code></pre><p>Stop channel scan:</p>
 <pre class="prettyprint source lang-js"><code>input.stopScan();</code></pre><p>Root list with all available channels from all inputs:</p>
-<pre class="prettyprint source lang-js"><code>console.log(stbDvbManager.channelList);</code></pre><p>Make a new channel list as a subset of the parent list:</p>
+<pre class="prettyprint source lang-js"><code>console.log('root list with all available channels from all inputs:', stbDvbManager.channelList);</code></pre><p>Make a new channel list as a subset of the parent list:</p>
 <pre class="prettyprint source lang-js"><code>var channelList1, channelList2;
 
-// any channel with LCN less then 123
-channelList1 = stbDvbManager.createChannelList(['lt', 'channelNumber', 123], stbDvbManager.channelList);
-console.log(channelList1);
+channelList1 = stbDvbManager.createChannelList(['lt', 'channelNumber', 123]);
+console.log('any channels with LCN less than 123:', channelList1);
 
-// all channels without filters
 channelList2 = stbDvbManager.createChannelList([], stbDvbManager.channelList);
-console.log(channelList2);</code></pre><p>Get size of list:</p>
-<pre class="prettyprint source lang-js"><code>console.log(channelList1.size);</code></pre><p>Add channel to the list:</p>
+console.log('all channels without filters:', channelList2);</code></pre><p>Get size of list:</p>
+<pre class="prettyprint source lang-js"><code>console.log('list size:', channelList1.size);</code></pre><p>Add channel to the list:</p>
 <pre class="prettyprint source lang-js"><code>channelList2.add(channelList1.get(123).id);</code></pre><p>Remove the given channel from this channel list with check operation status:</p>
 <pre class="prettyprint source lang-js"><code>if ( !channelList2.remove(channelList2.get(123).id) ) {
     console.log('Was not able to remove a channel!');
@@ -109,17 +120,15 @@ console.log(channelList2);</code></pre><p>Get size of list:</p>
 if ( !channelList2.remove(123) ) {
     console.log('Was not able to remove a channel!');
 }</code></pre><p>Get channel detailed info:</p>
-<pre class="prettyprint source lang-js"><code>// by index
-console.log(channelList2.get(5));
-// by channel unique id
-console.log(channelList2.get('C.0.000506.06875-00'));</code></pre><p>Get channel range:</p>
-<pre class="prettyprint source lang-js"><code>console.log(channelList2.slice(1, 5));</code></pre><p>Get the channel index in this channel list:</p>
-<pre class="prettyprint source lang-js"><code>console.log(channelList1.indexOf(channelList2.get(123).id));</code></pre><p>Remove all channels from this channel list:</p>
+<pre class="prettyprint source lang-js"><code>console.log('channel detailed info:', channelList2.getChannel(5));
+console.log('channel detailed info:', channelList2.getChannel('ccid:0.12.1'));</code></pre><p>Get channel range:</p>
+<pre class="prettyprint source lang-js"><code>console.log('channel range:', channelList2.slice(1, 5));</code></pre><p>Get the channel index in this channel list:</p>
+<pre class="prettyprint source lang-js"><code>console.log('the channel index in this channel list:', channelList2.indexOf('ccid:0.12.1'));</code></pre><p>Remove all channels from this channel list:</p>
 <pre class="prettyprint source lang-js"><code>channelList2.clear();</code></pre><p>Preload the given channel to faster start playing:</p>
 <pre class="prettyprint source lang-js"><code>stbDvbManager.loadChannel(channelList2.get(0));</code></pre><p>Unload from preloaded cache the given channel:</p>
 <pre class="prettyprint source lang-js"><code>stbDvbManager.unloadChannel(channelList2.get(0));</code></pre><p>Unload from preloaded cache all channels:</p>
 <pre class="prettyprint source lang-js"><code>stbDvbManager.unloadAllChannels();</code></pre><p>Get array of all available tuners in the system:</p>
-<pre class="prettyprint source lang-js"><code>console.log(stbDvbManager.tuners);</code></pre><p>Play channel:</p>
+<pre class="prettyprint source lang-js"><code>console.log('array of all available tuners in the system:', stbDvbManager.tuners);</code></pre><p>Play channel:</p>
 <pre class="prettyprint source lang-js"><code>var player  = stbPlayerManager.list[0],
     channel = channelList2.get(0);
 
@@ -135,12 +144,12 @@ player.play({
 tuner.tune(channelList2.get(0));</code></pre><p>Untune receiver:</p>
 <pre class="prettyprint source lang-js"><code>tuner.untune();</code></pre><p>Link this tuner to the given input:</p>
 <pre class="prettyprint source lang-js"><code>tuner.moveToInput(input);</code></pre><p>Get current input number of this tuner:</p>
-<pre class="prettyprint source lang-js"><code>console.log(tuner.inputIndex);</code></pre><p>Get players count which used this tuner:</p>
-<pre class="prettyprint source lang-js"><code>console.log(tuner.playersCount);</code></pre><p>Get Bit Error Rate:</p>
-<pre class="prettyprint source lang-js"><code>console.log(tuner.bitErrorRate);</code></pre><p>Get information about signal quality:</p>
-<pre class="prettyprint source lang-js"><code>console.log(tuner.signalQuality);</code></pre><p>Get information about signal level:</p>
-<pre class="prettyprint source lang-js"><code>console.log(tuner.signalLevel);</code></pre><p>Get information about tuner state (see in <code>stbDvbTuner.stateType</code>):</p>
-<pre class="prettyprint source lang-js"><code>console.log(tuner.state);</code></pre>
+<pre class="prettyprint source lang-js"><code>console.log('current input number of this tuner:', tuner.inputIndex);</code></pre><p>Get players count which used this tuner:</p>
+<pre class="prettyprint source lang-js"><code>console.log('players count which used this tuner:', tuner.playersCount);</code></pre><p>Get Bit Error Rate:</p>
+<pre class="prettyprint source lang-js"><code>console.log('Bit Error Rate:', tuner.bitErrorRate);</code></pre><p>Get information about signal quality:</p>
+<pre class="prettyprint source lang-js"><code>console.log('information about signal quality:', tuner.signalQuality);</code></pre><p>Get information about signal level:</p>
+<pre class="prettyprint source lang-js"><code>console.log('information about signal level:', tuner.signalLevel);</code></pre><p>Get information about tuner state (see in <code>stbDvbTuner.stateType</code>):</p>
+<pre class="prettyprint source lang-js"><code>console.log('information about tuner state:', tuner.state);</code></pre>
 </article>
 
 </section>

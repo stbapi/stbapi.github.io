@@ -51,14 +51,14 @@
         throw new Error(error);
     }
 
-    console.log(data);
+    console.log('find servers data:', data);
 });</code></pre><p>Start scanning to find all available exports on the given server:</p>
 <pre class="prettyprint source lang-js"><code>stbNfs.findShares({server: serverIp}, function ( error, data ) {
     if ( error ) {
         throw new Error(error);
     }
 
-    console.log(data);
+    console.log('find shares data:', data);
 });</code></pre>
 </article>
 

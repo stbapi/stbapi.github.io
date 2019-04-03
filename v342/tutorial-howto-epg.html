@@ -57,26 +57,22 @@ gSTB.Play(channelId);
 // new recommended approach
 stbPlayerManager.list[0].play({uri: streamUrl});
 stbPlayerManager.list[0].play({uri: channelId});</code></pre><p>After EPG data is received get present and following program info for specified channel:</p>
-<pre class="prettyprint source lang-js"><code>console.log(stbEpgManager.getBrief({id: streamUrl}));
-console.log(stbEpgManager.getBrief({id: channelId}));</code></pre><p>Get program info for a given time period for specified channel:</p>
-<pre class="prettyprint source lang-js"><code>// full schedule
-console.log(stbEpgManager.getSchedule({id: streamUrl}));
+<pre class="prettyprint source lang-js"><code>console.log('EPG data:', stbEpgManager.getBrief({id: streamUrl}));
+console.log('EPG data:', stbEpgManager.getBrief({id: channelId}));</code></pre><p>Get program info for a given time period for specified channel:</p>
+<pre class="prettyprint source lang-js"><code>console.log('full schedule:', stbEpgManager.getSchedule({id: streamUrl}));
 
-// given time range
-console.log(stbEpgManager.getSchedule({
+console.log('given time range:', stbEpgManager.getSchedule({
     id:    channelId,
     start: 1428307972,
     end:   1428329461
 }));
 
-// full schedule from the given start time
-console.log(stbEpgManager.getSchedule({
+console.log('full schedule from the given start time:', stbEpgManager.getSchedule({
     id:    streamUrl,
     start: 1428307972
 }));
 
-// full schedule till the given end time
-console.log(stbEpgManager.getSchedule({
+console.log('full schedule till the given end time:', stbEpgManager.getSchedule({
     id:  channelId,
     end: 1428329461
 }));</code></pre><p>Detect EPG data update with one of the following methods:</p>
@@ -84,14 +80,16 @@ console.log(stbEpgManager.getSchedule({
 window.stbEvent = {
     onEvent: function ( event, info ) {
         if ( event === 42 ) {
-            console.log('EPG info is updated.');
+            console.log('EPG info is updated. Updated info:', info);
+            // {id: 'T2_11_650000', brief: true}
         }
     }
 };
 
 // new recommended approach
 stbEpgManager.onEpgInfo = function ( data ) {
-    console.log('EPG info is updated.');
+    console.log('EPG info is updated. Updated data:', data);
+    // {id: 'T2_11_650000', brief: true}
 }</code></pre>
 </article>
 

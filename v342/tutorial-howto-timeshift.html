@@ -52,7 +52,7 @@ timeShift.SetSlidingMode(true);</code></pre><p>Event model initialization:</p>
 <pre class="prettyprint source lang-js"><code>window.stbEvent = {
     onEvent: function ( event, info ) {
         if ( event === 36 ) {
-            console.log('TimeShift mode is enabled.');
+            console.log('TimeShift mode is enabled. TimeShift data:', info);
         }
     }
 };</code></pre><p>Start playback of an internet stream with one of the following methods:</p>

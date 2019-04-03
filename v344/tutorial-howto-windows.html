@@ -74,14 +74,14 @@ stbWindowMgr.windowAttr(windowId, JSON.stringify({visible: false}));</code></pre
 <pre class="prettyprint source lang-js"><code>if ( !stbWindowMgr.windowLoad(windowId, url) ) {
     console.log('Failed to execute!');
 }</code></pre><p>Retrieve IDs of currently existing windows:</p>
-<pre class="prettyprint source lang-js"><code>console.log(stbWindowMgr.windowList());</code></pre><p>Get ID of currently active window:</p>
-<pre class="prettyprint source lang-js"><code>console.log(stbWindowMgr.windowActive());</code></pre><p>It's possible to work with user input on a web pages.<br>Get information for currently focused UI inputs:</p>
-<pre class="prettyprint source lang-js"><code>console.log(stbWindowMgr.GetFocusedInputInfo());</code></pre><p>Set text for currently focused HTML element:</p>
+<pre class="prettyprint source lang-js"><code>console.log('IDs of currently existing windows:', stbWindowMgr.windowList());</code></pre><p>Get ID of currently active window:</p>
+<pre class="prettyprint source lang-js"><code>console.log('ID of currently active window:', stbWindowMgr.windowActive());</code></pre><p>It's possible to work with user input on a web pages.<br>Get information for currently focused UI inputs:</p>
+<pre class="prettyprint source lang-js"><code>console.log('information for currently focused UI inputs:', stbWindowMgr.GetFocusedInputInfo());</code></pre><p>Set text for currently focused HTML element:</p>
 <pre class="prettyprint source lang-js"><code>stbWindowMgr.SetFocusedInputText('foo');</code></pre><p>Different windows can easily interact with each other via messages.<br>Receive a message from a window:</p>
 <pre class="prettyprint source lang-js"><code>stbEvent.onMessage = function ( windowId, message, data ) {
-    console.log('Sender ID: ' + windowId);
-    console.log('Message text: ' + message);
-    console.log('Received data: ' + data);
+    console.log('sender ID: ' + windowId);
+    console.log('message text: ' + message);
+    console.log('received data: ' + data);
 };</code></pre><p>Send a message with some data to a window with ID 3:</p>
 <pre class="prettyprint source lang-js"><code>stbWebWindow.messageSend(3, 'Hello!', JSON.stringify({foo: 1000}));</code></pre>
 </article>

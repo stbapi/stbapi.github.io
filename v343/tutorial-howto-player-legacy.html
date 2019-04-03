@@ -53,7 +53,7 @@ gSTB.SetVideoState(0);
 gSTB.SetTopWin(0);
 gSTB.SetViewport(800, 600, 0, 500);</code></pre><p>Event model initialization:</p>
 <pre class="prettyprint source lang-js"><code>window.stbEvent = {
-    onEvent: function ( event, info ) {
+    onEvent: function ( event ) {
         switch ( event ) {
             case 2:
                 console.log('Information on audio and video tracks of the media content is received.');
@@ -69,14 +69,17 @@ gSTB.SetViewport(800, 600, 0, 500);</code></pre><p>Event model initialization:</
     var volume = gSTB.GetVolume();
 
     switch ( event.keyCode ) {
-        case 107: // volume up
+        case 107: 
+            console.log('keydown: volume up');
             gSTB.SetVolume(volume++);
             break;
-        case 109: // volume down
+        case 109:
+            console.log('keydown: volume down');
             gSTB.SetVolume(volume--);
             break;
         case 83:
-            if ( event.altKey ) { // stop
+            if ( event.altKey ) {
+                console.log('keydown: stop');
                 gSTB.Stop();
             }
             break;

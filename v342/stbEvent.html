@@ -229,11 +229,11 @@
 </tr>
 <tr>
 <td> 34 (0x22)</td>
-<td>PVR task has been finished successfully. See Appendix 13. JavaScript API for PVR subsystem.</td>
+<td>PVR task has been finished successfully.</td>
 </tr>
 <tr>
 <td> 35 (0x23)</td>
-<td>PVR task has been finished with error. See Appendix 13. JavaScript API for PVR subsystem.</td>
+<td>PVR task has been finished with error.</td>
 </tr>
 <tr>
 <td> 36 (0x24)</td>
@@ -303,7 +303,7 @@
 
     
 
-    <h4 class="name" id=".onEvent"><span class="type-signature">(static) </span>onEvent<span class="signature">(event, info)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id=".onEvent"><span class="type-signature">(static) </span>onEvent<span class="signature">(event, info<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
 
     
 
@@ -395,7 +395,7 @@
 <div class="description">
     <p>The function to be called when getting the player event.</p>
 <p>It is used for processing the events in the portal with the event code as the parameter.</p>
-<p>In case there are many players available a field &quot;playerId&quot; appears in the field &quot;info&quot;.</p>
+<p><strong>Warning</strong>: these events are only for the first player (stbPlayerManager.list[0]).</p>
 </div>
 
 
@@ -420,6 +420,8 @@
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -446,6 +448,14 @@
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -468,6 +478,16 @@
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
