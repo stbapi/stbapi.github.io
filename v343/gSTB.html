@@ -97,7 +97,8 @@
 
 
             
-                <div class="description"><p>Main STB object declaration.<br>Provides general API functions.</p></div>
+                <div class="description"><p>Main STB object declaration.<br>
+Provides general API functions.</p></div>
             
 
             
@@ -1007,11 +1008,11 @@
 </thead>
 <tbody>
 <tr>
-<td> true</td>
+<td>true</td>
 <td>enable interrupt</td>
 </tr>
 <tr>
-<td> false</td>
+<td>false</td>
 <td>disable interrupt</td>
 </tr>
 </tbody>
@@ -1099,7 +1100,9 @@
 
 <div class="description">
     <p>Enable multicast proxy.</p>
-<p>If multicast proxy URL is set and multicast proxy enabled then any multicast <code>rtp://</code> or <code>udp://</code> stream<br>will be played back via multicast proxy e.i. instead of <code>rtp://239.1.1.1:1234</code><br>player play the following stream: <code>http://[proxy_addr]/rtp/239.1.1.1:1234</code></p>
+<p>If multicast proxy URL is set and multicast proxy enabled then any multicast <code>rtp://</code> or <code>udp://</code> stream<br>
+will be played back via multicast proxy e.i. instead of <code>rtp://239.1.1.1:1234</code><br>
+player play the following stream: <code>http://[proxy_addr]/rtp/239.1.1.1:1234</code></p>
 <p>See <a href="gSTB.html#.SetMulticastProxyURL"><code>gSTB.SetMulticastProxyURL</code></a>.</p>
 </div>
 
@@ -1164,11 +1167,11 @@
 </thead>
 <tbody>
 <tr>
-<td> true</td>
+<td>true</td>
 <td>enable multicast proxy</td>
 </tr>
 <tr>
-<td> false</td>
+<td>false</td>
 <td>disable multicast proxy</td>
 </tr>
 </tbody>
@@ -1248,7 +1251,8 @@
 <div class="description">
     <p>Allow or forbid to set cookie from given domain.</p>
 <p>By default any domain is allowed to set cookie.</p>
-<p>Each call of this function adds domain (mode is false) or removes it (mode is true)<br>from the list of domains that are not allowed to set cookie.</p>
+<p>Each call of this function adds domain (mode is false) or removes it (mode is true)<br>
+from the list of domains that are not allowed to set cookie.</p>
 </div>
 
 
@@ -1335,11 +1339,11 @@
 </thead>
 <tbody>
 <tr>
-<td> true</td>
+<td>true</td>
 <td>allow to set cookie from given domain</td>
 </tr>
 <tr>
-<td> false</td>
+<td>false</td>
 <td>forbid to set cookie from given domain</td>
 </tr>
 </tbody>
@@ -1418,7 +1422,8 @@
 
 <div class="description">
     <p>Enable or disable 2D navigation (arrow navigation) on web pages.</p>
-<p>2D navigation is disabled by default, but could be enabled on previous web page,<br>so it is recommended to disable 2D navigation if current page does not use it.</p>
+<p>2D navigation is disabled by default, but could be enabled on previous web page,<br>
+so it is recommended to disable 2D navigation if current page does not use it.</p>
 </div>
 
 
@@ -1482,11 +1487,11 @@
 </thead>
 <tbody>
 <tr>
-<td> true</td>
+<td>true</td>
 <td>enable 2D navigation</td>
 </tr>
 <tr>
-<td> false</td>
+<td>false</td>
 <td>disable 2D navigation</td>
 </tr>
 </tbody>
@@ -1628,11 +1633,11 @@
 </thead>
 <tbody>
 <tr>
-<td> true</td>
+<td>true</td>
 <td>application will take control under the &quot;<code>App</code>&quot; button</td>
 </tr>
 <tr>
-<td> false</td>
+<td>false</td>
 <td>the &quot;<code>App</code>&quot; button will be handled as a regular button</td>
 </tr>
 </tbody>
@@ -1712,7 +1717,8 @@
 <div class="description">
     <p>Enable or disable automatic start of Service Menu by pressing &quot;<code>SET</code>&quot; (&quot;<code>service</code>&quot; on old RC) button.</p>
 <p>If button &quot;<code>SET</code>&quot; (&quot;service&quot; on old RC) is already used by JavaScript code, there may be a conflict.</p>
-<p>To avoid this conflict JavaScript code should disable automatic start of Service Menu<br>and call directly function <a href="gSTB.html#.StartLocalCfg"><code>gSTB.StartLocalCfg</code></a> every time it is required.</p>
+<p>To avoid this conflict JavaScript code should disable automatic start of Service Menu<br>
+and call directly function <a href="gSTB.html#.StartLocalCfg"><code>gSTB.StartLocalCfg</code></a> every time it is required.</p>
 </div>
 
 
@@ -1776,11 +1782,11 @@
 </thead>
 <tbody>
 <tr>
-<td> true</td>
+<td>true</td>
 <td>enable automatic start</td>
 </tr>
 <tr>
-<td> false</td>
+<td>false</td>
 <td>disable automatic start</td>
 </tr>
 </tbody>
@@ -1860,7 +1866,9 @@
 <div class="description">
     <p>Enable or disable automatic show/hide of virtual keyboard by pressing &quot;<code>KB</code>&quot; (&quot;<code>empty</code>&quot; on old RC) button.</p>
 <p>If button &quot;<code>KB</code>&quot; (&quot;empty&quot; on old RC) is already used by JavaScript code, there may be a conflict.</p>
-<p>To avoid this conflict JavaScript code should disable automatic start of virtual keyboard<br>and call directly functions <a href="gSTB.html#.ShowVirtualKeyboard"><code>gSTB.ShowVirtualKeyboard</code></a> or<br><a href="gSTB.html#.HideVirtualKeyboard"><code>gSTB.HideVirtualKeyboard</code></a> every time it is required.</p>
+<p>To avoid this conflict JavaScript code should disable automatic start of virtual keyboard<br>
+and call directly functions <a href="gSTB.html#.ShowVirtualKeyboard"><code>gSTB.ShowVirtualKeyboard</code></a> or<br>
+<a href="gSTB.html#.HideVirtualKeyboard"><code>gSTB.HideVirtualKeyboard</code></a> every time it is required.</p>
 </div>
 
 
@@ -1924,11 +1932,11 @@
 </thead>
 <tbody>
 <tr>
-<td> true</td>
+<td>true</td>
 <td>enable automatic show/hide</td>
 </tr>
 <tr>
-<td> false</td>
+<td>false</td>
 <td>disable automatic show/hide</td>
 </tr>
 </tbody>
@@ -2006,7 +2014,8 @@
 
 
 <div class="description">
-    <p>Enable application defined &quot;<code>TV</code>&quot; button processing.<br>When enabled &quot;<code>TV</code>&quot; button events will be consumed by application and will not pass to the portal web window.</p>
+    <p>Enable application defined &quot;<code>TV</code>&quot; button processing.<br>
+When enabled &quot;<code>TV</code>&quot; button events will be consumed by application and will not pass to the portal web window.</p>
 </div>
 
 
@@ -2070,11 +2079,11 @@
 </thead>
 <tbody>
 <tr>
-<td> true</td>
+<td>true</td>
 <td>enable</td>
 </tr>
 <tr>
-<td> false</td>
+<td>false</td>
 <td>disable</td>
 </tr>
 </tbody>
@@ -2232,51 +2241,51 @@ gSTB.ExecAction('umount_dir /ram/mnt/nfs');</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> reboot</td>
+<td>reboot</td>
 <td>Reboot STB.</td>
 </tr>
 <tr>
-<td> mount_dir</td>
+<td>mount_dir</td>
 <td>Mount NFS share.</td>
 </tr>
 <tr>
-<td> umount_dir dir_path</td>
+<td>umount_dir dir_path</td>
 <td>Unmount folder with path dir_path, e.g. NFS or SMB.</td>
 </tr>
 <tr>
-<td> make_dir</td>
+<td>make_dir</td>
 <td>Make directories.</td>
 </tr>
 <tr>
-<td> RebootDHCP</td>
+<td>RebootDHCP</td>
 <td>Reboot and update from DHCP.</td>
 </tr>
 <tr>
-<td> UpdateSW</td>
+<td>UpdateSW</td>
 <td>Choose bank to load from.</td>
 </tr>
 <tr>
-<td> front_panel led-on</td>
+<td>front_panel led-on</td>
 <td>turn on front panel led</td>
 </tr>
 <tr>
-<td> front_panel led-off</td>
+<td>front_panel led-off</td>
 <td>turn off front panel led</td>
 </tr>
 <tr>
-<td> tvsystem mode</td>
+<td>tvsystem mode</td>
 <td>Set TV system mode, e.g. PAL or NTSC.</td>
 </tr>
 <tr>
-<td> graphicres mode</td>
+<td>graphicres mode</td>
 <td>Set graphic mode, e.g. 1280.</td>
 </tr>
 <tr>
-<td> timezone time_zone</td>
+<td>timezone time_zone</td>
 <td>Set time zone time_zone.</td>
 </tr>
 <tr>
-<td> check_dhcp_update</td>
+<td>check_dhcp_update</td>
 <td>Check updates of DHCP parameters.</td>
 </tr>
 </tbody>
@@ -2632,11 +2641,11 @@ gSTB.ExecAction('umount_dir /ram/mnt/nfs');</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>auto detect HDMI mode</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>force HDMI to DVI mode</td>
 </tr>
 </tbody>
@@ -2999,19 +3008,19 @@ gSTB.ExecAction('umount_dir /ram/mnt/nfs');</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>automatic</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>20:9</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>16:9</td>
 </tr>
 <tr>
-<td> 3</td>
+<td>3</td>
 <td>4:3</td>
 </tr>
 </tbody>
@@ -3026,27 +3035,27 @@ gSTB.ExecAction('umount_dir /ram/mnt/nfs');</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>as it is (video is stretched for the whole screen)</td>
 </tr>
 <tr>
-<td> 1</td>
-<td>Letter box mode (video is proportionally enlarged to the size of the screen along the larger edge)</td>
+<td>1</td>
+<td>letterbox mode (video is proportionally enlarged to the size of the screen along the larger edge)</td>
 </tr>
 <tr>
-<td> 2</td>
-<td>Pan&amp;Scan mode (video is proportionally enlarged to the screen size along the lesser edge)</td>
+<td>2</td>
+<td>pan and scan mode (video is proportionally enlarged to the screen size along the lesser edge)</td>
 </tr>
 <tr>
-<td> 3</td>
-<td>combined mode (intermediate between Letter Box Box and Pan&amp;Scan)</td>
+<td>3</td>
+<td>combined mode (intermediate between letterbox and pan and scan)</td>
 </tr>
 <tr>
-<td> 4</td>
+<td>4</td>
 <td>enlarged mode</td>
 </tr>
 <tr>
-<td> 5</td>
+<td>5</td>
 <td>optimal mode</td>
 </tr>
 </tbody>
@@ -3292,15 +3301,15 @@ gSTB.ExecAction('umount_dir /ram/mnt/nfs');</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> PIDn</td>
+<td>PIDn</td>
 <td>PID of audio track with the number n</td>
 </tr>
 <tr>
-<td> lang1_n, lang2_n</td>
+<td>lang1_n, lang2_n</td>
 <td>first two descriptions of languages in audio track</td>
 </tr>
 <tr>
-<td> number n</td>
+<td>number n</td>
 <td>3-symbol tags according to ISO 639</td>
 </tr>
 </tbody>
@@ -3386,7 +3395,8 @@ gSTB.ExecAction('umount_dir /ram/mnt/nfs');</code></pre>
 
 <div class="description">
     <p>Get the list of audio tracks in the stream with the description of the language and audio codec type.</p>
-<p>This stream can be easily converted into a structure array by calling the function <code>eval</code>.<br>This function must be called after the <code>event 2</code> occurs (see description of events).</p>
+<p>This stream can be easily converted into a structure array by calling the function <code>eval</code>.<br>
+This function must be called after the <code>event 2</code> occurs (see description of events).</p>
 </div>
 
 
@@ -3434,15 +3444,15 @@ gSTB.ExecAction('umount_dir /ram/mnt/nfs');</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> PIDn</td>
+<td>PIDn</td>
 <td>PID of audio track with the number n</td>
 </tr>
 <tr>
-<td> lang1_n, lang2_n</td>
+<td>lang1_n, lang2_n</td>
 <td>first two descriptions of languages in audio track</td>
 </tr>
 <tr>
-<td> number n</td>
+<td>number n</td>
 <td>3-symbol tags according to ISO 639</td>
 </tr>
 </tbody>
@@ -3457,39 +3467,39 @@ gSTB.ExecAction('umount_dir /ram/mnt/nfs');</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>Unknown</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>mp2a</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>mp3</td>
 </tr>
 <tr>
-<td> 3</td>
+<td>3</td>
 <td>AC3</td>
 </tr>
 <tr>
-<td> 4</td>
+<td>4</td>
 <td>AAC</td>
 </tr>
 <tr>
-<td> 5</td>
+<td>5</td>
 <td>PCM</td>
 </tr>
 <tr>
-<td> 6</td>
+<td>6</td>
 <td>OGG</td>
 </tr>
 <tr>
-<td> 7</td>
+<td>7</td>
 <td>DTS</td>
 </tr>
 <tr>
-<td> 8</td>
+<td>8</td>
 <td>EAC3</td>
 </tr>
 </tbody>
@@ -3678,7 +3688,9 @@ gSTB.ExecAction('umount_dir /ram/mnt/nfs');</code></pre>
 
 <div class="description">
     <p>Get the current buffer loading in percents.</p>
-<p>It makes sense to call this function only with the following solutions:<br><strong>ffmpeg</strong>, <strong>ffrt</strong>, <strong>ffrt2</strong>, <strong>ffrt3</strong>, <strong>fm</strong>, <strong>file</strong> after getting <code>event 2</code> from List of the events used<br>and before complete buffer filling or before getting <code>event 4</code> from List of the events used.</p>
+<p>It makes sense to call this function only with the following solutions:<br>
+<strong>ffmpeg</strong>, <strong>ffrt</strong>, <strong>ffrt2</strong>, <strong>ffrt3</strong>, <strong>fm</strong>, <strong>file</strong> after getting <code>event 2</code> from List of the events used<br>
+and before complete buffer filling or before getting <code>event 4</code> from List of the events used.</p>
 </div>
 
 
@@ -5164,15 +5176,15 @@ JSON.parse(gSTB.GetEnv('{"varList":["a", "b", "timezone_conf_int", "wifi_ssid", 
 </thead>
 <tbody>
 <tr>
-<td> result</td>
+<td>result</td>
 <td>holds result of operation (only pairs) and each pair name is equal to variable name, value of the pair representing value of variable in string notation</td>
 </tr>
 <tr>
-<td> errMsg</td>
+<td>errMsg</td>
 <td>empty string in case of success or non-localized string that representing error condition otherwise</td>
 </tr>
 <tr>
-<td> errCode</td>
+<td>errCode</td>
 <td>0 in case of success or -1 in case of general error</td>
 </tr>
 </tbody>
@@ -5411,15 +5423,15 @@ JSON.parse(gSTB.GetExtProtocolList());
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>HDMI disconnected from TV.</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>HDMI connected to TV, but not in active state e.i. standby mode, TV is off</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>HDMI connected to TV in active state.</td>
 </tr>
 </tbody>
@@ -5562,11 +5574,11 @@ JSON.parse(gSTB.GetHLSInfo());
 </thead>
 <tbody>
 <tr>
-<td> currentVariant</td>
+<td>currentVariant</td>
 <td>the number of currently active variant in variants array</td>
 </tr>
 <tr>
-<td> variants</td>
+<td>variants</td>
 <td>a list of bitrates for all variants and can be empty (available only for Apple HLS streams)</td>
 </tr>
 </tbody>
@@ -5681,11 +5693,11 @@ JSON.parse(gSTB.GetHLSInfo());
 </thead>
 <tbody>
 <tr>
-<td> true</td>
+<td>true</td>
 <td>link is active</td>
 </tr>
 <tr>
-<td> false</td>
+<td>false</td>
 <td>no link connections</td>
 </tr>
 </tbody>
@@ -5990,7 +6002,8 @@ JSON.parse(gSTB.GetHLSInfo());
 
 
 <div class="description">
-    <p>Get metadata information stored in current content.<br>For example, it can be data from ID3 tag from mp3 file or info from iso/bluray/dvd.</p>
+    <p>Get metadata information stored in current content.<br>
+For example, it can be data from ID3 tag from mp3 file or info from iso/bluray/dvd.</p>
 <p>It makes sense to call this function after getting <code>event 2</code> from List of the events used.</p>
 </div>
 
@@ -6339,11 +6352,11 @@ JSON.parse(gSTB.GetMetadataInfo());
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>output is not muted</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>output is muted</td>
 </tr>
 </tbody>
@@ -6621,7 +6634,8 @@ JSON.parse(gSTB.GetMetadataInfo());
 
 
 <div class="description">
-    <p>Returns MAC address for WiFi interface.<br>May return &quot;<UNDEFINED>&quot; if there is no WiFi interface exist.</p>
+    <p>Returns MAC address for WiFi interface.<br>
+May return &quot;<UNDEFINED>&quot; if there is no WiFi interface exist.</p>
 </div>
 
 
@@ -6748,11 +6762,11 @@ JSON.parse(gSTB.GetMetadataInfo());
 </thead>
 <tbody>
 <tr>
-<td> true</td>
+<td>true</td>
 <td>the content is displayed in a reduced window</td>
 </tr>
 <tr>
-<td> false</td>
+<td>false</td>
 <td>the content is displayed in a full screen mode</td>
 </tr>
 </tbody>
@@ -7408,11 +7422,11 @@ JSON.parse(gSTB.GetMetadataInfo());
 </thead>
 <tbody>
 <tr>
-<td> true</td>
+<td>true</td>
 <td>link is active</td>
 </tr>
 <tr>
-<td> false</td>
+<td>false</td>
 <td>disconnected</td>
 </tr>
 </tbody>
@@ -7644,15 +7658,15 @@ JSON.parse(gSTB.GetSmbGroups());
 </thead>
 <tbody>
 <tr>
-<td> result</td>
+<td>result</td>
 <td>holds result of operation</td>
 </tr>
 <tr>
-<td> errMsg</td>
+<td>errMsg</td>
 <td>empty string in case of success or non-localized string that representing error condition otherwise</td>
 </tr>
 <tr>
-<td> errCode</td>
+<td>errCode</td>
 <td>0 in case of success or -1 in case of general error</td>
 </tr>
 </tbody>
@@ -7831,15 +7845,15 @@ JSON.parse(gSTB.GetSmbServers('{"group":"WORKGROUP"}'));
 </thead>
 <tbody>
 <tr>
-<td> result</td>
+<td>result</td>
 <td>holds result of operation</td>
 </tr>
 <tr>
-<td> errMsg</td>
+<td>errMsg</td>
 <td>empty string in case of success or non-localized string that representing error condition otherwise</td>
 </tr>
 <tr>
-<td> errCode</td>
+<td>errCode</td>
 <td>0 in case of success or -1 in case of general error</td>
 </tr>
 </tbody>
@@ -8032,23 +8046,23 @@ gSTB.GetSmbShares(JSON.stringify({
 </thead>
 <tbody>
 <tr>
-<td> result</td>
+<td>result</td>
 <td>holds result of operation</td>
 </tr>
 <tr>
-<td> result.shares</td>
+<td>result.shares</td>
 <td>an array of share names</td>
 </tr>
 <tr>
-<td> result.serverIP</td>
+<td>result.serverIP</td>
 <td>holds IP address of given server</td>
 </tr>
 <tr>
-<td> errMsg</td>
+<td>errMsg</td>
 <td>empty string in case of success or non-localized string that representing error condition otherwise</td>
 </tr>
 <tr>
-<td> errCode</td>
+<td>errCode</td>
 <td>0 in case of success or -1 in case of general error</td>
 </tr>
 </tbody>
@@ -8172,59 +8186,59 @@ gSTB.GetSmbShares(JSON.stringify({
 </thead>
 <tbody>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>normal</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>2x</td>
 </tr>
 <tr>
-<td> 3</td>
+<td>3</td>
 <td>4x</td>
 </tr>
 <tr>
-<td> 4</td>
+<td>4</td>
 <td>8x</td>
 </tr>
 <tr>
-<td> 5</td>
+<td>5</td>
 <td>16x</td>
 </tr>
 <tr>
-<td> 6</td>
+<td>6</td>
 <td>1/2</td>
 </tr>
 <tr>
-<td> 7</td>
+<td>7</td>
 <td>1/4</td>
 </tr>
 <tr>
-<td> 8</td>
+<td>8</td>
 <td>12x</td>
 </tr>
 <tr>
-<td> -1</td>
+<td>-1</td>
 <td>reverse</td>
 </tr>
 <tr>
-<td> -2</td>
+<td>-2</td>
 <td>reverse 2x</td>
 </tr>
 <tr>
-<td> -3</td>
+<td>-3</td>
 <td>reverse 4x</td>
 </tr>
 <tr>
-<td> -4</td>
+<td>-4</td>
 <td>reverse 8x</td>
 </tr>
 <tr>
-<td> -5</td>
+<td>-5</td>
 <td>reverse 16x</td>
 </tr>
 <tr>
-<td> -8</td>
+<td>-8</td>
 <td>reverse 12x</td>
 </tr>
 </tbody>
@@ -8464,15 +8478,15 @@ JSON.parse(gSTB.GetStatistics());
 </thead>
 <tbody>
 <tr>
-<td> CCErrorCnt</td>
+<td>CCErrorCnt</td>
 <td>continuity counter error count</td>
 </tr>
 <tr>
-<td> RTPErrorCnt</td>
+<td>RTPErrorCnt</td>
 <td>RTP error count</td>
 </tr>
 <tr>
-<td> VideoDecodingErrorCnt</td>
+<td>VideoDecodingErrorCnt</td>
 <td>video decoding error count</td>
 </tr>
 </tbody>
@@ -8671,15 +8685,15 @@ JSON.parse(gSTB.GetStorageInfo('{}'));
 </thead>
 <tbody>
 <tr>
-<td> result</td>
+<td>result</td>
 <td>holds result of operation</td>
 </tr>
 <tr>
-<td> errMsg</td>
+<td>errMsg</td>
 <td>empty string in case of success or non-localized string that representing error condition otherwise</td>
 </tr>
 <tr>
-<td> errCode</td>
+<td>errCode</td>
 <td>0 in case of success or -1 in case of general error</td>
 </tr>
 </tbody>
@@ -8925,15 +8939,15 @@ JSON.parse(gSTB.GetStorageInfo('{}'));
 </thead>
 <tbody>
 <tr>
-<td> PIDn</td>
+<td>PIDn</td>
 <td>PID of subtitle track with the number n</td>
 </tr>
 <tr>
-<td> lang1_n, lang2_n</td>
+<td>lang1_n, lang2_n</td>
 <td>first two descriptions of languages in subtitle track</td>
 </tr>
 <tr>
-<td> number n</td>
+<td>number n</td>
 <td>3-symbol tags according to ISO 639</td>
 </tr>
 </tbody>
@@ -9062,15 +9076,15 @@ JSON.parse(gSTB.GetStorageInfo('{}'));
 </thead>
 <tbody>
 <tr>
-<td> result</td>
+<td>result</td>
 <td>holds result of operation</td>
 </tr>
 <tr>
-<td> errMsg</td>
+<td>errMsg</td>
 <td>empty string in case of success or non-localized string that representing error condition otherwise</td>
 </tr>
 <tr>
-<td> errCode</td>
+<td>errCode</td>
 <td>0 in case of success or -1 in case of general error</td>
 </tr>
 </tbody>
@@ -9308,15 +9322,15 @@ JSON.parse(gSTB.GetStorageInfo('{}'));
 </thead>
 <tbody>
 <tr>
-<td> PIDn</td>
+<td>PIDn</td>
 <td>PID of teletext track with the number n</td>
 </tr>
 <tr>
-<td> lang1_n, lang2_n</td>
+<td>lang1_n, lang2_n</td>
 <td>First two descriptions of languages in teletext track</td>
 </tr>
 <tr>
-<td> number n</td>
+<td>number n</td>
 <td>3-symbol tags according to ISO 639</td>
 </tr>
 </tbody>
@@ -9546,19 +9560,19 @@ JSON.parse(gSTB.GetStorageInfo('{}'));
 </thead>
 <tbody>
 <tr>
-<td> frameRate</td>
+<td>frameRate</td>
 <td>video frame rate</td>
 </tr>
 <tr>
-<td> pictureWidth</td>
+<td>pictureWidth</td>
 <td>encoded video width</td>
 </tr>
 <tr>
-<td> pictureHeight</td>
+<td>pictureHeight</td>
 <td>encoded video height</td>
 </tr>
 <tr>
-<td> hPAR and vPAR</td>
+<td>hPAR and vPAR</td>
 <td>pixel aspect ratio coefficients <br> in example above these params mean that movie aspect ratio is: (704*hPAR/vPAR)/576 = 1.333333333(3) = 4:3 for square pixels</td>
 </tr>
 </tbody>
@@ -9848,15 +9862,15 @@ JSON.parse(gSTB.GetWepKey128ByPassPhrase('somepass'));
 </thead>
 <tbody>
 <tr>
-<td> result</td>
+<td>result</td>
 <td>holds result of operation</td>
 </tr>
 <tr>
-<td> errMsg</td>
+<td>errMsg</td>
 <td>empty string in case of success or non-localized string that representing error condition otherwise</td>
 </tr>
 <tr>
-<td> errCode</td>
+<td>errCode</td>
 <td>0 in case of success or -1 in case of general error</td>
 </tr>
 </tbody>
@@ -10039,15 +10053,15 @@ JSON.parse(gSTB.GetWepKey64ByPassPhrase('somepass'));
 </thead>
 <tbody>
 <tr>
-<td> result</td>
+<td>result</td>
 <td>holds result of operation</td>
 </tr>
 <tr>
-<td> errMsg</td>
+<td>errMsg</td>
 <td>empty string in case of success or non-localized string that representing error condition otherwise</td>
 </tr>
 <tr>
-<td> errCode</td>
+<td>errCode</td>
 <td>0 in case of success or -1 in case of general error</td>
 </tr>
 </tbody>
@@ -10191,35 +10205,35 @@ JSON.parse(gSTB.GetWifiGroups());
 </thead>
 <tbody>
 <tr>
-<td> result</td>
+<td>result</td>
 <td>holds result of operation</td>
 </tr>
 <tr>
-<td> result[n].ssid</td>
+<td>result[n].ssid</td>
 <td>name of group</td>
 </tr>
 <tr>
-<td> result[n].auth</td>
+<td>result[n].auth</td>
 <td>authentication method (&quot;WPA&quot;, &quot;WPA2&quot;, &quot;WEPAUTO&quot;, &quot;NONE&quot;)</td>
 </tr>
 <tr>
-<td> result[n].enc</td>
+<td>result[n].enc</td>
 <td>encoding (&quot;CCMP&quot;, &quot;TKIP&quot;, &quot;NONE&quot;)</td>
 </tr>
 <tr>
-<td> result[n].signalInfo</td>
+<td>result[n].signalInfo</td>
 <td>signal strength (numeric value in dB)</td>
 </tr>
 <tr>
-<td> result[n].rfInfo</td>
+<td>result[n].rfInfo</td>
 <td>string information about channel</td>
 </tr>
 <tr>
-<td> errMsg</td>
+<td>errMsg</td>
 <td>empty string in case of success or non-localized string that representing error condition otherwise</td>
 </tr>
 <tr>
-<td> errCode</td>
+<td>errCode</td>
 <td>0 in case of success or -1 in case of general error</td>
 </tr>
 </tbody>
@@ -10234,23 +10248,23 @@ JSON.parse(gSTB.GetWifiGroups());
 </thead>
 <tbody>
 <tr>
-<td> &lt;= -80</td>
+<td>&lt;= -80</td>
 <td>20%</td>
 </tr>
 <tr>
-<td> &lt;= -70</td>
+<td>&lt;= -70</td>
 <td>40%</td>
 </tr>
 <tr>
-<td> &lt;= -60</td>
+<td>&lt;= -60</td>
 <td>60%</td>
 </tr>
 <tr>
-<td> &lt;= -50</td>
+<td>&lt;= -50</td>
 <td>80%</td>
 </tr>
 <tr>
-<td> &lt;= 0</td>
+<td>&lt;= 0</td>
 <td>100%</td>
 </tr>
 </tbody>
@@ -10365,11 +10379,11 @@ JSON.parse(gSTB.GetWifiGroups());
 </thead>
 <tbody>
 <tr>
-<td> true</td>
+<td>true</td>
 <td>link is active</td>
 </tr>
 <tr>
-<td> false</td>
+<td>false</td>
 <td>no connection to wifi access point</td>
 </tr>
 </tbody>
@@ -10632,11 +10646,11 @@ JSON.parse(gSTB.GetWifiLinkStatusEx());
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>graphic window</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>video window</td>
 </tr>
 </tbody>
@@ -10879,11 +10893,11 @@ JSON.parse(gSTB.GetWifiLinkStatusEx());
 </thead>
 <tbody>
 <tr>
-<td> true</td>
+<td>true</td>
 <td>after this call the graphic window stops upgrading till the next call with the parameter false</td>
 </tr>
 <tr>
-<td> false</td>
+<td>false</td>
 <td>after this call the graphic window resumes upgrading – passing to normal mode</td>
 </tr>
 </tbody>
@@ -11132,11 +11146,11 @@ JSON.parse(gSTB.GetWifiLinkStatusEx());
 </thead>
 <tbody>
 <tr>
-<td> true</td>
+<td>true</td>
 <td>file name is an absolute path and it points to an existing file</td>
 </tr>
 <tr>
-<td> false</td>
+<td>false</td>
 <td>otherwise</td>
 </tr>
 </tbody>
@@ -11300,11 +11314,11 @@ JSON.parse(gSTB.GetWifiLinkStatusEx());
 </thead>
 <tbody>
 <tr>
-<td> true</td>
+<td>true</td>
 <td>file name is an absolute path and it points to an existing folder</td>
 </tr>
 <tr>
-<td> false</td>
+<td>false</td>
 <td>otherwise</td>
 </tr>
 </tbody>
@@ -11686,11 +11700,11 @@ JSON.parse(gSTB.GetWifiLinkStatusEx());
 </thead>
 <tbody>
 <tr>
-<td> true</td>
+<td>true</td>
 <td>currently is playing</td>
 </tr>
 <tr>
-<td> false</td>
+<td>false</td>
 <td>currently is not playing</td>
 </tr>
 </tbody>
@@ -12074,11 +12088,11 @@ JSON.parse(gSTB.GetWifiLinkStatusEx());
 </thead>
 <tbody>
 <tr>
-<td> dirN</td>
+<td>dirN</td>
 <td>the name of N-sub-directory</td>
 </tr>
 <tr>
-<td> fileNameM and sizeM</td>
+<td>fileNameM and sizeM</td>
 <td>name and size of M-file</td>
 </tr>
 </tbody>
@@ -12898,27 +12912,27 @@ gSTB.LoadUserData('test');</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> solution</td>
+<td>solution</td>
 <td>Media content type. Depends on the IPTV-device type (see <a href="tutorial-media-formats.html">Media content formats</a> tutorial for the table of supported formats and the description of media content types).</td>
 </tr>
 <tr>
-<td> URL</td>
+<td>URL</td>
 <td>Address of the content to be started for playing. Depends on the type (see more detailed information in <a href="tutorial-media-formats.html">Media content formats</a> tutorial).</td>
 </tr>
 <tr>
-<td> atrack:anum</td>
+<td>atrack:anum</td>
 <td>Sets the number(PID) of audio track (optional parameter). See property audioPID in <a href="stbPlayer.html#.play"><code>stbPlayer.play</code></a>.</td>
 </tr>
 <tr>
-<td> vtrack:vnum</td>
+<td>vtrack:vnum</td>
 <td>Sets the number(PID) of video track (optional parameter).</td>
 </tr>
 <tr>
-<td> strack:snum</td>
+<td>strack:snum</td>
 <td>Sets the number(PID) of subtitle track (optional parameter).</td>
 </tr>
 <tr>
-<td> subURL:subtitleURL</td>
+<td>subURL:subtitleURL</td>
 <td>Sets the URL of external subtitles file. See <a href="gSTB.html#.LoadExternalSubtitles"><code>gSTB.LoadExternalSubtitles</code></a> (optional parameter).</td>
 </tr>
 </tbody>
@@ -13204,163 +13218,163 @@ gSTB.LoadUserData('test');</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> get_hdd_info</td>
+<td>get_hdd_info</td>
 <td>Get HDD information. Deprecated, for this purpose please use <a href="gSTB.html#.GetStorageInfo"><code>gSTB.GetStorageInfo</code></a>.</td>
 </tr>
 <tr>
-<td> get_storage_info</td>
+<td>get_storage_info</td>
 <td>Get information about mounted drives. Deprecated, for this purpose please use <a href="gSTB.html#.GetStorageInfo"><code>gSTB.GetStorageInfo</code></a>.</td>
 </tr>
 <tr>
-<td> ifconfig</td>
+<td>ifconfig</td>
 <td>Displays the status of the eth0 interface.</td>
 </tr>
 <tr>
-<td> GetFile</td>
+<td>GetFile</td>
 <td>Get file content.</td>
 </tr>
 <tr>
-<td> RemoveFile</td>
+<td>RemoveFile</td>
 <td>Remove given file, return &quot;Ok&quot; on success.</td>
 </tr>
 <tr>
-<td> RemoveDirFull</td>
+<td>RemoveDirFull</td>
 <td>Remove given directory, return &quot;Ok&quot; on success.</td>
 </tr>
 <tr>
-<td> SerialNumber</td>
+<td>SerialNumber</td>
 <td>Return STB serial number. Deprecated, for this purpose please use <a href="gSTB.html#.GetDeviceSerialNumber"><code>gSTB.GetDeviceSerialNumber</code></a>.</td>
 </tr>
 <tr>
-<td> MACAddress</td>
+<td>MACAddress</td>
 <td>Return STB MAC address. Deprecated, for this purpose please use <a href="gSTB.html#.GetDeviceMacAddress"><code>gSTB.GetDeviceMacAddress</code></a>.</td>
 </tr>
 <tr>
-<td> IPAddress</td>
+<td>IPAddress</td>
 <td>Return STB IP address (eth0).</td>
 </tr>
 <tr>
-<td> HardwareVersion</td>
+<td>HardwareVersion</td>
 <td>Return STB hardware version. Deprecated, for this purpose please use <a href="gSTB.html#.GetDeviceVersionHardware"><code>gSTB.GetDeviceVersionHardware</code></a>.</td>
 </tr>
 <tr>
-<td> Vendor</td>
+<td>Vendor</td>
 <td>Return the name of STB manufacturer. Deprecated, for this purpose please use <a href="gSTB.html#.GetDeviceVendor"><code>gSTB.GetDeviceVendor</code></a>.</td>
 </tr>
 <tr>
-<td> Model</td>
+<td>Model</td>
 <td>Return STB model name. Deprecated, for this purpose please use <a href="gSTB.html#.GetDeviceModel"><code>gSTB.GetDeviceModel</code></a>.</td>
 </tr>
 <tr>
-<td> ModelExt</td>
+<td>ModelExt</td>
 <td>Return STB model name. Deprecated, for this purpose please use <a href="gSTB.html#.GetDeviceModelExt"><code>gSTB.GetDeviceModelExt</code></a>.</td>
 </tr>
 <tr>
-<td> ImageVersion</td>
+<td>ImageVersion</td>
 <td>Return NAND image version. Deprecated, for this purpose please use <a href="gSTB.html#.GetDeviceImageVersion"><code>gSTB.GetDeviceImageVersion</code></a>.</td>
 </tr>
 <tr>
-<td> ImageDescription</td>
+<td>ImageDescription</td>
 <td>Return NAND image description. Deprecated, for this purpose please use <a href="gSTB.html#.GetDeviceImageDesc"><code>gSTB.GetDeviceImageDesc</code></a>.</td>
 </tr>
 <tr>
-<td> ImageDate</td>
+<td>ImageDate</td>
 <td>Return NAND image creation date.</td>
 </tr>
 <tr>
-<td> vmode</td>
+<td>vmode</td>
 <td>Return video mode, e.g. &quot;1080p&quot;.</td>
 </tr>
 <tr>
-<td> gmode</td>
+<td>gmode</td>
 <td>Return graphic mode.</td>
 </tr>
 <tr>
-<td> setenv</td>
+<td>setenv</td>
 <td>Setup values of specified boot loader’s variables. Deprecated, for this purpose please use <a href="gSTB.html#.SetEnv"><code>gSTB.SetEnv</code></a>.</td>
 </tr>
 <tr>
-<td> getenv</td>
+<td>getenv</td>
 <td>Read specified boot loader’s variables. Deprecated, for this purpose please use <a href="gSTB.html#.GetEnv"><code>gSTB.GetEnv</code></a>.</td>
 </tr>
 <tr>
-<td> Img_Ver</td>
+<td>Img_Ver</td>
 <td>Return release version.</td>
 </tr>
 <tr>
-<td> SetLogo</td>
+<td>SetLogo</td>
 <td>Set logotype on boot start.</td>
 </tr>
 <tr>
-<td> UpdateSecondBoot</td>
+<td>UpdateSecondBoot</td>
 <td>Update second boot loader on supported devices.</td>
 </tr>
 <tr>
-<td> ResolveIP</td>
+<td>ResolveIP</td>
 <td>Resolve hostname to IP address.</td>
 </tr>
 <tr>
-<td> GetCurrentBank</td>
+<td>GetCurrentBank</td>
 <td>Get active bank of NAND. Deprecated, for this purpose please use <a href="gSTB.html#.GetDeviceActiveBank"><code>gSTB.GetDeviceActiveBank</code></a>.</td>
 </tr>
 <tr>
-<td> IPMask</td>
+<td>IPMask</td>
 <td>Return STB IP mask.</td>
 </tr>
 <tr>
-<td> DefaultGW</td>
+<td>DefaultGW</td>
 <td>Return STB default gateway.</td>
 </tr>
 <tr>
-<td> DNSServers</td>
+<td>DNSServers</td>
 <td>Return STB DNS servers.</td>
 </tr>
 <tr>
-<td> tempfile</td>
+<td>tempfile</td>
 <td>Operate (read, write, delete) with temporal files in <code>/ram/data</code>.</td>
 </tr>
 <tr>
-<td> permfile</td>
+<td>permfile</td>
 <td>Operate (read, write, delete) with permanent files in <code>/mnt/Userfs/data</code>.</td>
 </tr>
 <tr>
-<td> LAN_link</td>
+<td>LAN_link</td>
 <td>Return LAN connection status.</td>
 </tr>
 <tr>
-<td> WiFi_link</td>
+<td>WiFi_link</td>
 <td>Return WiFi connection status.</td>
 </tr>
 <tr>
-<td> WiFi_ip</td>
+<td>WiFi_ip</td>
 <td>Return STB IP address (WiFi).</td>
 </tr>
 <tr>
-<td> SHA1</td>
+<td>SHA1</td>
 <td>Return computed SHA1 checksum of a string, wrapper for <code>sha1sum</code>.</td>
 </tr>
 <tr>
-<td> mount</td>
+<td>mount</td>
 <td>Mount SMB and NFS shares.</td>
 </tr>
 <tr>
-<td> hdd_format</td>
+<td>hdd_format</td>
 <td>Format given HDD to ext2/ext3/ntfs/fat16/fat32 file system.</td>
 </tr>
 <tr>
-<td> dhcp_is_ready</td>
+<td>dhcp_is_ready</td>
 <td>Return DHCP status.</td>
 </tr>
 <tr>
-<td> get_dhcp_params</td>
+<td>get_dhcp_params</td>
 <td>Return data received by DHCP.</td>
 </tr>
 <tr>
-<td> GetMemoryInfo</td>
+<td>GetMemoryInfo</td>
 <td>Return <code>/proc/meminfo</code> file content.</td>
 </tr>
 <tr>
-<td> mtr</td>
+<td>mtr</td>
 <td>Network diagnostic tool, wrapper for <code>mtr</code>.</td>
 </tr>
 </tbody>
@@ -13743,7 +13757,8 @@ gSTB.RDir('ResolveIP www.infomir.com');</code></pre>
 
 
 <div class="description">
-    <p>Rotate video.<br>Can rotate images on other platforms.</p>
+    <p>Rotate video.<br>
+Can rotate images on other platforms.</p>
 <p><em>Platform: MAG100</em></p>
 </div>
 
@@ -14165,32 +14180,32 @@ gSTB.RDir('ResolveIP www.infomir.com');</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> local-config</td>
+<td>local-config</td>
 <td>reset</td>
 <td>set all environment variables as default values or clear it</td>
 </tr>
 <tr>
-<td> network</td>
+<td>network</td>
 <td>restart</td>
 <td>restart ethernet driver, need to apply new ethernet settings</td>
 </tr>
 <tr>
-<td> wifi</td>
+<td>wifi</td>
 <td>restart</td>
 <td>restart WiFi driver, need to apply new WiFi settings</td>
 </tr>
 <tr>
-<td> pppoe</td>
+<td>pppoe</td>
 <td>start, stop, restart</td>
 <td>control PPPoE, need to apply new PPPoE settings</td>
 </tr>
 <tr>
-<td> upnp-service</td>
+<td>upnp-service</td>
 <td>start, stop, restart</td>
 <td>control UPnP service, need to apply new UPnP settings</td>
 </tr>
 <tr>
-<td> ntp</td>
+<td>ntp</td>
 <td>start, stop, restart</td>
 <td>control NTP service, need to apply new NTP server settings</td>
 </tr>
@@ -14322,19 +14337,19 @@ JSON.parse(gSTB.ServiceControl('ntp', 'restart'));
 </thead>
 <tbody>
 <tr>
-<td> result</td>
+<td>result</td>
 <td>holds result of operation</td>
 </tr>
 <tr>
-<td> result.status</td>
+<td>result.status</td>
 <td>value is always &quot;ok&quot;</td>
 </tr>
 <tr>
-<td> errMsg</td>
+<td>errMsg</td>
 <td>empty string in case of success or non-localized string that representing error condition otherwise</td>
 </tr>
 <tr>
-<td> errCode</td>
+<td>errCode</td>
 <td>0 in case of success or -1 in case of general error</td>
 </tr>
 </tbody>
@@ -14484,23 +14499,23 @@ JSON.parse(gSTB.ServiceControl('ntp', 'restart'));
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>Treat video as normal 2D video. Default mode. In case of top-bottom or side-by-side 3D video player displays both stereo views so TV can reproduce 3D video (with half resolution). If TV is 3D capable and video contains information about 3D then TV will be automatically switched to 3D mode.</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>Treat video as 3D video in top-bottom(over-under) format with half resolution of each stereo view. In that mode player will stretch top half of the video into fullscreen according to specified aspect.</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>Treat video as 3D video in top-bottom(over-under) format with full resolution of each stereo view. In that mode player will stretch top half of the video into fullscreen according to specified aspect. The difference between STB_3D_MODE_TOP and STB_3D_MODE_TOP_HALF is that STB_SetAspect with other than auto mode gives different behaviour and in case of resulting video will be Full resolution HD.</td>
 </tr>
 <tr>
-<td> 3</td>
+<td>3</td>
 <td>Treat video as 3D video in side-by-side format with half resolution of each stereo view. In that mode player will stretch left half of the video into fullscreen according to specified aspect.</td>
 </tr>
 <tr>
-<td> 4</td>
+<td>4</td>
 <td>Same as STB_3D_MODE_FULL but without automatic TV switch to 3D.</td>
 </tr>
 </tbody>
@@ -14986,19 +15001,19 @@ gSTB.SetAspect(0x50);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>automatic</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>20:9</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>16:9</td>
 </tr>
 <tr>
-<td> 3</td>
+<td>3</td>
 <td>4:3</td>
 </tr>
 </tbody>
@@ -15013,27 +15028,27 @@ gSTB.SetAspect(0x50);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>as it is (video is stretched for the whole screen)</td>
 </tr>
 <tr>
-<td> 1</td>
-<td>Letter box mode (video is proportionally enlarged to the size of the screen along the larger edge)</td>
+<td>1</td>
+<td>letterbox mode (video is proportionally enlarged to the size of the screen along the larger edge)</td>
 </tr>
 <tr>
-<td> 2</td>
-<td>Pan&amp;Scan mode (video is proportionally enlarged to the screen size along the lesser edge)</td>
+<td>2</td>
+<td>pan and scan mode (video is proportionally enlarged to the screen size along the lesser edge)</td>
 </tr>
 <tr>
-<td> 3</td>
-<td>combined mode (intermediate between Letter Box Box and Pan&amp;Scan)</td>
+<td>3</td>
+<td>combined mode (intermediate between letterbox and pan and scan)</td>
 </tr>
 <tr>
-<td> 4</td>
+<td>4</td>
 <td>enlarged mode</td>
 </tr>
 <tr>
-<td> 5</td>
+<td>5</td>
 <td>optimal mode</td>
 </tr>
 </tbody>
@@ -15349,19 +15364,19 @@ gSTB.SetAspect(0x50);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>RF mode</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>Line mode</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>Custom0</td>
 </tr>
 <tr>
-<td> 3</td>
+<td>3</td>
 <td>Custom1</td>
 </tr>
 </tbody>
@@ -15664,15 +15679,15 @@ gSTB.SetAutoFrameRate(7);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>can switch to 1080p-24 mode</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>can switch to 720p-50, 1080i-50, 1080p-50 modes</td>
 </tr>
 <tr>
-<td> 4</td>
+<td>4</td>
 <td>can switch to 720p-60, 1080i-60, 1080p-60</td>
 </tr>
 </tbody>
@@ -16139,11 +16154,11 @@ gSTB.SetAutoFrameRate(7);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>use hard descrambling</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>use soft descrambling</td>
 </tr>
 </tbody>
@@ -16540,19 +16555,19 @@ gSTB.SetAutoFrameRate(7);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>not set</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>Verimatrix</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>SecureMedia</td>
 </tr>
 <tr>
-<td> 4-10</td>
+<td>4-10</td>
 <td>custom CAS plugin with corresponding number</td>
 </tr>
 </tbody>
@@ -16826,7 +16841,8 @@ gSTB.SetAutoFrameRate(7);</code></pre>
 
 <div class="description">
     <p>Enable/disable logging to file.</p>
-<p>File <code>/ram/data/vrweb_client.log</code> is used to store log data.<br>It's possible to read it with <code>gSTB.RDir('tempfile read vrweb_client.log')</code>.</p>
+<p>File <code>/ram/data/vrweb_client.log</code> is used to store log data.<br>
+It's possible to read it with <code>gSTB.RDir('tempfile read vrweb_client.log')</code>.</p>
 </div>
 
 
@@ -17028,11 +17044,11 @@ gSTB.SetAutoFrameRate(7);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>disable check</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>enable check (default)</td>
 </tr>
 </tbody>
@@ -17332,11 +17348,11 @@ gSTB.SetAutoFrameRate(7);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>YUV mode</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>RGB mode (available only for SD mode)</td>
 </tr>
 </tbody>
@@ -17745,11 +17761,11 @@ gSTB.SetAutoFrameRate(7);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>switch off</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>switch on (default values for sharpness and flicker are set)</td>
 </tr>
 </tbody>
@@ -18202,11 +18218,11 @@ gSTB.SetAutoFrameRate(7);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>switch off the flicker-filter</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>switch on the flicker-filter</td>
 </tr>
 </tbody>
@@ -18394,11 +18410,11 @@ gSTB.SetAutoFrameRate(7);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>HDMI transmits PCM audio</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>HDMI transmits S/PDIF audio (in that case S/PDIF output mode is set by <a href="gSTB.html#.SetupSPdif"><code>gSTB.SetupSPdif</code></a>)</td>
 </tr>
 </tbody>
@@ -18817,11 +18833,11 @@ gSTB.SetAutoFrameRate(7);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>switch off repeated playing on the content</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>switch on repeated playing on the content</td>
 </tr>
 </tbody>
@@ -19564,7 +19580,8 @@ gSTB.SetAutoFrameRate(7);</code></pre>
 
 
 <div class="description">
-    <p>Set display mode &quot;on the fly&quot;.<br>Exists only on supported devices.</p>
+    <p>Set display mode &quot;on the fly&quot;.<br>
+Exists only on supported devices.</p>
 </div>
 
 
@@ -20118,11 +20135,11 @@ gSTB.SetAutoFrameRate(7);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>show the video in the specified rectangle</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>show the video on full screen</td>
 </tr>
 </tbody>
@@ -21975,59 +21992,59 @@ gSTB.SetAutoFrameRate(7);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>normal</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>2x</td>
 </tr>
 <tr>
-<td> 3</td>
+<td>3</td>
 <td>4x</td>
 </tr>
 <tr>
-<td> 4</td>
+<td>4</td>
 <td>8x</td>
 </tr>
 <tr>
-<td> 5</td>
+<td>5</td>
 <td>16x</td>
 </tr>
 <tr>
-<td> 6</td>
+<td>6</td>
 <td>1/2</td>
 </tr>
 <tr>
-<td> 7</td>
+<td>7</td>
 <td>1/4</td>
 </tr>
 <tr>
-<td> 8</td>
+<td>8</td>
 <td>12x</td>
 </tr>
 <tr>
-<td> -1</td>
+<td>-1</td>
 <td>reverse</td>
 </tr>
 <tr>
-<td> -2</td>
+<td>-2</td>
 <td>reverse 2x</td>
 </tr>
 <tr>
-<td> -3</td>
+<td>-3</td>
 <td>reverse 4x</td>
 </tr>
 <tr>
-<td> -4</td>
+<td>-4</td>
 <td>reverse 8x</td>
 </tr>
 <tr>
-<td> -5</td>
+<td>-5</td>
 <td>reverse 16x</td>
 </tr>
 <tr>
-<td> -8</td>
+<td>-8</td>
 <td>reverse 12x</td>
 </tr>
 </tbody>
@@ -22170,23 +22187,23 @@ gSTB.SetAutoFrameRate(7);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>Stereo mode.</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>Mono mode. Left and right channels are mixed and sent to both audio outputs.</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>Mono left. Left channel audio are sent to both audio outputs.</td>
 </tr>
 <tr>
-<td> 3</td>
+<td>3</td>
 <td>Mono right. Right channel audio are sent to both audio outputs.</td>
 </tr>
 <tr>
-<td> 4</td>
+<td>4</td>
 <td>Lt/Rt mode.</td>
 </tr>
 </tbody>
@@ -22640,11 +22657,11 @@ gSTB.SetAutoFrameRate(7);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> true</td>
+<td>true</td>
 <td>subtitles on</td>
 </tr>
 <tr>
-<td> false</td>
+<td>false</td>
 <td>subtitles off</td>
 </tr>
 </tbody>
@@ -23769,23 +23786,23 @@ gSTB.SetSyslogLevel(5);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>quiet level, logging disabled (default)</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>error level, e.i. &quot;RTP counter error&quot;, &quot;TS Continuity Counter error&quot;, &quot;Video decoding error&quot;</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>warning level</td>
 </tr>
 <tr>
-<td> 4</td>
+<td>4</td>
 <td>info level, e.i. &quot;Starting playback&quot;, &quot;External subtitles opening error&quot;, &quot;Content opening error&quot;, &quot;End of Stream&quot;</td>
 </tr>
 <tr>
-<td> 8</td>
+<td>8</td>
 <td>debug level, e.i.: <a href="gSTB.html#.Debug"><code>gSTB.Debug</code></a> from JS API do not filter frequent error events.</td>
 </tr>
 </tbody>
@@ -23937,11 +23954,11 @@ gSTB.SetSyslogLevel(5);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> true</td>
+<td>true</td>
 <td>enable teletext</td>
 </tr>
 <tr>
-<td> false</td>
+<td>false</td>
 <td>disable teletext</td>
 </tr>
 </tbody>
@@ -24220,11 +24237,11 @@ gSTB.SetSyslogLevel(5);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>graphic window</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>video window</td>
 </tr>
 </tbody>
@@ -24341,11 +24358,11 @@ gSTB.SetSyslogLevel(5);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>graphic window</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>video window</td>
 </tr>
 </tbody>
@@ -24628,35 +24645,35 @@ gSTB.SetSyslogLevel(5);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>RTSP server based on VLC</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>BitBand RTSP server</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>Kasenna RTSP server</td>
 </tr>
 <tr>
-<td> 3</td>
+<td>3</td>
 <td>ARRIS (C-COR) RTSP server</td>
 </tr>
 <tr>
-<td> 4</td>
+<td>4</td>
 <td>Live555 RTSP server</td>
 </tr>
 <tr>
-<td> 5</td>
+<td>5</td>
 <td>ZTE RTSP server</td>
 </tr>
 <tr>
-<td> 6</td>
+<td>6</td>
 <td>Netup RTSP server</td>
 </tr>
 <tr>
-<td> 7</td>
+<td>7</td>
 <td>Elecard RTSP server</td>
 </tr>
 </tbody>
@@ -24693,31 +24710,31 @@ gSTB.SetSyslogLevel(5);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>switch on the keep-alive mode</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>determination of the stream end by the field x-notice in the message ANNOUNCE from the server</td>
 </tr>
 <tr>
-<td> 4</td>
+<td>4</td>
 <td>determination of te stream end by the field x-notice in the answer to GET_PARAMETER</td>
 </tr>
 <tr>
-<td> 8</td>
+<td>8</td>
 <td>determination of the stream end after a period of time of the video stream from the server absence</td>
 </tr>
 <tr>
-<td> 16 (0x10)</td>
+<td>16 (0x10)</td>
 <td>determination of the stream end by the field according to the field rtptime sent in the RTP heading of the package (only for the mode of sending video under RTP)</td>
 </tr>
 <tr>
-<td> 32 (0x20)</td>
+<td>32 (0x20)</td>
 <td>use UDP transport to send video</td>
 </tr>
 <tr>
-<td> 64 (0x40)</td>
+<td>64 (0x40)</td>
 <td>use RTP transport over RTSP connection</td>
 </tr>
 <tr>
@@ -24867,15 +24884,15 @@ gSTB.SetSyslogLevel(5);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>the sound is supplied only to analogue output</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>sound is supplied to analogue output and through S/PDIF in tne format 2-channel PCM</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>sound is supplied to S/PDIF without decoding (AC3 ...), if supported by codec, otherwise through S/PDIF in the format of 2-channel PCM</td>
 </tr>
 </tbody>
@@ -25021,11 +25038,11 @@ gSTB.SetSyslogLevel(5);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>API user controls flicker-filter himself.</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>The player automatically switches on flicker-filter during pauses and stops and switches it off during playing.</td>
 </tr>
 </tbody>
@@ -25176,11 +25193,11 @@ gSTB.SetSyslogLevel(5);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>the device automatically switches on the video window at the beginning of playing and switches it off when stops</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>API user uses <a href="gSTB.html#.SetVideoState"><code>gSTB.SetVideoState</code></a> for instructing whether to show the video window or not</td>
 </tr>
 </tbody>
@@ -25332,11 +25349,11 @@ gSTB.SetSyslogLevel(5);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>video window is not displayed</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>video window is displayed if the stream is present</td>
 </tr>
 </tbody>
@@ -25638,10 +25655,15 @@ gSTB.SetSyslogLevel(5);</code></pre>
 
 
 <div class="description">
-    <p>Set video surface position and size in pixels and clipping rectangle for input video.<br>More flexible version of <a href="gSTB.html#.SetViewport"><code>gSTB.SetViewport</code></a>.</p>
-<p>Clip rectangle specifies which sub-rectangle will be shown in specified video window rectangle (stretched to fill whole video window).<br>If clip_xsize==0 or clip_ysize==0 then clip will be ignored.</p>
-<p>If clip rectangle is ignored or has size equal to encoded video size then aspect ratio conversion will be performed inside specified video window rectangle according to the current aspect for fullscreen mode. This does not depend on specified video window size.<br>At the same time <a href="gSTB.html#.SetViewport"><code>gSTB.SetViewport</code></a> function does aspect ratio conversion only in fullscreen mode.</p>
-<p>Clip rectangle size and position should be in pixels of the encoded video.<br>Width and height of encoded video can be retrieved via <a href="gSTB.html#.GetVideoInfo"><code>gSTB.GetVideoInfo</code></a>.<br>See pictureWidth and pictureHeight.</p>
+    <p>Set video surface position and size in pixels and clipping rectangle for input video.<br>
+More flexible version of <a href="gSTB.html#.SetViewport"><code>gSTB.SetViewport</code></a>.</p>
+<p>Clip rectangle specifies which sub-rectangle will be shown in specified video window rectangle (stretched to fill whole video window).<br>
+If clip_xsize==0 or clip_ysize==0 then clip will be ignored.</p>
+<p>If clip rectangle is ignored or has size equal to encoded video size then aspect ratio conversion will be performed inside specified video window rectangle according to the current aspect for fullscreen mode. This does not depend on specified video window size.<br>
+At the same time <a href="gSTB.html#.SetViewport"><code>gSTB.SetViewport</code></a> function does aspect ratio conversion only in fullscreen mode.</p>
+<p>Clip rectangle size and position should be in pixels of the encoded video.<br>
+Width and height of encoded video can be retrieved via <a href="gSTB.html#.GetVideoInfo"><code>gSTB.GetVideoInfo</code></a>.<br>
+See pictureWidth and pictureHeight.</p>
 </div>
 
 
@@ -25891,11 +25913,11 @@ gSTB.SetSyslogLevel(5);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> true</td>
+<td>true</td>
 <td>use this clip only for current playback</td>
 </tr>
 <tr>
-<td> false</td>
+<td>false</td>
 <td>use this clip till next call of STB_SetViewportEx, STB_SetViewport, STB_SetPIG</td>
 </tr>
 </tbody>
@@ -26661,11 +26683,11 @@ gSTB.SetSyslogLevel(5);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>graphic window</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>video window</td>
 </tr>
 </tbody>
@@ -26832,11 +26854,11 @@ gSTB.SetSyslogLevel(5);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>graphic window</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>video window</td>
 </tr>
 </tbody>
@@ -27190,11 +27212,11 @@ gSTB.SetSyslogLevel(5);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> true</td>
+<td>true</td>
 <td>Do not wait for video synchronization and start to show video as soon as possible. Can lead to jerky video for a few seconds right after channel switching.</td>
 </tr>
 <tr>
-<td> false</td>
+<td>false</td>
 <td>Wait for synchronization (default).</td>
 </tr>
 </tbody>
@@ -27358,11 +27380,11 @@ gSTB.SetSyslogLevel(5);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> true</td>
+<td>true</td>
 <td>the keyboard should be warmed up</td>
 </tr>
 <tr>
-<td> false</td>
+<td>false</td>
 <td>ignore</td>
 </tr>
 </tbody>
@@ -27509,11 +27531,11 @@ gSTB.SetSyslogLevel(5);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> true</td>
+<td>true</td>
 <td>enter Standby mode</td>
 </tr>
 <tr>
-<td> false</td>
+<td>false</td>
 <td>exit from Standby mode</td>
 </tr>
 </tbody>
@@ -27856,7 +27878,7 @@ gSTB.SetSyslogLevel(5);</code></pre>
     <h5>Example</h5>
     
     <pre class="prettyprint"><code>// execution result
-'JS API version: 301; STB API version: 35; Player Engine version: 0x23'</code></pre>
+'JS API version: 301; STB API version: 33; Player Engine version: 0x23'</code></pre>
 
 
 
@@ -27889,16 +27911,16 @@ gSTB.SetSyslogLevel(5);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> JS_API</td>
+<td>JS_API</td>
 <td>this API version number</td>
 </tr>
 <tr>
-<td> STB_API</td>
-<td>player API version</td>
+<td>STB_API</td>
+<td>player API version (deprecated, exists only on supported devices)</td>
 </tr>
 <tr>
-<td> Player</td>
-<td>version of the player used in API in HEX code form</td>
+<td>Player</td>
+<td>version of the player used in API in HEX code form (deprecated, exists only on supported devices)</td>
 </tr>
 </tbody>
 </table>
@@ -27974,7 +27996,8 @@ gSTB.SetSyslogLevel(5);</code></pre>
 
 <div class="description">
     <p>Write the file of portal settings <code>/etc/stb_params</code>.</p>
-<p>It must be kept in mind that the values PORTAL_IP, PORTAL_1, PORTAL_2 are used in the starting portal stored in <code>/home/web</code> of the root file system,<br>therefore it is desirable to receive source values of these parameters via <a href="gSTB.html#.ReadCFG"><code>gSTB.ReadCFG</code></a> before making the call and add them to the string cfg.</p>
+<p>It must be kept in mind that the values PORTAL_IP, PORTAL_1, PORTAL_2 are used in the starting portal stored in <code>/home/web</code> of the root file system,<br>
+therefore it is desirable to receive source values of these parameters via <a href="gSTB.html#.ReadCFG"><code>gSTB.ReadCFG</code></a> before making the call and add them to the string cfg.</p>
 </div>
 
 
@@ -28103,7 +28126,8 @@ gSTB.SetSyslogLevel(5);</code></pre>
 
 <div class="description">
     <p>Save the string as the browser set up (prefs.js).</p>
-<p>This function is not browser specific and it is used to set the right of access to the portal.<br>This is performed in starting portal saved at <code>/home/web</code> of the root file system and it is recommended to avoid using it anywhere else.</p>
+<p>This function is not browser specific and it is used to set the right of access to the portal.<br>
+This is performed in starting portal saved at <code>/home/web</code> of the root file system and it is recommended to avoid using it anywhere else.</p>
 </div>
 
 
@@ -28631,15 +28655,15 @@ gSTB.SetSyslogLevel(5);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>off</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>normal</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>standby</td>
 </tr>
 </tbody>
@@ -28909,15 +28933,15 @@ gSTB.SetSyslogLevel(5);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> mode</td>
+<td>mode</td>
 <td>current mode</td>
 </tr>
 <tr>
-<td> levelBase</td>
+<td>levelBase</td>
 <td>base LED level</td>
 </tr>
 <tr>
-<td> levelBlink</td>
+<td>levelBlink</td>
 <td>level for blinking</td>
 </tr>
 </tbody>
@@ -29275,75 +29299,75 @@ gSTB.SetSyslogLevel(5);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>digit 0</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>digit 1</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>digit 2</td>
 </tr>
 <tr>
-<td> 3</td>
+<td>3</td>
 <td>digit 3</td>
 </tr>
 <tr>
-<td> 4</td>
+<td>4</td>
 <td>digit 4</td>
 </tr>
 <tr>
-<td> 5</td>
+<td>5</td>
 <td>digit 5</td>
 </tr>
 <tr>
-<td> 6</td>
+<td>6</td>
 <td>digit 6</td>
 </tr>
 <tr>
-<td> 7</td>
+<td>7</td>
 <td>digit 7</td>
 </tr>
 <tr>
-<td> 8</td>
+<td>8</td>
 <td>digit 8</td>
 </tr>
 <tr>
-<td> 9</td>
+<td>9</td>
 <td>digit 9</td>
 </tr>
 <tr>
-<td> 10</td>
+<td>10</td>
 <td>NextPage</td>
 </tr>
 <tr>
-<td> 11</td>
+<td>11</td>
 <td>PrevPage</td>
 </tr>
 <tr>
-<td> 12</td>
+<td>12</td>
 <td>NextSubpage</td>
 </tr>
 <tr>
-<td> 13</td>
+<td>13</td>
 <td>PrevSubpage</td>
 </tr>
 <tr>
-<td> 14</td>
+<td>14</td>
 <td>Red</td>
 </tr>
 <tr>
-<td> 15</td>
+<td>15</td>
 <td>Yellow</td>
 </tr>
 <tr>
-<td> 16</td>
+<td>16</td>
 <td>Blue</td>
 </tr>
 <tr>
-<td> 17</td>
+<td>17</td>
 <td>Green</td>
 </tr>
 </tbody>
@@ -29494,11 +29518,11 @@ gSTB.SetSyslogLevel(5);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> true</td>
+<td>true</td>
 <td>show teletext on screen</td>
 </tr>
 <tr>
-<td> false</td>
+<td>false</td>
 <td>hide teletext</td>
 </tr>
 </tbody>
@@ -31142,7 +31166,8 @@ gSTB.SetSyslogLevel(5);</code></pre>
 
 
 <div class="description">
-    <p>Write/rewrite file only on mounted device.<br>See <a href="gSTB.html#.RDir"><code>gSTB.RDir</code></a> <code>GetFile</code> parameter.</p>
+    <p>Write/rewrite file only on mounted device.<br>
+See <a href="gSTB.html#.RDir"><code>gSTB.RDir</code></a> <code>GetFile</code> parameter.</p>
 </div>
 
 
@@ -32234,19 +32259,19 @@ gSTB.SetSyslogLevel(5);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>Normal non-sleep mode (not implemented at the moment)</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>S1 mode (active standby)</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>S2 mode (not implemented at the moment)</td>
 </tr>
 <tr>
-<td> 3</td>
+<td>3</td>
 <td>S3 mode (deep standby)</td>
 </tr>
 </tbody>
@@ -32341,31 +32366,31 @@ gSTB.SetSyslogLevel(5);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>Unknown</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>IR (power button from RCU)</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>HDMI_HPD (HDMI HotPlug Detect)</td>
 </tr>
 <tr>
-<td> 3</td>
+<td>3</td>
 <td>CEC (CEC command from TV)</td>
 </tr>
 <tr>
-<td> 4</td>
+<td>4</td>
 <td>WakeOnLAN</td>
 </tr>
 <tr>
-<td> 5</td>
+<td>5</td>
 <td>Button (button from rear panel)</td>
 </tr>
 <tr>
-<td> 6</td>
+<td>6</td>
 <td>Soft (software exit from standby via gSTB.StandBy for S1 mode)</td>
 </tr>
 </tbody>
@@ -32407,7 +32432,7 @@ gSTB.SetSyslogLevel(5);</code></pre>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

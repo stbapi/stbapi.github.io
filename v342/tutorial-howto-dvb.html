@@ -46,13 +46,19 @@
 
 <article>
     <p>Get array of all available instances in the system:</p>
-<pre class="prettyprint source lang-js"><code>console.log(stbDvbManager.list);</code></pre><p>Get first available input:</p>
-<pre class="prettyprint source lang-js"><code>var input = stbDvbManager.list[0];</code></pre><p>Manual control of antenna power state:</p>
+<pre class="prettyprint source lang-js"><code>console.log(stbDvbManager.list);
+</code></pre>
+<p>Get first available input:</p>
+<pre class="prettyprint source lang-js"><code>var input = stbDvbManager.list[0];
+</code></pre>
+<p>Manual control of antenna power state:</p>
 <pre class="prettyprint source lang-js"><code>// turn on
 input.antennaPower = true;
 
 // turn off
-input.antennaPower = false;</code></pre><p>Get information about input:</p>
+input.antennaPower = false;
+</code></pre>
+<p>Get information about input:</p>
 <pre class="prettyprint source lang-js"><code>console.log('current state of this tuner:', input.state);
 
 console.log('signal level:', input.signalLevel);
@@ -63,14 +69,18 @@ console.log('supported scan types for this tuner:', input.supportedScanTypes);
 
 console.log('currently supported scan types for this tuner:', input.currentScanTypes);
 
-console.log('bit error rate:', input.bitErrorRate);</code></pre><p>Set current scan type for this input:</p>
+console.log('bit error rate:', input.bitErrorRate);
+</code></pre>
+<p>Set current scan type for this input:</p>
 <pre class="prettyprint source lang-js"><code>console.log('DVB-C signal:', input.setSignalType(1));
 
 console.log('DVB-T signal:', input.setSignalType(2));
 
 console.log('DVB-T2 signal (not available for MAG270):', input.setSignalType(3));
 
-console.log('DVB-S/DVB-S2 signal:', input.setSignalType(4));</code></pre><p>Set event listeners to handle received data:</p>
+console.log('DVB-S/DVB-S2 signal:', input.setSignalType(4));
+</code></pre>
+<p>Set event listeners to handle received data:</p>
 <pre class="prettyprint source lang-js"><code>input.onScanProgress = function ( info ) {
     console.log('DVB channels scanning is in progress:', info);
     // {&quot;state&quot;:&quot;searching&quot;,&quot;channel&quot;:0,&quot;frequency&quot;:51000,&quot;progress&quot;:0,&quot;inputIndex&quot;:0,&quot;polarization&quot;:&quot;H&quot;}
@@ -83,7 +93,9 @@ input.onChannelFound = function ( info ) {
 
 input.onAntennaPower = function () {
     console.log('DVB antenna is powered off.');
-};</code></pre><p>Start channel scanning (parameters explanation see in <a href="stbDvbInput.html#.startScan"><code>stbDvbInput.startScan</code></a> method):</p>
+};
+</code></pre>
+<p>Start channel scanning (parameters explanation see in <a href="stbDvbInput.html#.startScan"><code>stbDvbInput.startScan</code></a> method):</p>
 <pre class="prettyprint source lang-js"><code>input.startScan({
     from: 10,
     to: 100,
@@ -94,35 +106,56 @@ input.onAntennaPower = function () {
     scanMode: 0,
     frequency: 12,
     networkId: 0
-});</code></pre><p>Tune receiver to specified frequency (parameters explanation see in <a href="stbDvbInput.html#.tune"><code>stbDvbInput.tune</code></a> method):</p>
+});
+</code></pre>
+<p>Tune receiver to specified frequency (parameters explanation see in <a href="stbDvbInput.html#.tune"><code>stbDvbInput.tune</code></a> method):</p>
 <pre class="prettyprint source lang-js"><code>input.tune({
     frequency: 10,
     polarization: 'V',
     symbolRate: 2,
     type: 2
-});</code></pre><p>Stop channel scan:</p>
-<pre class="prettyprint source lang-js"><code>input.stopScan();</code></pre><p>Make a new channel list as a subset of parent list:</p>
+});
+</code></pre>
+<p>Stop channel scan:</p>
+<pre class="prettyprint source lang-js"><code>input.stopScan();
+</code></pre>
+<p>Make a new channel list as a subset of parent list:</p>
 <pre class="prettyprint source lang-js"><code>var channelList1, channelList2;
 
 channelList1 = stbDvbManager.createChannelList(['lt', 'channelNumber', 123]);
 console.log('any channels with LCN less than 123:', channelList1);
 
 channelList2 = stbDvbManager.createChannelList();
-console.log(channelList2);</code></pre><p>Root list of all available channels from all inputs:</p>
-<pre class="prettyprint source lang-js"><code>console.log(stbDvbManager.channelList);</code></pre><p>Get the channel index in this channel list:</p>
-<pre class="prettyprint source lang-js"><code>channelList2.add(channelList1.getChannel('123').id);</code></pre><p>Remove the given channel from this channel list with check operation status:</p>
+console.log(channelList2);
+</code></pre>
+<p>Root list of all available channels from all inputs:</p>
+<pre class="prettyprint source lang-js"><code>console.log(stbDvbManager.channelList);
+</code></pre>
+<p>Get the channel index in this channel list:</p>
+<pre class="prettyprint source lang-js"><code>channelList2.add(channelList1.getChannel('123').id);
+</code></pre>
+<p>Remove the given channel from this channel list with check operation status:</p>
 <pre class="prettyprint source lang-js"><code>if ( !channelList2.remove('ccid:0.12.1') ) {
     console.log('Was not able to remove a channel!');
 }
 
 if ( !channelList2.remove(5) ) {
     console.log('Was not able to remove a channel!');
-}</code></pre><p>Get channel detailed info:</p>
+}
+</code></pre>
+<p>Get channel detailed info:</p>
 <pre class="prettyprint source lang-js"><code>console.log('channel detailed info:', channelList2.getChannel(5));
-console.log('channel detailed info:', channelList2.getChannel('ccid:0.12.1'));</code></pre><p>Get channel range:</p>
-<pre class="prettyprint source lang-js"><code>console.log('channel range:', channelList2.slice(1, 5));</code></pre><p>Get the channel index in this channel list:</p>
-<pre class="prettyprint source lang-js"><code>console.log('the channel index in this channel list:', channelList2.indexOf('ccid:0.12.1'));</code></pre><p>Remove all channels from this channel list:</p>
-<pre class="prettyprint source lang-js"><code>channelList2.clear();</code></pre>
+console.log('channel detailed info:', channelList2.getChannel('ccid:0.12.1'));
+</code></pre>
+<p>Get channel range:</p>
+<pre class="prettyprint source lang-js"><code>console.log('channel range:', channelList2.slice(1, 5));
+</code></pre>
+<p>Get the channel index in this channel list:</p>
+<pre class="prettyprint source lang-js"><code>console.log('the channel index in this channel list:', channelList2.indexOf('ccid:0.12.1'));
+</code></pre>
+<p>Remove all channels from this channel list:</p>
+<pre class="prettyprint source lang-js"><code>channelList2.clear();
+</code></pre>
 </article>
 
 </section>
@@ -134,7 +167,7 @@ console.log('channel detailed info:', channelList2.getChannel('ccid:0.12.1'));</
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

@@ -45,7 +45,8 @@
 </header>
 
 <article>
-    <p><a href="stbWindowMgr.html"><code>stbWindowMgr</code></a> object provides API to the window manager functionality.<br>Some methods require <code>windowId</code> field which can be achieved either from <a href="stbWindowMgr.html#.windowInit"><code>stbWindowMgr.windowInit</code></a> or from <a href="stbWebWindow.html#.windowId"><code>stbWebWindow.windowId</code></a>.</p>
+    <p><a href="stbWindowMgr.html"><code>stbWindowMgr</code></a> object provides API to the window manager functionality.<br>
+Some methods require <code>windowId</code> field which can be achieved either from <a href="stbWindowMgr.html#.windowInit"><code>stbWindowMgr.windowInit</code></a> or from <a href="stbWebWindow.html#.windowId"><code>stbWebWindow.windowId</code></a>.</p>
 <p>Create new window with specified attributes:</p>
 <pre class="prettyprint source lang-js"><code>var windowId = stbWindowMgr.windowInit(JSON.stringify({
     url: 'http://domain.com/some.page.html',
@@ -55,35 +56,62 @@
     height: 480,
     visible: true,
     backgroundColor: '#000'
-}));</code></pre><p>Redefine any of window attributes:</p>
+}));
+</code></pre>
+<p>Redefine any of window attributes:</p>
 <pre class="prettyprint source lang-js"><code>stbWindowMgr.windowAttr(windowId, JSON.stringify({
     backgroundColor: '#fff'
-}));</code></pre><p>Get attributes for the given window:</p>
-<pre class="prettyprint source lang-js"><code>console.log(stbWindowMgr.windowInfo(windowId));</code></pre><p>Change windows visibility:</p>
+}));
+</code></pre>
+<p>Get attributes for the given window:</p>
+<pre class="prettyprint source lang-js"><code>console.log(stbWindowMgr.windowInfo(windowId));
+</code></pre>
+<p>Change windows visibility:</p>
 <pre class="prettyprint source lang-js"><code>// make window visible with one of these methods
 stbWindowMgr.windowShow(windowId);
 stbWindowMgr.windowAttr(windowId, JSON.stringify({visible: true}));
 
 // make window invisible with one of these methods
 stbWindowMgr.windowHide(windowId);
-stbWindowMgr.windowAttr(windowId, JSON.stringify({visible: false}));</code></pre><p>Close given window:</p>
+stbWindowMgr.windowAttr(windowId, JSON.stringify({visible: false}));
+</code></pre>
+<p>Close given window:</p>
 <pre class="prettyprint source lang-js"><code>if ( !stbWindowMgr.windowClose(windowId) ) {
     console.log('Given window closing is failed!');
-}</code></pre><p>Also window can be closed from itself:</p>
-<pre class="prettyprint source lang-js"><code>stbWebWindow.close();</code></pre><p>Load new web document into given window:</p>
+}
+</code></pre>
+<p>Also window can be closed from itself:</p>
+<pre class="prettyprint source lang-js"><code>stbWebWindow.close();
+</code></pre>
+<p>Load new web document into given window:</p>
 <pre class="prettyprint source lang-js"><code>if ( !stbWindowMgr.windowLoad(windowId, url) ) {
     console.log('Failed to execute!');
-}</code></pre><p>Retrieve IDs of currently existing windows:</p>
-<pre class="prettyprint source lang-js"><code>console.log('IDs of currently existing windows:', stbWindowMgr.windowList());</code></pre><p>Get ID of currently active window:</p>
-<pre class="prettyprint source lang-js"><code>console.log('ID of currently active window:', stbWindowMgr.windowActive());</code></pre><p>It's possible to work with user input on a web pages.<br>Get information for currently focused UI inputs:</p>
-<pre class="prettyprint source lang-js"><code>console.log('information for currently focused UI inputs:', stbWindowMgr.GetFocusedInputInfo());</code></pre><p>Set text for currently focused HTML element:</p>
-<pre class="prettyprint source lang-js"><code>stbWindowMgr.SetFocusedInputText('foo');</code></pre><p>Different windows can easily interact with each other via messages.<br>Receive a message from a window:</p>
+}
+</code></pre>
+<p>Retrieve IDs of currently existing windows:</p>
+<pre class="prettyprint source lang-js"><code>console.log('IDs of currently existing windows:', stbWindowMgr.windowList());
+</code></pre>
+<p>Get ID of currently active window:</p>
+<pre class="prettyprint source lang-js"><code>console.log('ID of currently active window:', stbWindowMgr.windowActive());
+</code></pre>
+<p>It's possible to work with user input on a web pages.<br>
+Get information for currently focused UI inputs:</p>
+<pre class="prettyprint source lang-js"><code>console.log('information for currently focused UI inputs:', stbWindowMgr.GetFocusedInputInfo());
+</code></pre>
+<p>Set text for currently focused HTML element:</p>
+<pre class="prettyprint source lang-js"><code>stbWindowMgr.SetFocusedInputText('foo');
+</code></pre>
+<p>Different windows can easily interact with each other via messages.<br>
+Receive a message from a window:</p>
 <pre class="prettyprint source lang-js"><code>stbEvent.onMessage = function ( windowId, message, data ) {
     console.log('sender ID: ' + windowId);
     console.log('message text: ' + message);
     console.log('received data: ' + data);
-};</code></pre><p>Send a message with some data to a window with ID 3:</p>
-<pre class="prettyprint source lang-js"><code>stbWebWindow.messageSend(3, 'Hello!', JSON.stringify({foo: 1000}));</code></pre>
+};
+</code></pre>
+<p>Send a message with some data to a window with ID 3:</p>
+<pre class="prettyprint source lang-js"><code>stbWebWindow.messageSend(3, 'Hello!', JSON.stringify({foo: 1000}));
+</code></pre>
 </article>
 
 </section>
@@ -95,7 +123,7 @@ stbWindowMgr.windowAttr(windowId, JSON.stringify({visible: false}));</code></pre
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

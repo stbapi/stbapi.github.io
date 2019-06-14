@@ -46,73 +46,124 @@
 
 <article>
     <p>Special window types are described here.</p>
-<p>There are several special buttons on a remote control intended to invoke corresponding windows. They can work in one of two modes: </p>
+<p>There are several special buttons on a remote control intended to invoke corresponding windows. They can work in one of two modes:</p>
 <ol>
 <li><code>Silent mode</code></li>
 <li><code>Passthrough mode</code></li>
 </ol>
-<p><code>Silent mode</code> means that hits on corresponding buttons caught inside browser environment and managed by it in according to built-in logic.<br>In this mode it's impossible to handle them in the user application space via regular event handler methods.</p>
+<p><code>Silent mode</code> means that hits on corresponding buttons caught inside browser environment and managed by it in according to built-in logic.<br>
+In this mode it's impossible to handle them in the user application space via regular event handler methods.</p>
 <p><code>Passthrough mode</code> means that hits on corresponding buttons can be managed by user application logic via regular event handler callbacks such as <code>window.keydown</code>.</p>
-<h2>Virtual Keyboard</h2><p>It's a special window which has its API. It's intended to create on-screen interactive keyboard.</p>
+<h2>Virtual Keyboard</h2>
+<p>It's a special window which has its API. It's intended to create on-screen interactive keyboard.</p>
 <p>Check if <code>Virtual Keyboard</code> window exists:</p>
 <pre class="prettyprint source lang-js"><code>if ( !stbWindowMgr.IsWebVkWindowExist() ) {
     console.log('Virtual Keyboard window is not exists!');
-}</code></pre><p>Return state of virtual keyboard visibility:</p>
-<pre class="prettyprint source lang-js"><code>console.log('state of virtual keyboard visibility:', gSTB.IsVirtualKeyboardActive());</code></pre><p>Set manual position for <code>Virtual Keyboard</code> window:</p>
-<pre class="prettyprint source lang-js"><code>stbWindowMgr.SetVirtualKeyboardCoord('topleft');</code></pre><p>Get URL of built-in keyboard implementation:</p>
-<pre class="prettyprint source lang-js"><code>console.log('URL of built-in keyboard implementation:', stbWindowMgr.getVirtualKeyboardImplUrl());</code></pre><p>Visibility of <code>Virtual Keyboard</code> window can be managed manually, by <code>KB</code> remote control button, and programmatically.<br>Functioning modes of corresponding button are described in the head of this document.</p>
+}
+</code></pre>
+<p>Return state of virtual keyboard visibility:</p>
+<pre class="prettyprint source lang-js"><code>console.log('state of virtual keyboard visibility:', gSTB.IsVirtualKeyboardActive());
+</code></pre>
+<p>Set manual position for <code>Virtual Keyboard</code> window:</p>
+<pre class="prettyprint source lang-js"><code>stbWindowMgr.SetVirtualKeyboardCoord('topleft');
+</code></pre>
+<p>Get URL of built-in keyboard implementation:</p>
+<pre class="prettyprint source lang-js"><code>console.log('URL of built-in keyboard implementation:', stbWindowMgr.getVirtualKeyboardImplUrl());
+</code></pre>
+<p>Visibility of <code>Virtual Keyboard</code> window can be managed manually, by <code>KB</code> remote control button, and programmatically.<br>
+Functioning modes of corresponding button are described in the head of this document.</p>
 <pre class="prettyprint source lang-js"><code>// enable Silent mode:
 gSTB.EnableVKButton(true);
 
 // enable Passthrough mode:
-gSTB.EnableVKButton(false);</code></pre><p>Operate with <code>Virtual Keyboard</code> window visibility programmatically:</p>
+gSTB.EnableVKButton(false);
+</code></pre>
+<p>Operate with <code>Virtual Keyboard</code> window visibility programmatically:</p>
 <pre class="prettyprint source lang-js"><code>gSTB.ShowVirtualKeyboard();
-gSTB.HideVirtualKeyboard();</code></pre><p>Set custom <code>Virtual Keyboard</code> window implementation:</p>
+gSTB.HideVirtualKeyboard();
+</code></pre>
+<p>Set custom <code>Virtual Keyboard</code> window implementation:</p>
 <pre class="prettyprint source lang-js"><code>stbWindowMgr.setVirtualKeyboardInitAttr(JSON.stringify({
     url: 'path/index.html'
-}));</code></pre><h2>Internal Portal</h2><p>It's the basic parental window.</p>
+}));
+</code></pre>
+<h2>Internal Portal</h2>
+<p>It's the basic parental window.</p>
 <p>Make the <code>Portal</code> window active:</p>
-<pre class="prettyprint source lang-js"><code>stbWindowMgr.showPortalWindow();</code></pre><h2>Screen Saver</h2><p>This is a special window which appears after specified time of inactivity and hides after some user action (mouse move, key press).<br><code>Screen Saver</code> window does not occur when audio or video content is playing.</p>
+<pre class="prettyprint source lang-js"><code>stbWindowMgr.showPortalWindow();
+</code></pre>
+<h2>Screen Saver</h2>
+<p>This is a special window which appears after specified time of inactivity and hides after some user action (mouse move, key press).<br>
+<code>Screen Saver</code> window does not occur when audio or video content is playing.</p>
 <p>Get status for <code>Screen Saver</code> window:</p>
 <pre class="prettyprint source lang-js"><code>if ( stbWindowMgr.IsScreenSaverWindowExist() ) {
     console.log('Screen Saver window exists.');
-}</code></pre><p>Set a custom <code>Screen Saver</code> window implementation:</p>
+}
+</code></pre>
+<p>Set a custom <code>Screen Saver</code> window implementation:</p>
 <pre class="prettyprint source lang-js"><code>gSTB.SetScreenSaverInitAttr(JSON.stringify({
     url: 'path/index.html',
     backgroundColor: '#000'
-}));</code></pre><p>Set a <code>Screen Saver</code> activation time (in seconds) on idle:</p>
+}));
+</code></pre>
+<p>Set a <code>Screen Saver</code> activation time (in seconds) on idle:</p>
 <pre class="prettyprint source lang-js"><code>// time 0 - disable screensaver, 1-59 value is ceiling to 60
-gSTB.SetScreenSaverTime(30);</code></pre><h2>System Settings</h2><p>It's a special window intended to show STB system settings.</p>
-<p>Visibility of <code>System Settings</code> window can be managed manually, by <code>SET</code> remote control button, and programmatically.<br>Functioning modes of corresponding button are described in the head of this document.</p>
+gSTB.SetScreenSaverTime(30);
+</code></pre>
+<h2>System Settings</h2>
+<p>It's a special window intended to show STB system settings.</p>
+<p>Visibility of <code>System Settings</code> window can be managed manually, by <code>SET</code> remote control button, and programmatically.<br>
+Functioning modes of corresponding button are described in the head of this document.</p>
 <pre class="prettyprint source lang-js"><code>// enable Silent mode:
 gSTB.EnableServiceButton(true);
 
 // enable Passthrough mode:
-gSTB.EnableServiceButton(false);</code></pre><p>Operate with <code>System Settings</code> window visibility programmatically: </p>
-<pre class="prettyprint source lang-js"><code>gSTB.StartLocalCfg();</code></pre><p>Set a custom <code>System Settings</code> window implementation:</p>
+gSTB.EnableServiceButton(false);
+</code></pre>
+<p>Operate with <code>System Settings</code> window visibility programmatically:</p>
+<pre class="prettyprint source lang-js"><code>gSTB.StartLocalCfg();
+</code></pre>
+<p>Set a custom <code>System Settings</code> window implementation:</p>
 <pre class="prettyprint source lang-js"><code>gSTB.SetSettingsInitAttr(JSON.stringify({
     url: 'path/index.html',
     backgroundColor: '#000'
-}));</code></pre><h2>Auto Power Down</h2><p>It's a special window which represents UI for turning off device after specified time of inactivity.</p>
+}));
+</code></pre>
+<h2>Auto Power Down</h2>
+<p>It's a special window which represents UI for turning off device after specified time of inactivity.</p>
 <p>Set a custom <code>Auto Power Down</code> window implementation:</p>
 <pre class="prettyprint source lang-js"><code>gSTB.SetAutoPowerDownInitAttr(JSON.stringify({
     url: 'path/index.html',
     backgroundColor: 'transparent'
-}));</code></pre><p>Set an <code>Auto Power Down</code> activation time(in seconds) on idle:</p>
+}));
+</code></pre>
+<p>Set an <code>Auto Power Down</code> activation time(in seconds) on idle:</p>
 <pre class="prettyprint source lang-js"><code>// time 0 - disable, 1-10 value is ceiling to 10
-gSTB.SetAutoPowerDownTime(5);</code></pre><h2>Auto Update</h2><p>It's a special window intended to create UI for firmware update process on you device.<br>For details about functionality it represents see <a href="stbUpdate.html"><code>stbUpdate</code></a>.</p>
+gSTB.SetAutoPowerDownTime(5);
+</code></pre>
+<h2>Auto Update</h2>
+<p>It's a special window intended to create UI for firmware update process on you device.<br>
+For details about functionality it represents see <a href="stbUpdate.html"><code>stbUpdate</code></a>.</p>
 <p>Set URL for <code>Auto Update</code> web window:</p>
 <pre class="prettyprint source lang-js"><code>stbUpdate.setAutoUpdateInitAttr(JSON.stringify({
     url: 'path/index.html'
-}));</code></pre><p>Run <code>Auto Update</code> procedure in automatic way, for more information see <a href="howto-update.md">howto-update</a>:</p>
+}));
+</code></pre>
+<p>Run <code>Auto Update</code> procedure in automatic way, for more information see <a href="howto-update.md">howto-update</a>:</p>
 <pre class="prettyprint source lang-js"><code>// imageUrl is 'imageupdate' file address
-stbUpdate.startAutoUpdate(imageUrl, true);</code></pre><h2>Web Browser</h2><p>It's a special window to build browser UI and control <code>Wild Web</code> window.</p>
-<p>Visibility of <code>Web Browser</code> window can be managed manually, by <code>APP</code> remote control button, and programmatically.<br>Functioning modes of corresponding button are described in the head of this document.</p>
+stbUpdate.startAutoUpdate(imageUrl, true);
+</code></pre>
+<h2>Web Browser</h2>
+<p>It's a special window to build browser UI and control <code>Wild Web</code> window.</p>
+<p>Visibility of <code>Web Browser</code> window can be managed manually, by <code>APP</code> remote control button, and programmatically.<br>
+Functioning modes of corresponding button are described in the head of this document.</p>
 <pre class="prettyprint source lang-js"><code>// enable Silent mode:
 gSTB.EnableAppButton(true);
 
 // enable Passthrough mode:
-gSTB.EnableAppButton(false);</code></pre><p>For details about functionality it represents see <a href="tutorial-howto-web-browser.html">Embedded Internet Browser management</a>.</p>
+gSTB.EnableAppButton(false);
+</code></pre>
+<p>For details about functionality it represents see <a href="tutorial-howto-web-browser.html">Embedded Internet Browser management</a>.</p>
 </article>
 
 </section>
@@ -124,7 +175,7 @@ gSTB.EnableAppButton(false);</code></pre><p>For details about functionality it r
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

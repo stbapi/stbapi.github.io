@@ -111,7 +111,8 @@
 
             
                 <div class="description"><p>Main object to manage DVB-C/T/T2 subsystem for MAG270/MAG275 boards only.</p>
-<p>To start playback of DVB channel player should be started with the following URL: <code>dvb://&lt;channel_id&gt;</code><br>where channel_id can be obtained from &quot;<code>id</code>&quot; field in the result of calling <a href="dvbManager.html#.GetChannelList"><code>dvbManager.GetChannelList</code></a> or <a href="dvbManager.html#.GetChannelInfo"><code>dvbManager.GetChannelInfo</code></a>.</p>
+<p>To start playback of DVB channel player should be started with the following URL: <code>dvb://&lt;channel_id&gt;</code><br>
+where channel_id can be obtained from &quot;<code>id</code>&quot; field in the result of calling <a href="dvbManager.html#.GetChannelList"><code>dvbManager.GetChannelList</code></a> or <a href="dvbManager.html#.GetChannelInfo"><code>dvbManager.GetChannelInfo</code></a>.</p>
 <p>Current DVB type is set via dvb_type bootloader environment variable with the following values:</p>
 <ul>
 <li>DVB-C</li>
@@ -119,7 +120,7 @@
 <li>DVB-T2</li>
 <li>DVB-S2</li>
 </ul>
-<p><br></p>
+<br>
 <p>Status codes table:</p>
 <table>
 <thead>
@@ -130,30 +131,39 @@
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>operation successful</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>error</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>unsupported</td>
 </tr>
 <tr>
-<td> 3</td>
+<td>3</td>
 <td>need reboot</td>
 </tr>
 <tr>
-<td> 0x1c</td>
+<td>0x1c</td>
 <td>bad handle</td>
 </tr>
 </tbody>
 </table>
-<p><br></p>
-<h4>Possible events:</h4><h5>event 40 (0x28) &quot;DVB progress&quot;</h5><p>When scan starts to search new frequency, player will trigger <code>event 40 (0x28)</code> with the following event data:</p>
-<p>   {<br>       &quot;state&quot;: &quot;searching&quot;,<br>       &quot;channel&quot;: 23,<br>       &quot;frequency&quot;: 650000,<br>       &quot;progress&quot;: 33,<br>       &quot;inputIndex&quot;: 0,<br>       &quot;polarization&quot;: &quot;H&quot;<br>   }</p>
+<br>
+<h4>Possible events:</h4>
+<h5>event 40 (0x28) &quot;DVB progress&quot;</h5>
+<p>When scan starts to search new frequency, player will trigger <code>event 40 (0x28)</code> with the following event data:</p>
+<p>{<br>
+&quot;state&quot;: &quot;searching&quot;,<br>
+&quot;channel&quot;: 23,<br>
+&quot;frequency&quot;: 650000,<br>
+&quot;progress&quot;: 33,<br>
+&quot;inputIndex&quot;: 0,<br>
+&quot;polarization&quot;: &quot;H&quot;<br>
+}</p>
 <p>where</p>
 <table>
 <thead>
@@ -164,34 +174,42 @@
 </thead>
 <tbody>
 <tr>
-<td> state</td>
+<td>state</td>
 <td>scan state: &quot;<code>searching</code>&quot; or &quot;<code>finished</code>&quot;</td>
 </tr>
 <tr>
-<td> channel</td>
+<td>channel</td>
 <td>channel number in frequency grid</td>
 </tr>
 <tr>
-<td> frequency</td>
+<td>frequency</td>
 <td>channel frequency (in kHz)</td>
 </tr>
 <tr>
-<td> progress</td>
+<td>progress</td>
 <td>scan progress in range [0..100]</td>
 </tr>
 <tr>
-<td> inputIndex</td>
+<td>inputIndex</td>
 <td>antenna (input connector) index [0..n]</td>
 </tr>
 <tr>
-<td> polarization</td>
+<td>polarization</td>
 <td>optional satellite signal polarization (&quot;<code>V</code>&quot; - vertical, &quot;<code>H</code>&quot; - horizontal, &quot;<code>CL</code>&quot; - circular left, &quot;<code>CR</code>&quot; - circular right ) to tune to</td>
 </tr>
 </tbody>
 </table>
-<p><br></p>
-<h5>event 41 (0x29) &quot;DVB channel found&quot;</h5><p>When any new channels is found, player will trigger <code>event 41 (0x29)</code> with the following event data:</p>
-<p>   {<br>       &quot;id&quot;: &quot;C_4601_634000&quot;,<br>       &quot;name&quot;: &quot;channel_name&quot;,<br>       &quot;frequency&quot;: 634000,<br>       &quot;inputIndex&quot;: 0,<br>       &quot;polarization&quot;: &quot;H&quot;,<br>       &quot;symbolRate&quot;: 27500000<br>   }</p>
+<br>
+<h5>event 41 (0x29) &quot;DVB channel found&quot;</h5>
+<p>When any new channels is found, player will trigger <code>event 41 (0x29)</code> with the following event data:</p>
+<p>{<br>
+&quot;id&quot;: &quot;C_4601_634000&quot;,<br>
+&quot;name&quot;: &quot;channel_name&quot;,<br>
+&quot;frequency&quot;: 634000,<br>
+&quot;inputIndex&quot;: 0,<br>
+&quot;polarization&quot;: &quot;H&quot;,<br>
+&quot;symbolRate&quot;: 27500000<br>
+}</p>
 <p>where</p>
 <table>
 <thead>
@@ -202,40 +220,44 @@
 </thead>
 <tbody>
 <tr>
-<td> id</td>
+<td>id</td>
 <td>channel unique identifier</td>
 </tr>
 <tr>
-<td> type</td>
+<td>type</td>
 <td>DVB signal type (see <a href="dvbManager.html#.signalType"><code>dvbManager.signalType</code></a>)</td>
 </tr>
 <tr>
-<td> name</td>
+<td>name</td>
 <td>channel name</td>
 </tr>
 <tr>
-<td> frequency</td>
+<td>frequency</td>
 <td>channel frequency (in kHz)</td>
 </tr>
 <tr>
-<td> inputIndex</td>
+<td>inputIndex</td>
 <td>antenna (input connector) index [0..n]</td>
 </tr>
 <tr>
-<td> polarization</td>
+<td>polarization</td>
 <td>optional satellite signal polarization (&quot;<code>V</code>&quot; - vertical, &quot;<code>H</code>&quot; - horizontal, &quot;<code>CL</code>&quot; - circular left, &quot;<code>CR</code>&quot; - circular right ) to tune to</td>
 </tr>
 <tr>
-<td> symbolRate</td>
+<td>symbolRate</td>
 <td>optional satellite/cable signal symbol rate (symbols per second)</td>
 </tr>
 </tbody>
 </table>
-<p><br></p>
-<h5>event 43 (0x2B) &quot;Power overload&quot;</h5><p>When antenna power is enabled but antenna is not active then antenna power will be disabled<br>and <code>event 43 (0x2B)</code> will be triggered to notify JavaScript API user. Example:</p>
-<pre class="prettyprint source"><code>{
+<br>
+<h5>event 43 (0x2B) &quot;Power overload&quot;</h5>
+<p>When antenna power is enabled but antenna is not active then antenna power will be disabled<br>
+and <code>event 43 (0x2B)</code> will be triggered to notify JavaScript API user. Example:</p>
+<pre><code>{
     &quot;inputIndex&quot;: 0
-}</code></pre><p>where</p>
+}
+</code></pre>
+<p>where</p>
 <table>
 <thead>
 <tr>
@@ -245,12 +267,12 @@
 </thead>
 <tbody>
 <tr>
-<td> inputIndex</td>
+<td>inputIndex</td>
 <td>antenna (input connector) index [0..n]</td>
 </tr>
 </tbody>
 </table>
-<p><br></p></div>
+<br></div>
             
 
             
@@ -421,11 +443,11 @@
 </thead>
 <tbody>
 <tr>
-<td> true</td>
+<td>true</td>
 <td>power is enabled</td>
 </tr>
 <tr>
-<td> false</td>
+<td>false</td>
 <td>power is disabled</td>
 </tr>
 </tbody>
@@ -2293,27 +2315,27 @@
 </thead>
 <tbody>
 <tr>
-<td> inputIndex</td>
+<td>inputIndex</td>
 <td>number</td>
 <td>antenna (input connector) index [0..n]</td>
 </tr>
 <tr>
-<td> frequency</td>
+<td>frequency</td>
 <td>number</td>
 <td>channel frequency (in kHz)</td>
 </tr>
 <tr>
-<td> polarization</td>
+<td>polarization</td>
 <td>string</td>
 <td>optional satellite signal polarization (&quot;<code>V</code>&quot; - vertical, &quot;<code>H</code>&quot; - horizontal, &quot;<code>CL</code>&quot; - circular left, &quot;<code>CR</code>&quot; - circular right ) to tune to</td>
 </tr>
 <tr>
-<td> symbolRate</td>
+<td>symbolRate</td>
 <td>number</td>
 <td>satellite/cable signal symbol rate (symbols per second)</td>
 </tr>
 <tr>
-<td> type</td>
+<td>type</td>
 <td>number</td>
 <td>DVB signal type (see <a href="dvbManager.html#.signalType"><code>dvbManager.signalType</code></a>)</td>
 </tr>
@@ -2775,27 +2797,27 @@
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>AUTO</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>16QAM</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>32QAM</td>
 </tr>
 <tr>
-<td> 3</td>
+<td>3</td>
 <td>64QAM</td>
 </tr>
 <tr>
-<td> 4</td>
+<td>4</td>
 <td>128QAM</td>
 </tr>
 <tr>
-<td> 5</td>
+<td>5</td>
 <td>256QAM</td>
 </tr>
 </tbody>
@@ -2877,37 +2899,37 @@
 </thead>
 <tbody>
 <tr>
-<td> type</td>
+<td>type</td>
 <td>number</td>
 <td>DVB signal type (see <a href="dvbManager.html#.signalType"><code>dvbManager.signalType</code></a>)</td>
 </tr>
 <tr>
-<td> symbolRate</td>
+<td>symbolRate</td>
 <td>number</td>
 <td>optional satellite/cable signal symbol rate (symbols per second)</td>
 </tr>
 <tr>
-<td> modulation</td>
+<td>modulation</td>
 <td>number</td>
 <td>see modulation values list</td>
 </tr>
 <tr>
-<td> scanMode</td>
+<td>scanMode</td>
 <td>number</td>
 <td>0 - network, 1 - full, 2 - fast (use NIT)</td>
 </tr>
 <tr>
-<td> frequency</td>
+<td>frequency</td>
 <td>number</td>
 <td>frequency for fast scan (in kHz)</td>
 </tr>
 <tr>
-<td> inputIndex</td>
+<td>inputIndex</td>
 <td>number</td>
 <td>optional antenna (input connector) index [0..n]</td>
 </tr>
 <tr>
-<td> networkId</td>
+<td>networkId</td>
 <td>number</td>
 <td>network ID (0 - auto)</td>
 </tr>
@@ -3398,7 +3420,9 @@ JSON.parse(dvbManager.GetSupportedScanTypes());
 
 <div class="description">
     <p>Get currently supported scan types for this STB.</p>
-<p>The difference with <a href="dvbManager.html#.GetSupportedScanTypes"><code>dvbManager.GetSupportedScanTypes</code></a> is:<br>result of <a href="dvbManager.html#.GetCurrentScanTypes"><code>dvbManager.GetCurrentScanTypes</code></a> depends on current DVB Type<br>e.i. for MAG275 it can be either DVB-C or DVB-T and DVB-T2, for MAG356 it can be DVB-S2.</p>
+<p>The difference with <a href="dvbManager.html#.GetSupportedScanTypes"><code>dvbManager.GetSupportedScanTypes</code></a> is:<br>
+result of <a href="dvbManager.html#.GetCurrentScanTypes"><code>dvbManager.GetCurrentScanTypes</code></a> depends on current DVB Type<br>
+e.i. for MAG275 it can be either DVB-C or DVB-T and DVB-T2, for MAG356 it can be DVB-S2.</p>
 <p>See <a href="dvbManager.html#.signalType"><code>dvbManager.signalType</code></a>.</p>
 </div>
 
@@ -4225,19 +4249,19 @@ JSON.parse(dvbManager.GetCurrentScanTypes());
 </thead>
 <tbody>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>DVB-C signal</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>DVB-T signal</td>
 </tr>
 <tr>
-<td> 3</td>
+<td>3</td>
 <td>DVB-T2 signal (not available for MAG270)</td>
 </tr>
 <tr>
-<td> 4</td>
+<td>4</td>
 <td>DVB-S2 signal</td>
 </tr>
 </tbody>
@@ -4861,7 +4885,7 @@ JSON.parse(dvbManager.GetCurrentScanTypes());
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

@@ -45,14 +45,32 @@
 </header>
 
 <article>
-    <p>Software updates subsystem operations available by using <a href="stbUpdate.html"><code>stbUpdate</code></a> object.<br>The object provides an interface to the update manager.</p>
-<p>Update Manager allows you to initiate and display the status of the software upgrade process.<br>Attention! Before any software update operation you must stop every single process of media content accessing and displaying.</p>
-<h2>Possible states of an object</h2><p>Update manager is a finite state machine.<br>State is accessible via <a href="stbUpdate.html#.getStatus"><code>stbUpdate.getStatus</code></a> method. Initial state – <code>Idle</code> (value <code>21</code>). Any active operation upon the update system is allowed only in <code>Idle</code> state.<br>Right after starting of an operation state machine leaves <code>Idle</code> state and must be considered as busy until <code>Idle</code> state turned back. So, after every start of operation that been committed user should wait for <code>Idle</code> state back.</p>
-<h2>User interface hints</h2><h3>Additional information</h3><p>Besides general state of an object there is additional information available to user (in terms of machine-user interface).<br>Additional information can be accessed via <a href="stbUpdate.html#.getStatusStr"><code>stbUpdate.getStatusStr</code></a> method.<br>This information should be sampled on periodic basis (recommended period is 1 sec) to keep user interface up to date with the actual data behind update process.</p>
-<h3>Progress indicator</h3><p>Progress indicator reflects measure of completion of current operation and can be read via <a href="stbUpdate.html#.getPercents"><code>stbUpdate.getPercents</code></a> method.</p>
-<h2>Update file check</h2><p>There is update file check procedure available before actual update process will be committed.<br>Update file checking available via <a href="stbUpdate.html#.startCheck"><code>stbUpdate.startCheck</code></a> method. It take path (either URL or path to file) to update file as parameter. For example: <code>/media/usbdisk/mag200/imageupdate</code> or <code>http://mag.infomir.com.ua/mag200/imageupdate</code>.<br>After checking procedure completion available information could be read via <a href="stbUpdate.html#.getImageVersionStr"><code>stbUpdate.getImageVersionStr</code></a>, <a href="stbUpdate.html#.getImageDateStr"><code>stbUpdate.getImageDateStr</code></a>, <a href="stbUpdate.html#.getImageDescStr"><code>stbUpdate.getImageDescStr</code></a> methods.</p>
-<h2>Bank selection procedure</h2><p>Active bank could be found via <a href="stbUpdate.html#.getActiveBank"><code>stbUpdate.getActiveBank</code></a> method.<br>In case when active bank defined (<a href="stbUpdate.html#.getActiveBank"><code>stbUpdate.getActiveBank</code></a> method returned either <code>0</code> or <code>1</code>) update should be applied to bank opposite to active. In case of undefined active bank (<a href="stbUpdate.html#.getActiveBank"><code>stbUpdate.getActiveBank</code></a> method returned <code>-1</code>) selection of bank to update depends on implementation.</p>
-<h2>Manual software update</h2><p>Software update procedure could be started via startUpdate method. It takes bank number and path (either URL or path to file) to update file as parameters. For example: <code>/media/usbdisk/mag200/imageupdate</code> or <code>http://mag.infomir.com.ua/mag200/imageupdate</code>.<br>In general, it takes few minutes to complete the operation. So, it is recommended to show status of the operation to user during the process.<br>During process execution additional information is available via <a href="stbUpdate.html#.getPercents"><code>stbUpdate.getPercents</code></a>, <a href="stbUpdate.html#.getStatus"><code>stbUpdate.getStatus</code></a>, <a href="stbUpdate.html#.getStatusStr"><code>stbUpdate.getStatusStr</code></a>, <a href="stbUpdate.html#.getImageVersionStr"><code>stbUpdate.getImageVersionStr</code></a>, <a href="stbUpdate.html#.getImageDateStr"><code>stbUpdate.getImageDateStr</code></a>, <a href="stbUpdate.html#.getImageDescStr"><code>stbUpdate.getImageDescStr</code></a> methods.</p>
+    <p>Software updates subsystem operations available by using <a href="stbUpdate.html"><code>stbUpdate</code></a> object.<br>
+The object provides an interface to the update manager.</p>
+<p>Update Manager allows you to initiate and display the status of the software upgrade process.<br>
+Attention! Before any software update operation you must stop every single process of media content accessing and displaying.</p>
+<h2>Possible states of an object</h2>
+<p>Update manager is a finite state machine.<br>
+State is accessible via <a href="stbUpdate.html#.getStatus"><code>stbUpdate.getStatus</code></a> method. Initial state – <code>Idle</code> (value <code>21</code>). Any active operation upon the update system is allowed only in <code>Idle</code> state.<br>
+Right after starting of an operation state machine leaves <code>Idle</code> state and must be considered as busy until <code>Idle</code> state turned back. So, after every start of operation that been committed user should wait for <code>Idle</code> state back.</p>
+<h2>User interface hints</h2>
+<h3>Additional information</h3>
+<p>Besides general state of an object there is additional information available to user (in terms of machine-user interface).<br>
+Additional information can be accessed via <a href="stbUpdate.html#.getStatusStr"><code>stbUpdate.getStatusStr</code></a> method.<br>
+This information should be sampled on periodic basis (recommended period is 1 sec) to keep user interface up to date with the actual data behind update process.</p>
+<h3>Progress indicator</h3>
+<p>Progress indicator reflects measure of completion of current operation and can be read via <a href="stbUpdate.html#.getPercents"><code>stbUpdate.getPercents</code></a> method.</p>
+<h2>Update file check</h2>
+<p>There is update file check procedure available before actual update process will be committed.<br>
+Update file checking available via <a href="stbUpdate.html#.startCheck"><code>stbUpdate.startCheck</code></a> method. It take path (either URL or path to file) to update file as parameter. For example: <code>/media/usbdisk/mag200/imageupdate</code> or <code>http://mag.infomir.com.ua/mag200/imageupdate</code>.<br>
+After checking procedure completion available information could be read via <a href="stbUpdate.html#.getImageVersionStr"><code>stbUpdate.getImageVersionStr</code></a>, <a href="stbUpdate.html#.getImageDateStr"><code>stbUpdate.getImageDateStr</code></a>, <a href="stbUpdate.html#.getImageDescStr"><code>stbUpdate.getImageDescStr</code></a> methods.</p>
+<h2>Bank selection procedure</h2>
+<p>Active bank could be found via <a href="stbUpdate.html#.getActiveBank"><code>stbUpdate.getActiveBank</code></a> method.<br>
+In case when active bank defined (<a href="stbUpdate.html#.getActiveBank"><code>stbUpdate.getActiveBank</code></a> method returned either <code>0</code> or <code>1</code>) update should be applied to bank opposite to active. In case of undefined active bank (<a href="stbUpdate.html#.getActiveBank"><code>stbUpdate.getActiveBank</code></a> method returned <code>-1</code>) selection of bank to update depends on implementation.</p>
+<h2>Manual software update</h2>
+<p>Software update procedure could be started via startUpdate method. It takes bank number and path (either URL or path to file) to update file as parameters. For example: <code>/media/usbdisk/mag200/imageupdate</code> or <code>http://mag.infomir.com.ua/mag200/imageupdate</code>.<br>
+In general, it takes few minutes to complete the operation. So, it is recommended to show status of the operation to user during the process.<br>
+During process execution additional information is available via <a href="stbUpdate.html#.getPercents"><code>stbUpdate.getPercents</code></a>, <a href="stbUpdate.html#.getStatus"><code>stbUpdate.getStatus</code></a>, <a href="stbUpdate.html#.getStatusStr"><code>stbUpdate.getStatusStr</code></a>, <a href="stbUpdate.html#.getImageVersionStr"><code>stbUpdate.getImageVersionStr</code></a>, <a href="stbUpdate.html#.getImageDateStr"><code>stbUpdate.getImageDateStr</code></a>, <a href="stbUpdate.html#.getImageDescStr"><code>stbUpdate.getImageDescStr</code></a> methods.</p>
 <p>Software update procedure include following stages:</p>
 <ol>
 <li>Waiting for <code>Idle</code> state of manager.</li>
@@ -63,7 +81,9 @@
 <li>In case of any trouble object will be set to <code>Idle</code> state and additional information would help to understand what happened.</li>
 <li>In case of success device will be forced to reboot.</li>
 </ol>
-<h2>Automatic software update</h2><p>Initiated by <a href="stbUpdate.html#.startAutoUpdate"><code>stbUpdate.startAutoUpdate</code></a> method.<br>Dedicated status form will be summoned to user interface during execution of this operation. Form will show overall progress.</p>
+<h2>Automatic software update</h2>
+<p>Initiated by <a href="stbUpdate.html#.startAutoUpdate"><code>stbUpdate.startAutoUpdate</code></a> method.<br>
+Dedicated status form will be summoned to user interface during execution of this operation. Form will show overall progress.</p>
 <p>Automatic software update procedure include following stages:</p>
 <ol>
 <li>Verification of the update file’s attributes. In case of any trouble process will be terminated and related status provided</li>
@@ -82,7 +102,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

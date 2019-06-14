@@ -105,7 +105,8 @@
 
             
                 <div class="description"><p>stbPlayer instance.</p>
-<p>Not accessible in global scope.<br>Can't be manually created but can be received from other STB global objects.</p></div>
+<p>Not accessible in global scope.<br>
+Can't be manually created but can be received from other STB global objects.</p></div>
             
 
             
@@ -395,23 +396,23 @@ console.log(stbPlayerManager.list[0].capabilities.autoFrameRate);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>Treat video as normal 2D video. Default mode. In case of top-bottom or side-by-side 3D video player displays both stereo views so TV can reproduce 3D video (with half resolution). If TV is 3D capable and video contains information about 3D then TV will be automatically switched to 3D mode.</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>Treat video as 3D video in top-bottom(over-under) format with half resolution of each stereo view. In that mode player will stretch top half of the video into fullscreen according to specified aspect.</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>Treat video as 3D video in top-bottom(over-under) format with full resolution of each stereo view. In that mode player will stretch top half of the video into fullscreen according to specified aspect. The difference between STB_3D_MODE_TOP and STB_3D_MODE_TOP_HALF is that STB_SetAspect with other than auto mode gives different behaviour and in case of resulting video will be Full resolution HD.</td>
 </tr>
 <tr>
-<td> 3</td>
+<td>3</td>
 <td>Treat video as 3D video in side-by-side format with half resolution of each stereo view. In that mode player will stretch left half of the video into fullscreen according to specified aspect.</td>
 </tr>
 <tr>
-<td> 4</td>
+<td>4</td>
 <td>Same as STB_3D_MODE_FULL but without automatic TV switch to 3D.</td>
 </tr>
 </tbody>
@@ -875,19 +876,19 @@ console.log(stbPlayerManager.list[0].statistics.decodingErrors);</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>RF mode</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>Line mode</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>Custom0</td>
 </tr>
 <tr>
-<td> 3</td>
+<td>3</td>
 <td>Custom1</td>
 </tr>
 </tbody>
@@ -959,8 +960,10 @@ console.log(stbPlayerManager.list[0].statistics.decodingErrors);</code></pre>
 
 
 <div class="description">
-    <p>Preferred audio track languages to be automatically selected<br>when receiving the information on the channel and several audio tracks are present.</p>
-<p>It's a 2/3–symbol tags according to ISO 639 in order of priority.<br>For best results use ISO 639-1, 639-2/T and 639-2/B at the same time.</p>
+    <p>Preferred audio track languages to be automatically selected<br>
+when receiving the information on the channel and several audio tracks are present.</p>
+<p>It's a 2/3–symbol tags according to ISO 639 in order of priority.<br>
+For best results use ISO 639-1, 639-2/T and 639-2/B at the same time.</p>
 </div>
 
 
@@ -1037,8 +1040,10 @@ console.log(stbPlayerManager.list[0].statistics.decodingErrors);</code></pre>
 
 
 <div class="description">
-    <p>Preferred subtitles track languages to be automatically selected<br>when receiving the information on the channel and several subtitles tracks are present.</p>
-<p>It's a 2/3–symbol tags according to ISO 639 in order of priority.<br>For best results use ISO 639-1, 639-2/T and 639-2/B at the same time.</p>
+    <p>Preferred subtitles track languages to be automatically selected<br>
+when receiving the information on the channel and several subtitles tracks are present.</p>
+<p>It's a 2/3–symbol tags according to ISO 639 in order of priority.<br>
+For best results use ISO 639-1, 639-2/T and 639-2/B at the same time.</p>
 </div>
 
 
@@ -1126,7 +1131,8 @@ console.log(stbPlayerManager.list[0].statistics.decodingErrors);</code></pre>
 
 
 <div class="description">
-    <p>Primary audio track language to be automatically selected<br>when receiving the information on the channel and several audio tracks are present.</p>
+    <p>Primary audio track language to be automatically selected<br>
+when receiving the information on the channel and several audio tracks are present.</p>
 <p>It's a 2/3–symbol tags according to ISO 639 (for example, &quot;ru&quot;, &quot;rus&quot;, &quot;en&quot;, &quot;eng&quot;).</p>
 <p>If such track is not found, the track with the language <code>stbPlayer.audioSecondaryLanguage</code> is selected.</p>
 </div>
@@ -1207,7 +1213,8 @@ console.log(stbPlayerManager.list[0].statistics.decodingErrors);</code></pre>
 
 
 <div class="description">
-    <p>Secondary audio track language to be automatically selected<br>when receiving the information on the channel and several audio tracks are present.</p>
+    <p>Secondary audio track language to be automatically selected<br>
+when receiving the information on the channel and several audio tracks are present.</p>
 <p>It's a 2/3–symbol tags according to ISO 639 (for example, &quot;ru&quot;, &quot;rus&quot;, &quot;en&quot;, &quot;eng&quot;).</p>
 <p>If not found the first track from the list is selected.</p>
 </div>
@@ -1288,7 +1295,8 @@ console.log(stbPlayerManager.list[0].statistics.decodingErrors);</code></pre>
 
 
 <div class="description">
-    <p>Primary subtitles track language to be automatically selected<br>when receiving the information on the channel and several subtitles tracks are present.</p>
+    <p>Primary subtitles track language to be automatically selected<br>
+when receiving the information on the channel and several subtitles tracks are present.</p>
 <p>It's a 2/3–symbol tags according to ISO 639 (for example, &quot;ru&quot;, &quot;rus&quot;, &quot;en&quot;, &quot;eng&quot;).</p>
 <p>If such track is not found, the track with the language <code>stbPlayer.subtitlesSecondaryLanguage</code> is selected.</p>
 </div>
@@ -1369,7 +1377,8 @@ console.log(stbPlayerManager.list[0].statistics.decodingErrors);</code></pre>
 
 
 <div class="description">
-    <p>Secondary subtitles track language to be automatically selected<br>when receiving the information on the channel and several subtitles tracks are present.</p>
+    <p>Secondary subtitles track language to be automatically selected<br>
+when receiving the information on the channel and several subtitles tracks are present.</p>
 <p>It's a 2/3–symbol tags according to ISO 639 (for example, &quot;ru&quot;, &quot;rus&quot;, &quot;en&quot;, &quot;eng&quot;).</p>
 <p>If not found the first track from the list is selected.</p>
 </div>
@@ -2029,7 +2038,9 @@ stbPlayer.subtitlesColor = 0xff0000;</code></pre>
 
 <div class="description">
     <p>Get the current buffer loading in percents [0..100].</p>
-<p>It makes sense to call this function only with the following solutions:<br><strong>ffmpeg</strong>, <strong>ffrt</strong>, <strong>ffrt2</strong>, <strong>ffrt3</strong>, <strong>fm</strong>, <strong>file</strong><br>after getting <code>event 2</code> and before complete buffer filling or before getting <code>event 4</code>.</p>
+<p>It makes sense to call this function only with the following solutions:<br>
+<strong>ffmpeg</strong>, <strong>ffrt</strong>, <strong>ffrt2</strong>, <strong>ffrt3</strong>, <strong>fm</strong>, <strong>file</strong><br>
+after getting <code>event 2</code> and before complete buffer filling or before getting <code>event 4</code>.</p>
 </div>
 
 
@@ -2526,7 +2537,8 @@ stbPlayer.subtitlesColor = 0xff0000;</code></pre>
 
 
 <div class="description">
-    <p>Current speed of playing.<br>Available only on supported devices with some media sources.</p>
+    <p>Current speed of playing.<br>
+Available only on supported devices with some media sources.</p>
 <p>Possible values:</p>
 <table>
 <thead>
@@ -2537,83 +2549,83 @@ stbPlayer.subtitlesColor = 0xff0000;</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0.25</td>
+<td>0.25</td>
 <td>quarter speed</td>
 </tr>
 <tr>
-<td> 0.5</td>
+<td>0.5</td>
 <td>half speed</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>normal</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>2x</td>
 </tr>
 <tr>
-<td> 4</td>
+<td>4</td>
 <td>4x</td>
 </tr>
 <tr>
-<td> 8</td>
+<td>8</td>
 <td>8x</td>
 </tr>
 <tr>
-<td> 12</td>
+<td>12</td>
 <td>12x</td>
 </tr>
 <tr>
-<td> 16</td>
+<td>16</td>
 <td>16x</td>
 </tr>
 <tr>
-<td> 32</td>
+<td>32</td>
 <td>32x</td>
 </tr>
 <tr>
-<td> 64</td>
+<td>64</td>
 <td>64x</td>
 </tr>
 <tr>
-<td> -0.25</td>
+<td>-0.25</td>
 <td>backward quarter speed</td>
 </tr>
 <tr>
-<td> -0.5</td>
+<td>-0.5</td>
 <td>backward half speed</td>
 </tr>
 <tr>
-<td> -1</td>
+<td>-1</td>
 <td>backward normal</td>
 </tr>
 <tr>
-<td> -2</td>
+<td>-2</td>
 <td>backward 2x</td>
 </tr>
 <tr>
-<td> -4</td>
+<td>-4</td>
 <td>backward 4x</td>
 </tr>
 <tr>
-<td> -8</td>
+<td>-8</td>
 <td>backward 8x</td>
 </tr>
 <tr>
-<td> -12</td>
+<td>-12</td>
 <td>backward 12x</td>
 </tr>
 <tr>
-<td> -16</td>
+<td>-16</td>
 <td>backward 16x</td>
 </tr>
 <tr>
-<td> -32</td>
+<td>-32</td>
 <td>backward 32x</td>
 </tr>
 <tr>
-<td> -64</td>
+<td>-64</td>
 <td>backward 64x</td>
 </tr>
 </tbody>
@@ -2685,7 +2697,8 @@ stbPlayer.subtitlesColor = 0xff0000;</code></pre>
 
 
 <div class="description">
-    <p>All available playing speed values for current media.<br>Collected with some delay after playback start.</p>
+    <p>All available playing speed values for current media.<br>
+Collected with some delay after playback start.</p>
 </div>
 
 
@@ -2763,19 +2776,19 @@ stbPlayer.subtitlesColor = 0xff0000;</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>idle</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>opening (between <a href="stbPlayer.html#.play"><code>stbPlayer.play</code></a> method call and <code>event 4</code>)</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>currently is playing</td>
 </tr>
 <tr>
-<td> 3</td>
+<td>3</td>
 <td>paused</td>
 </tr>
 </tbody>
@@ -2858,11 +2871,11 @@ stbPlayer.subtitlesColor = 0xff0000;</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> currentBitrate</td>
+<td>currentBitrate</td>
 <td>currently active bitrate</td>
 </tr>
 <tr>
-<td> bitrateList</td>
+<td>bitrateList</td>
 <td>list of all bitrates in a stream and can be empty (available only for Apple HLS streams)</td>
 </tr>
 </tbody>
@@ -2948,7 +2961,8 @@ null</code></pre>
 
 
 <div class="description">
-    <p>Get metadata information stored in current content.<br>For example, it can be data from ID3 tag from mp3 file or info from iso/bluray/dvd.</p>
+    <p>Get metadata information stored in current content.<br>
+For example, it can be data from ID3 tag from mp3 file or info from iso/bluray/dvd.</p>
 <p>It's better to request this information in <a href="stbPlayer.html#.onTracksInfo"><code>stbPlayer.onTracksInfo</code></a> callback (after getting <code>event 2</code>).</p>
 </div>
 
@@ -3120,23 +3134,23 @@ null</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> frameRate</td>
+<td>frameRate</td>
 <td>video frame rate</td>
 </tr>
 <tr>
-<td> bitRate</td>
+<td>bitRate</td>
 <td>video bitrate in bits (since v344)</td>
 </tr>
 <tr>
-<td> width</td>
+<td>width</td>
 <td>encoded video width</td>
 </tr>
 <tr>
-<td> height</td>
+<td>height</td>
 <td>encoded video height</td>
 </tr>
 <tr>
-<td> hPAR and vPAR</td>
+<td>hPAR and vPAR</td>
 <td>horizontal and vertical pixel aspect ratio coefficients <br> in example these params mean that movie aspect ratio is: (704*hPAR/vPAR)/576 = 1.333333333(3) = 4:3 for square pixels</td>
 </tr>
 </tbody>
@@ -3222,12 +3236,18 @@ null</code></pre>
 <div class="description">
     <p>Video window state.</p>
 <p>There are some use cases involving fullscreen and viewport:</p>
-<p>Case 1: viewport is partial, fullscreen switch to true<br>Result: viewport will switch to maximum and enable auto viewport maximization on video resolution changes</p>
-<p>Case 2: viewport is maximized, fullscreen switch to false<br>Result: viewport will remain maximized and disable auto viewport maximization on video resolution changes</p>
-<p>Case 3: viewport is maximized, fullscreen switch to true<br>Result: viewport will remain maximized and enable auto viewport maximization on video resolution changes</p>
-<p>Case 4: fullscreen is true, viewport switch to partial<br>Result: fullscreen will switch to false and disable auto viewport maximization on video resolution changes</p>
-<p>Case 5: fullscreen is false, viewport switch to partial<br>Result: fullscreen will remain false with disabled auto viewport maximization</p>
-<p>Case 6: fullscreen is false, viewport switch to maximized<br>Result: fullscreen will remain false with disabled auto viewport maximization</p>
+<p>Case 1: viewport is partial, fullscreen switch to true<br>
+Result: viewport will switch to maximum and enable auto viewport maximization on video resolution changes</p>
+<p>Case 2: viewport is maximized, fullscreen switch to false<br>
+Result: viewport will remain maximized and disable auto viewport maximization on video resolution changes</p>
+<p>Case 3: viewport is maximized, fullscreen switch to true<br>
+Result: viewport will remain maximized and enable auto viewport maximization on video resolution changes</p>
+<p>Case 4: fullscreen is true, viewport switch to partial<br>
+Result: fullscreen will switch to false and disable auto viewport maximization on video resolution changes</p>
+<p>Case 5: fullscreen is false, viewport switch to partial<br>
+Result: fullscreen will remain false with disabled auto viewport maximization</p>
+<p>Case 6: fullscreen is false, viewport switch to maximized<br>
+Result: fullscreen will remain false with disabled auto viewport maximization</p>
 </div>
 
 
@@ -3305,15 +3325,15 @@ null</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>the device automatically switches on the video window at the beginning of playing and switches it off when stops</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>video window is displayed</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>video window is not displayed</td>
 </tr>
 </tbody>
@@ -3395,27 +3415,27 @@ null</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>as it is (video is stretched for the whole screen)</td>
 </tr>
 <tr>
-<td> 1</td>
-<td>Letter box mode (video is proportionally enlarged to the size of the screen along the larger edge)</td>
+<td>1</td>
+<td>letterbox mode (video is proportionally enlarged to the size of the screen along the larger edge)</td>
 </tr>
 <tr>
-<td> 2</td>
-<td>Pan&amp;Scan mode (video is proportionally enlarged to the screen size along the lesser edge)</td>
+<td>2</td>
+<td>pan and scan mode (video is proportionally enlarged to the screen size along the lesser edge)</td>
 </tr>
 <tr>
-<td> 3</td>
-<td>combined mode (intermediate between Letter Box Box and Pan&amp;Scan)</td>
+<td>3</td>
+<td>combined mode (intermediate between letterbox and pan and scan)</td>
 </tr>
 <tr>
-<td> 4</td>
+<td>4</td>
 <td>enlarged mode</td>
 </tr>
 <tr>
-<td> 5</td>
+<td>5</td>
 <td>optimal mode</td>
 </tr>
 </tbody>
@@ -4361,7 +4381,9 @@ stbPlayer.teletextOpacity = 0.1;</code></pre>
 
 <div class="description">
     <p>Get/set multicast current web proxy configuration.</p>
-<p>If multicast proxy configuration is set and multicast proxy enabled then any multicast <code>rtp://</code> or <code>udp://</code> stream<br>will be played back via multicast proxy e.i. instead of <code>rtp://239.1.1.1:1234</code><br>player play the following stream: <code>[proxy_addr]/rtp/239.1.1.1:1234</code>.</p>
+<p>If multicast proxy configuration is set and multicast proxy enabled then any multicast <code>rtp://</code> or <code>udp://</code> stream<br>
+will be played back via multicast proxy e.i. instead of <code>rtp://239.1.1.1:1234</code><br>
+player play the following stream: <code>[proxy_addr]/rtp/239.1.1.1:1234</code>.</p>
 </div>
 
 
@@ -5523,7 +5545,8 @@ stbPlayer.setViewport({width: 500});</code></pre>
 
 
 <div class="description">
-    <p>Continue playing (after <a href="stbPlayer.html#.pause"><code>stbPlayer.pause</code></a>)<br>or begin anew (after <a href="stbPlayer.html#.stop"><code>stbPlayer.stop</code></a>).</p>
+    <p>Continue playing (after <a href="stbPlayer.html#.pause"><code>stbPlayer.pause</code></a>)<br>
+or begin anew (after <a href="stbPlayer.html#.stop"><code>stbPlayer.stop</code></a>).</p>
 </div>
 
 
@@ -5824,7 +5847,8 @@ stbPlayer.setViewport({width: 500});</code></pre>
 
 
 <div class="description">
-    <p>Information on audio and video tracks of the media content is received.<br>It's now possible to call <a href="stbPlayer.html#.audioTracks"><code>stbPlayer.audioTracks</code></a>, <a href="stbPlayer.html#.metadataInfo"><code>stbPlayer.metadataInfo</code></a> etc.</p>
+    <p>Information on audio and video tracks of the media content is received.<br>
+It's now possible to call <a href="stbPlayer.html#.audioTracks"><code>stbPlayer.audioTracks</code></a>, <a href="stbPlayer.html#.metadataInfo"><code>stbPlayer.metadataInfo</code></a> etc.</p>
 </div>
 
 
@@ -5910,7 +5934,8 @@ stbPlayer.setViewport({width: 500});</code></pre>
 
 
 <div class="description">
-    <p>The decoder has received info about the content and started to play.<br>It's now possible to call <a href="stbPlayer.html#.videoInfo"><code>stbPlayer.videoInfo</code></a>.</p>
+    <p>The decoder has received info about the content and started to play.<br>
+It's now possible to call <a href="stbPlayer.html#.videoInfo"><code>stbPlayer.videoInfo</code></a>.</p>
 </div>
 
 
@@ -6697,75 +6722,75 @@ stbPlayer.setViewport({width: 500});</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>digit 0</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>digit 1</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>digit 2</td>
 </tr>
 <tr>
-<td> 3</td>
+<td>3</td>
 <td>digit 3</td>
 </tr>
 <tr>
-<td> 4</td>
+<td>4</td>
 <td>digit 4</td>
 </tr>
 <tr>
-<td> 5</td>
+<td>5</td>
 <td>digit 5</td>
 </tr>
 <tr>
-<td> 6</td>
+<td>6</td>
 <td>digit 6</td>
 </tr>
 <tr>
-<td> 7</td>
+<td>7</td>
 <td>digit 7</td>
 </tr>
 <tr>
-<td> 8</td>
+<td>8</td>
 <td>digit 8</td>
 </tr>
 <tr>
-<td> 9</td>
+<td>9</td>
 <td>digit 9</td>
 </tr>
 <tr>
-<td> 10</td>
+<td>10</td>
 <td>NextPage</td>
 </tr>
 <tr>
-<td> 11</td>
+<td>11</td>
 <td>PrevPage</td>
 </tr>
 <tr>
-<td> 12</td>
+<td>12</td>
 <td>NextSubpage</td>
 </tr>
 <tr>
-<td> 13</td>
+<td>13</td>
 <td>PrevSubpage</td>
 </tr>
 <tr>
-<td> 14</td>
+<td>14</td>
 <td>Red</td>
 </tr>
 <tr>
-<td> 15</td>
+<td>15</td>
 <td>Yellow</td>
 </tr>
 <tr>
-<td> 16</td>
+<td>16</td>
 <td>Blue</td>
 </tr>
 <tr>
-<td> 17</td>
+<td>17</td>
 <td>Green</td>
 </tr>
 </tbody>
@@ -6843,7 +6868,8 @@ stbPlayer.setViewport({width: 500});</code></pre>
 
 
 <div class="description">
-    <p>Restore the default player state.<br>Affects playback, viewport, clears statistics, turns off subtitles and teletext, disables loop.</p>
+    <p>Restore the default player state.<br>
+Affects playback, viewport, clears statistics, turns off subtitles and teletext, disables loop.</p>
 </div>
 
 
@@ -7849,39 +7875,39 @@ stbPlayer.setViewport({width: 500});</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> 0</td>
+<td>0</td>
 <td>Unknown</td>
 </tr>
 <tr>
-<td> 1</td>
+<td>1</td>
 <td>mp2a</td>
 </tr>
 <tr>
-<td> 2</td>
+<td>2</td>
 <td>mp3</td>
 </tr>
 <tr>
-<td> 3</td>
+<td>3</td>
 <td>AC3</td>
 </tr>
 <tr>
-<td> 4</td>
+<td>4</td>
 <td>AAC</td>
 </tr>
 <tr>
-<td> 5</td>
+<td>5</td>
 <td>PCM</td>
 </tr>
 <tr>
-<td> 6</td>
+<td>6</td>
 <td>OGG</td>
 </tr>
 <tr>
-<td> 7</td>
+<td>7</td>
 <td>DTS</td>
 </tr>
 <tr>
-<td> 8</td>
+<td>8</td>
 <td>EAC3</td>
 </tr>
 </tbody>
@@ -8522,11 +8548,11 @@ stbPlayer.setViewport({width: 500});</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> true</td>
+<td>true</td>
 <td>use this clip only for current playback</td>
 </tr>
 <tr>
-<td> false</td>
+<td>false</td>
 <td>use this clip till next call of <a href="stbPlayer.html#.setViewport"><code>stbPlayer.setViewport</code></a></td>
 </tr>
 </tbody>
@@ -8544,9 +8570,15 @@ stbPlayer.setViewport({width: 500});</code></pre>
 
 <div class="description">
     <p>Clipping rectangle for input video structure.</p>
-<p>Clip rectangle specifies which sub-rectangle will be shown in specified video window rectangle (stretched to fill whole video window).<br>If <code>width</code> == 0 or <code>height</code> == 0 then clip will be ignored.</p>
-<p>If clip rectangle is ignored or has size equal to encoded video size<br>then aspect ratio conversion will be performed inside specified video window rectangle<br>according to the current aspect for fullscreen mode.<br>This does not depend on specified video window size.<br>At the same time <code>stbPlayer.SetViewport</code> function does aspect ratio conversion only in fullscreen mode.</p>
-<p>Clip rectangle size and position should be in pixels of the encoded video.<br>Width and height of encoded video can be retrieved via <a href="stbPlayer.html#.videoInfo"><code>stbPlayer.videoInfo</code></a> (see <code>width</code> and <code>height</code>).</p>
+<p>Clip rectangle specifies which sub-rectangle will be shown in specified video window rectangle (stretched to fill whole video window).<br>
+If <code>width</code> == 0 or <code>height</code> == 0 then clip will be ignored.</p>
+<p>If clip rectangle is ignored or has size equal to encoded video size<br>
+then aspect ratio conversion will be performed inside specified video window rectangle<br>
+according to the current aspect for fullscreen mode.<br>
+This does not depend on specified video window size.<br>
+At the same time <code>stbPlayer.SetViewport</code> function does aspect ratio conversion only in fullscreen mode.</p>
+<p>Clip rectangle size and position should be in pixels of the encoded video.<br>
+Width and height of encoded video can be retrieved via <a href="stbPlayer.html#.videoInfo"><code>stbPlayer.videoInfo</code></a> (see <code>width</code> and <code>height</code>).</p>
 </div>
 
 
@@ -8835,7 +8867,8 @@ stbPlayer.setViewport({width: 500});</code></pre>
             
 
             <td class="description last"><p>audio track number to play</p>
-<p>In case audioPID is specified and valid, it's chosen for playback. Otherwise audio track is chosen corresponding to <a href="stbPlayer.html#.audioLanguages"><code>stbPlayer.audioLanguages</code></a>.<br>By default the first valid audio track is chosen.</p></td>
+<p>In case audioPID is specified and valid, it's chosen for playback. Otherwise audio track is chosen corresponding to <a href="stbPlayer.html#.audioLanguages"><code>stbPlayer.audioLanguages</code></a>.<br>
+By default the first valid audio track is chosen.</p></td>
         </tr>
 
     
@@ -9230,151 +9263,151 @@ stbPlayer.setViewport({width: 500});</code></pre>
 </thead>
 <tbody>
 <tr>
-<td> -0x01</td>
+<td>-0x01</td>
 <td>Disabled</td>
 </tr>
 <tr>
-<td> 0x00</td>
+<td>0x00</td>
 <td>English</td>
 </tr>
 <tr>
-<td> 0x01</td>
+<td>0x01</td>
 <td>German</td>
 </tr>
 <tr>
-<td> 0x02</td>
+<td>0x02</td>
 <td>Swedish/Finnish/Hungarian</td>
 </tr>
 <tr>
-<td> 0x03</td>
+<td>0x03</td>
 <td>Italian</td>
 </tr>
 <tr>
-<td> 0x04</td>
+<td>0x04</td>
 <td>French</td>
 </tr>
 <tr>
-<td> 0x05</td>
+<td>0x05</td>
 <td>Portuguese/Spanish</td>
 </tr>
 <tr>
-<td> 0x06</td>
+<td>0x06</td>
 <td>Czech/Slovak</td>
 </tr>
 <tr>
-<td> 0x08</td>
+<td>0x08</td>
 <td>Polish</td>
 </tr>
 <tr>
-<td> 0x09</td>
+<td>0x09</td>
 <td>German</td>
 </tr>
 <tr>
-<td> 0x0a</td>
+<td>0x0a</td>
 <td>Swedish/Finnish/Hungarian</td>
 </tr>
 <tr>
-<td> 0x0b</td>
+<td>0x0b</td>
 <td>Italian</td>
 </tr>
 <tr>
-<td> 0x0c</td>
+<td>0x0c</td>
 <td>French</td>
 </tr>
 <tr>
-<td> 0x0e</td>
+<td>0x0e</td>
 <td>Czech/Slovak</td>
 </tr>
 <tr>
-<td> 0x10</td>
+<td>0x10</td>
 <td>English</td>
 </tr>
 <tr>
-<td> 0x11</td>
+<td>0x11</td>
 <td>German</td>
 </tr>
 <tr>
-<td> 0x12</td>
+<td>0x12</td>
 <td>Swedish/Finnish/Hungarian</td>
 </tr>
 <tr>
-<td> 0x13</td>
+<td>0x13</td>
 <td>Italian</td>
 </tr>
 <tr>
-<td> 0x14</td>
+<td>0x14</td>
 <td>French</td>
 </tr>
 <tr>
-<td> 0x15</td>
+<td>0x15</td>
 <td>Portuguese/Spanish</td>
 </tr>
 <tr>
-<td> 0x16</td>
+<td>0x16</td>
 <td>Turkish</td>
 </tr>
 <tr>
-<td> 0x1d</td>
+<td>0x1d</td>
 <td>Serbian/Croatian/Slovenian</td>
 </tr>
 <tr>
-<td> 0x1f</td>
+<td>0x1f</td>
 <td>Rumanian</td>
 </tr>
 <tr>
-<td> 0x20</td>
+<td>0x20</td>
 <td>Serbian/Croatian</td>
 </tr>
 <tr>
-<td> 0x21</td>
+<td>0x21</td>
 <td>German</td>
 </tr>
 <tr>
-<td> 0x22</td>
+<td>0x22</td>
 <td>Estonian</td>
 </tr>
 <tr>
-<td> 0x23</td>
+<td>0x23</td>
 <td>Lettish/Lithuanian</td>
 </tr>
 <tr>
-<td> 0x24</td>
+<td>0x24</td>
 <td>Russian/Bulgarian</td>
 </tr>
 <tr>
-<td> 0x25</td>
+<td>0x25</td>
 <td>Ukrainian</td>
 </tr>
 <tr>
-<td> 0x26</td>
+<td>0x26</td>
 <td>Czech/Slovak</td>
 </tr>
 <tr>
-<td> 0x36</td>
+<td>0x36</td>
 <td>Turkish</td>
 </tr>
 <tr>
-<td> 0x37</td>
+<td>0x37</td>
 <td>Greek</td>
 </tr>
 <tr>
-<td> 0x80</td>
+<td>0x80</td>
 <td>English/Arabic</td>
 </tr>
 <tr>
-<td> 0x84</td>
+<td>0x84</td>
 <td>French/Arabic</td>
 </tr>
 <tr>
-<td> 0x87</td>
+<td>0x87</td>
 <td>Arabic</td>
 </tr>
 <tr>
-<td> 0x95</td>
+<td>0x95</td>
 <td>Hebrew/Arabic</td>
 </tr>
 <tr>
-<td> 0x97</td>
+<td>0x97</td>
 <td>Arabic</td>
 </tr>
 </tbody>
@@ -9416,7 +9449,7 @@ stbPlayer.setViewport({width: 500});</code></pre>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

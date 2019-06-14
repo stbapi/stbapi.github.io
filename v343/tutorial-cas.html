@@ -45,19 +45,23 @@
 </header>
 
 <article>
-    <h2>Setting up Verimatrix CAS</h2><p>For using Verimatrix CAS proceed as follows:</p>
+    <h2>Setting up Verimatrix CAS</h2>
+<p>For using Verimatrix CAS proceed as follows:</p>
 <ol>
 <li>Set the correct time, for example, from ntp server.</li>
-<li>Set initial parameters of the CAS server using one of the two methods:<ul>
+<li>Set initial parameters of the CAS server using one of the two methods:</li>
+</ol>
+<ul>
 <li>with <a href="gSTB.html#.LoadCASIniFile"><code>gSTB.LoadCASIniFile</code></a> function, when the parameters are automatically taken from the specified file</li>
 <li>with <a href="gSTB.html#.SetCASParam"><code>gSTB.SetCASParam</code></a> or/and <a href="gSTB.html#.SetAdditionalCasParam"><code>gSTB.SetAdditionalCasParam</code></a> functions</li>
 </ul>
-</li>
+<ol start="3">
 <li>For MAG200, MAG250 and AuraHD set descrambling mode using <a href="gSTB.html#.SetCASDescrambling"><code>gSTB.SetCASDescrambling</code></a> function.</li>
 <li>Set the type of the CAS server after setting initial parameters.</li>
 </ol>
 <p><strong>Note</strong>. Since release of 0.1.66 software image version, file rootcert.pem is already in <code>/flash</code> folder.</p>
-<h2>Setting up SecureMedia CAS</h2><p>For using SecureMedia CAS proceed as follows:</p>
+<h2>Setting up SecureMedia CAS</h2>
+<p>For using SecureMedia CAS proceed as follows:</p>
 <ol>
 <li>Set the correct time, for example, from NTP server.</li>
 <li>Set initial parameters of the CAS server using <a href="gSTB.html#.SetCASParam"><code>gSTB.SetCASParam</code></a> or/and <a href="gSTB.html#.SetAdditionalCasParam"><code>gSTB.SetAdditionalCasParam</code></a> functions.</li>
@@ -65,12 +69,17 @@
 </ol>
 <p><strong>Note</strong>: In case when no additional parameters were set via <a href="gSTB.html#.SetAdditionalCasParam"><code>gSTB.SetAdditionalCasParam</code></a>, command line for smdaemon could be one of the following:</p>
 <ul>
-<li><code>smdaemon -daemon -l 0 -auto_register</code><br>if <a href="gSTB.html#.SetCASParam"><code>gSTB.SetCASParam</code></a> was not called before <a href="gSTB.html#.SetCASType"><code>gSTB.SetCASType</code></a>.</li>
-<li><code>smdaemon -daemon -l 0 -auto_register –rsurl serverAddr</code><br>if via function <a href="gSTB.html#.SetCASParam"><code>gSTB.SetCASParam</code></a> was set only server address but not server port.</li>
-<li><code>smdaemon -daemon -l 0 -auto_register –rsurl serverAddr:port</code><br>if via function <a href="gSTB.html#.SetCASParam"><code>gSTB.SetCASParam</code></a> were set both server address and server port.</li>
+<li><code>smdaemon -daemon -l 0 -auto_register</code><br>
+if <a href="gSTB.html#.SetCASParam"><code>gSTB.SetCASParam</code></a> was not called before <a href="gSTB.html#.SetCASType"><code>gSTB.SetCASType</code></a>.</li>
+<li><code>smdaemon -daemon -l 0 -auto_register –rsurl serverAddr</code><br>
+if via function <a href="gSTB.html#.SetCASParam"><code>gSTB.SetCASParam</code></a> was set only server address but not server port.</li>
+<li><code>smdaemon -daemon -l 0 -auto_register –rsurl serverAddr:port</code><br>
+if via function <a href="gSTB.html#.SetCASParam"><code>gSTB.SetCASParam</code></a> were set both server address and server port.</li>
 </ul>
-<h2>Setting additional CAS parameters</h2><p>Some additional CAS parameters can be set by using SetAdditionalCasParam.</p>
-<h3>Verimatrix</h3><p>The following list of additional parameters is implemented:</p>
+<h2>Setting additional CAS parameters</h2>
+<p>Some additional CAS parameters can be set by using SetAdditionalCasParam.</p>
+<h3>Verimatrix</h3>
+<p>The following list of additional parameters is implemented:</p>
 <ul>
 <li>COMPANY</li>
 <li>SERVERADDRESS</li>
@@ -94,18 +103,24 @@
 <pre class="prettyprint source lang-js"><code>// set connection timeout to 5 seconds
 gSTB.SetAdditionalCasParam('TIMEOUT', 5);
 // set connection retries count to 3
-gSTB.SetAdditionalCasParam('CONNECTION_RETRIES', 3);</code></pre><p>By default <code>STOREPATH</code> parameter is set to <code>/flash</code> and <code>ROOTCERT</code> to <code>/flash/rootcert.pem</code>. It is not recommended to change those values. </p>
-<h3>SecureMedia</h3><p>The following list of additional parameters is implemented:</p>
+gSTB.SetAdditionalCasParam('CONNECTION_RETRIES', 3);
+</code></pre>
+<p>By default <code>STOREPATH</code> parameter is set to <code>/flash</code> and <code>ROOTCERT</code> to <code>/flash/rootcert.pem</code>. It is not recommended to change those values.</p>
+<h3>SecureMedia</h3>
+<p>The following list of additional parameters is implemented:</p>
 <ul>
 <li><code>sm_add_cmd</code> – value of this parameter is appended to command line arguments for <code>/home/default/smd_start.sh</code> script after all parameters from <a href="gSTB.html#.SetCASParam"><code>gSTB.SetCASParam</code></a> function.</li>
 <li><code>sm_full_cmd</code> – value of this parameter completely overrides command line arguments for smdaemon. That is smdaemon starts only with specified in parameter value options.</li>
 </ul>
 <p>Please pay attention that smdaemon starts in blocking mode so value for <code>sm_full_cmd</code> parameter should contain <code>-daemon</code> option.</p>
-<h2>Custom CAS plugin</h2><p>Custom CAS plugin interface description can be found by the following link http://soft.infomir.com.ua/mag200/CAS/Readme_en.txt.</p>
-<p>To use custom CAS plugin put plugin dynamic library into <code>/home/default</code> folder. Ensure that the plugin has the name in the following form:<br><code>/home/default/libCasCustom_x.so</code>, where <code>_x</code> corresponds to given CAS type (see <a href="gSTB.html#.SetCASType"><code>gSTB.SetCASType</code></a>). </p>
+<h2>Custom CAS plugin</h2>
+<p>Custom CAS plugin interface description can be found by the following link http://soft.infomir.com.ua/mag200/CAS/Readme_en.txt.</p>
+<p>To use custom CAS plugin put plugin dynamic library into <code>/home/default</code> folder. Ensure that the plugin has the name in the following form:<br>
+<code>/home/default/libCasCustom_x.so</code>, where <code>_x</code> corresponds to given CAS type (see <a href="gSTB.html#.SetCASType"><code>gSTB.SetCASType</code></a>).</p>
 <p>For example:</p>
 <pre class="prettyprint source lang-js"><code>// force player to search /home/default/libCasCustom4.so library as a current CAS system
-gSTB.SetCASType(4);</code></pre>
+gSTB.SetCASType(4);
+</code></pre>
 </article>
 
 </section>
@@ -117,7 +132,7 @@ gSTB.SetCASType(4);</code></pre>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

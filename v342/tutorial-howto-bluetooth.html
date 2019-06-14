@@ -45,7 +45,8 @@
 </header>
 
 <article>
-    <h2>Bluetooth adapter</h2><p>Set bluetooth adapter parameters:</p>
+    <h2>Bluetooth adapter</h2>
+<p>Set bluetooth adapter parameters:</p>
 <pre class="prettyprint source lang-js"><code>// turn it on
 stbBluetooth.enable = true;
 
@@ -53,8 +54,12 @@ stbBluetooth.enable = true;
 stbBluetooth.visible = true;
 
 // set custom name
-stbBluetooth.name = 'My set top box';</code></pre><p>Get bluetooth adapter address:</p>
-<pre class="prettyprint source lang-js"><code>console.log('bluetooth adapter address:', stbBluetooth.address);</code></pre><p>Set all event handlers before discovery process:</p>
+stbBluetooth.name = 'My set top box';
+</code></pre>
+<p>Get bluetooth adapter address:</p>
+<pre class="prettyprint source lang-js"><code>console.log('bluetooth adapter address:', stbBluetooth.address);
+</code></pre>
+<p>Set all event handlers before discovery process:</p>
 <pre class="prettyprint source lang-js"><code>stbBluetooth.onDiscoveryStart = function ( config ) {
     console.log('onDiscoveryStart event:', config);
 };
@@ -69,7 +74,9 @@ stbBluetooth.onDeviceFound = function ( device ) {
 
 stbBluetooth.onDeviceRemoved = function ( device ) {
     console.log('onDeviceRemoved event:', device);
-};</code></pre><p>It's also possible to use <code>stbBluetooth.addEventListener</code> and <code>stbBluetooth.removeEventListener</code> methods:</p>
+};
+</code></pre>
+<p>It's also possible to use <code>stbBluetooth.addEventListener</code> and <code>stbBluetooth.removeEventListener</code> methods:</p>
 <pre class="prettyprint source lang-js"><code>stbBluetooth.addEventListener('discoveryStart', function ( config ) {
     console.log('discoveryStart listener:', config);
 });
@@ -84,13 +91,22 @@ stbBluetooth.addEventListener('deviceFound', function ( device ) {
 
 stbBluetooth.addEventListener('deviceRemoved', function ( device ) {
     console.log('deviceRemoved listener:', device);
-});</code></pre><p>Start searching for devices:</p>
+});
+</code></pre>
+<p>Start searching for devices:</p>
 <pre class="prettyprint source lang-js"><code>// scan for specific time - 1.28s * 20
-stbBluetooth.startDiscovery({duration: 20});</code></pre><p>Get all discovered devices list:</p>
-<pre class="prettyprint source lang-js"><code>console.log('all discovered devices list:', stbBluetooth.devices);</code></pre><h2>Discovered device</h2><p>Let's work with one of the found devices:</p>
+stbBluetooth.startDiscovery({duration: 20});
+</code></pre>
+<p>Get all discovered devices list:</p>
+<pre class="prettyprint source lang-js"><code>console.log('all discovered devices list:', stbBluetooth.devices);
+</code></pre>
+<h2>Discovered device</h2>
+<p>Let's work with one of the found devices:</p>
 <pre class="prettyprint source lang-js"><code>var device = stbBluetooth.devices[0];
 
-console.log('founded device:', device);</code></pre><p>Get device detailed information:</p>
+console.log('founded device:', device);
+</code></pre>
+<p>Get device detailed information:</p>
 <pre class="prettyprint source lang-js"><code>console.log('MAC address:', device.address);
 
 console.log('discoverable name:', device.name);
@@ -105,7 +121,9 @@ console.log('connection state:', device.active);
 
 console.log('paired state:', device.paired);
 
-console.log('available profiles:', device.profiles);</code></pre><p>Set all event handlers:</p>
+console.log('available profiles:', device.profiles);
+</code></pre>
+<p>Set all event handlers:</p>
 <pre class="prettyprint source lang-js"><code>device.onPinProvide = function ( pin ) {
     console.log('onPinProvide event:', pin);
 };
@@ -116,7 +134,9 @@ device.onAuthentication = function ( status ) {
 
 device.onChange = function ( name, value ) {
     console.log('onChange event:', name, value);
-};</code></pre><p>It's also possible to use <a href="stbBluetoothDevice.html#.addEventListener"><code>stbBluetoothDevice.addEventListener</code></a> and <a href="stbBluetoothDevice.html#.removeEventListener"><code>stbBluetoothDevice.removeEventListener</code></a> methods:</p>
+};
+</code></pre>
+<p>It's also possible to use <a href="stbBluetoothDevice.html#.addEventListener"><code>stbBluetoothDevice.addEventListener</code></a> and <a href="stbBluetoothDevice.html#.removeEventListener"><code>stbBluetoothDevice.removeEventListener</code></a> methods:</p>
 <pre class="prettyprint source lang-js"><code>device.addEventListener('pinProvide', function ( pin ) {
     console.log('pinProvide listener:', pin);
 });
@@ -127,26 +147,42 @@ device.addEventListener('authentication', function ( status ) {
 
 device.addEventListener('change', function ( name, value ) {
     console.log('change listener:', name, value);
-});</code></pre><p>Disconnect and unpair the device and remove it from the paired devices list:</p>
-<pre class="prettyprint source lang-js"><code>device.forget();</code></pre><h2>Device profile</h2><p>Let's work with one of the available profiles:</p>
-<pre class="prettyprint source lang-js"><code>var profile = device.profiles.HID;</code></pre><p>Get profile connection state:</p>
-<pre class="prettyprint source lang-js"><code>console.log(profile.active);</code></pre><p>Set all event handlers:</p>
+});
+</code></pre>
+<p>Disconnect and unpair the device and remove it from the paired devices list:</p>
+<pre class="prettyprint source lang-js"><code>device.forget();
+</code></pre>
+<h2>Device profile</h2>
+<p>Let's work with one of the available profiles:</p>
+<pre class="prettyprint source lang-js"><code>var profile = device.profiles.HID;
+</code></pre>
+<p>Get profile connection state:</p>
+<pre class="prettyprint source lang-js"><code>console.log(profile.active);
+</code></pre>
+<p>Set all event handlers:</p>
 <pre class="prettyprint source lang-js"><code>profile.onOpen = function () {
     console.log('onOpen event');
 };
 
 profile.onClose = function () {
     console.log('onClose event');
-};</code></pre><p>It's also possible to use <a href="stbBluetoothProfile.html#.addEventListener"><code>stbBluetoothProfile.addEventListener</code></a> and <a href="stbBluetoothProfile.html#.removeEventListener"><code>stbBluetoothProfile.removeEventListener</code></a> methods:</p>
+};
+</code></pre>
+<p>It's also possible to use <a href="stbBluetoothProfile.html#.addEventListener"><code>stbBluetoothProfile.addEventListener</code></a> and <a href="stbBluetoothProfile.html#.removeEventListener"><code>stbBluetoothProfile.removeEventListener</code></a> methods:</p>
 <pre class="prettyprint source lang-js"><code>profile.addEventListener('open', function () {
     console.log('open listener');
 });
 
 profile.addEventListener('close', function () {
     console.log('close listener');
-});</code></pre><p>Open connection:</p>
-<pre class="prettyprint source lang-js"><code>profile.open();</code></pre><p>Close connection:</p>
-<pre class="prettyprint source lang-js"><code>profile.close();</code></pre>
+});
+</code></pre>
+<p>Open connection:</p>
+<pre class="prettyprint source lang-js"><code>profile.open();
+</code></pre>
+<p>Close connection:</p>
+<pre class="prettyprint source lang-js"><code>profile.close();
+</code></pre>
 </article>
 
 </section>
@@ -158,7 +194,7 @@ profile.addEventListener('close', function () {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

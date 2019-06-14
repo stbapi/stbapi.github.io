@@ -45,32 +45,73 @@
 </header>
 
 <article>
-    <p>This tutorial describes the types of the content played back and their use.<br>Playback can be started by these functions: <a href="gSTB.html#.Play"><code>gSTB.Play</code></a>, <a href="gSTB.html#.PlaySolution"><code>gSTB.PlaySolution</code></a> and <a href="stbPlayer.html#.play"><code>stbPlayer.play</code></a>.<br>All these functions use <code>solution</code> option. It's the type of media content, which determines the content format, for example media container type and/or the method of broadcasting.<br>Some devices can determine and change codecs during a playback, for example, when audio tracks compressed by different codecs are present.</p>
-<h2>Available solutions</h2><h3>auto</h3><p>Automatic detection of the type of content, container, codec by the givern URL. Has the same effect as empty solution.<br>Correctly accepts the URLs beginning with <code>rtp://</code>, <code>udp://</code>, <code>rtsp://</code>.</p>
-<h3>rtp</h3><p>Play the string in the format MPEG2TS.<br>If URL begins with <code>rtp://</code> the RTP stream shall be played, if it begins with <code>udp://</code> the UDP stream shall be played.<br>Set required codecs if additional information of stream is present, for example, H.264, AC-3 and so on.</p>
-<h3>rtsp</h3><p>Play the content from RTSP-server.<br>Set required codecs if additional information on the stream is present, for example, H.264, AC-3 and so on.</p>
-<h3>rtpac3</h3><p>Play the stream in the format MPEG2TS using decoders MPEG2 Video and AC-3 Audio.</p>
-<h3>rtsp_ac3</h3><p>Play content from RTSP-server using decoders MPEG2 Video and AC-3 Audio.</p>
-<h3>mpegts</h3><p>Play the file in the format MPEG2TS.<br>Set required codecs if additional information on the stream is present, for example H.264, AC-3 and so on.</p>
-<h3>mpegps</h3><p>Play file in the format MPEG2 Program Stream.<br>Set required codecs if additional information on the stream is present, for example, AC-3 and so on.</p>
-<h3>file</h3><p>Play file at the URL set with automatic determining content type, container and codec.</p>
-<h3>fm</h3><p>Play audio from MPEG-TS of the (<code>udp://</code>, <code>rtp://</code>).</p>
-<h3>ffmpeg</h3><p>Allows playing files in various formats: avi, mkv, mpg, mp4, mov, wmv, AC-3, mp3.</p>
-<h3>ffrt</h3><p>Play MPEG-TS realtime stream via <code>http://</code>.</p>
-<h3>ffrt2</h3><p>Play real-time stream (not only MPEG-TS) via <code>http://</code>, <code>rtmp://</code> ...<br>For this solution looping is always enabled.</p>
-<h3>ffrt3</h3><p>Play non real-time internet video such as YouTube video.</p>
-<h2>Parameters</h2><h3>URL</h3><p>There are different approaches to specify where the content is stored:</p>
-<p><code>/path</code> - Local address of the file in the root file system (for example /media/1.mp3).<br><code>rtp://addr:port</code> - RTP-stream received from multicast or unicast address addr and the port port.<br><code>udp://addr:port</code> - UDP-stream received from multicast or unicast address addr and the port port.<br><code>rtsp://addr:port/path</code> - The content stored in the RTSP-server at the address addr and port port with the relative route path.</p>
-<h3>atrack/vtrack/strack</h3><p>Optional parameters to set audio/video/subtitle tracks (PID-s for MPEG2TS) of the content to be played.</p>
-<h3>position</h3><p>Optional parameter to set time in seconds, from which the content is to be played.</p>
-<h2>Examples</h2><p><code>mpegps /media/1.mpg</code><br>Plays /media/1.mpg which is Mpeg2 Program Stream file.</p>
-<p><code>mpegts /media/1.mpg</code><br>Plays /media/1.mpg which is Mpeg2 Transport Stream file.</p>
-<p><code>mp4 /media/1.mp4</code><br>Plays the file /media/1.mp4 in the format MP4.</p>
-<p><code>rtp 224.10.0.30:5004</code><br>Plays Mpeg2 in the format Transport Stream from the preset multicast address (224.10.0.30) and port (5004) using IGMP protocol for multicast broadcast.</p>
-<p><code>auto /media/file1</code><br>An attempt to automatically determine the file format and play it.</p>
-<p><code>rtpmpeg4 224.10.0.31:5004</code><br>Plays Mpeg4 in the format Transport Stream from the preset multicast address (224.10.0.31) and port (5004) with Mpeg2 Audio using IGMP protocol for multicast broadcast.</p>
-<p><code>rtpmpeg4_aac 224.10.0.32:5004 atrack:930 vtrack:920</code><br>Plays Mpeg4 video in the format Transport Stream from the preset multicast address (224.10.0.32) and port (5004) with AAC audio using IGMP protocol for multicast broadcast.<br>In this situation the stream with PID=920 is automatically selected as the video track and the stream with PID=930 – as the audio track, irrespective of the presence of information on the tracks in the stream.</p>
-<p><code>rtsp rtsp://192.168.1.32:554/video/media003.mpg</code><br>Plays the content /video/media003.mpg, located on RTSP-server with the address 192.168.1.32 and port 554.</p>
+    <p>This tutorial describes the types of the content played back and their use.<br>
+Playback can be started by these functions: <a href="gSTB.html#.Play"><code>gSTB.Play</code></a>, <a href="gSTB.html#.PlaySolution"><code>gSTB.PlaySolution</code></a> and <a href="stbPlayer.html#.play"><code>stbPlayer.play</code></a>.<br>
+All these functions use <code>solution</code> option. It's the type of media content, which determines the content format, for example media container type and/or the method of broadcasting.<br>
+Some devices can determine and change codecs during a playback, for example, when audio tracks compressed by different codecs are present.</p>
+<h2>Available solutions</h2>
+<h3>auto</h3>
+<p>Automatic detection of the type of content, container, codec by the givern URL. Has the same effect as empty solution.<br>
+Correctly accepts the URLs beginning with <code>rtp://</code>, <code>udp://</code>, <code>rtsp://</code>.</p>
+<h3>rtp</h3>
+<p>Play the string in the format MPEG2TS.<br>
+If URL begins with <code>rtp://</code> the RTP stream shall be played, if it begins with <code>udp://</code> the UDP stream shall be played.<br>
+Set required codecs if additional information of stream is present, for example, H.264, AC-3 and so on.</p>
+<h3>rtsp</h3>
+<p>Play the content from RTSP-server.<br>
+Set required codecs if additional information on the stream is present, for example, H.264, AC-3 and so on.</p>
+<h3>rtpac3</h3>
+<p>Play the stream in the format MPEG2TS using decoders MPEG2 Video and AC-3 Audio.</p>
+<h3>rtsp_ac3</h3>
+<p>Play content from RTSP-server using decoders MPEG2 Video and AC-3 Audio.</p>
+<h3>mpegts</h3>
+<p>Play the file in the format MPEG2TS.<br>
+Set required codecs if additional information on the stream is present, for example H.264, AC-3 and so on.</p>
+<h3>mpegps</h3>
+<p>Play file in the format MPEG2 Program Stream.<br>
+Set required codecs if additional information on the stream is present, for example, AC-3 and so on.</p>
+<h3>file</h3>
+<p>Play file at the URL set with automatic determining content type, container and codec.</p>
+<h3>fm</h3>
+<p>Play audio from MPEG-TS of the (<code>udp://</code>, <code>rtp://</code>).</p>
+<h3>ffmpeg</h3>
+<p>Allows playing files in various formats: avi, mkv, mpg, mp4, mov, wmv, AC-3, mp3.</p>
+<h3>ffrt</h3>
+<p>Play MPEG-TS realtime stream via <code>http://</code>.</p>
+<h3>ffrt2</h3>
+<p>Play real-time stream (not only MPEG-TS) via <code>http://</code>, <code>rtmp://</code> ...<br>
+For this solution looping is always enabled.</p>
+<h3>ffrt3</h3>
+<p>Play non real-time internet video such as YouTube video.</p>
+<h2>Parameters</h2>
+<h3>URL</h3>
+<p>There are different approaches to specify where the content is stored:</p>
+<p><code>/path</code> - Local address of the file in the root file system (for example /media/1.mp3).<br>
+<code>rtp://addr:port</code> - RTP-stream received from multicast or unicast address addr and the port port.<br>
+<code>udp://addr:port</code> - UDP-stream received from multicast or unicast address addr and the port port.<br>
+<code>rtsp://addr:port/path</code> - The content stored in the RTSP-server at the address addr and port port with the relative route path.</p>
+<h3>atrack/vtrack/strack</h3>
+<p>Optional parameters to set audio/video/subtitle tracks (PID-s for MPEG2TS) of the content to be played.</p>
+<h3>position</h3>
+<p>Optional parameter to set time in seconds, from which the content is to be played.</p>
+<h2>Examples</h2>
+<p><code>mpegps /media/1.mpg</code><br>
+Plays /media/1.mpg which is Mpeg2 Program Stream file.</p>
+<p><code>mpegts /media/1.mpg</code><br>
+Plays /media/1.mpg which is Mpeg2 Transport Stream file.</p>
+<p><code>mp4 /media/1.mp4</code><br>
+Plays the file /media/1.mp4 in the format MP4.</p>
+<p><code>rtp 224.10.0.30:5004</code><br>
+Plays Mpeg2 in the format Transport Stream from the preset multicast address (224.10.0.30) and port (5004) using IGMP protocol for multicast broadcast.</p>
+<p><code>auto /media/file1</code><br>
+An attempt to automatically determine the file format and play it.</p>
+<p><code>rtpmpeg4 224.10.0.31:5004</code><br>
+Plays Mpeg4 in the format Transport Stream from the preset multicast address (224.10.0.31) and port (5004) with Mpeg2 Audio using IGMP protocol for multicast broadcast.</p>
+<p><code>rtpmpeg4_aac 224.10.0.32:5004 atrack:930 vtrack:920</code><br>
+Plays Mpeg4 video in the format Transport Stream from the preset multicast address (224.10.0.32) and port (5004) with AAC audio using IGMP protocol for multicast broadcast.<br>
+In this situation the stream with PID=920 is automatically selected as the video track and the stream with PID=930 – as the audio track, irrespective of the presence of information on the tracks in the stream.</p>
+<p><code>rtsp rtsp://192.168.1.32:554/video/media003.mpg</code><br>
+Plays the content /video/media003.mpg, located on RTSP-server with the address 192.168.1.32 and port 554.</p>
 </article>
 
 </section>
@@ -82,7 +123,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
