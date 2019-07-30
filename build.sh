@@ -6,6 +6,7 @@ VERSIONS=(
     "v342"
     "v343"
     "v344"
+    "v345"
 )
 
 for version in ${VERSIONS[@]}; do
