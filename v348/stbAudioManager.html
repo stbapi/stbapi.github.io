@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>Tutorial: Work with application data storage - Documentation</title>
+    <title>stbAudioManager - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -33,45 +33,188 @@
 
 <div id="main">
     
-    <h1 class="page-title">Tutorial: Work with application data storage</h1>
+    <h1 class="page-title">stbAudioManager</h1>
     
 
-    <section>
+    
+
+
+
+
+<section>
 
 <header>
     
-
-    <h2>Work with application data storage</h2>
+        <h2>
+        stbAudioManager
+        </h2>
+        
+    
 </header>
 
 <article>
-    <p>Set new item or update an existing one:</p>
-<pre class="prettyprint source lang-js"><code>stbStorage.setItem('key', 123);
-</code></pre>
-<p>Get item value by name:</p>
-<pre class="prettyprint source lang-js"><code>console.log('item value by name:', stbStorage.getItem('key'));
-</code></pre>
-<p>Get item value by index:</p>
-<pre class="prettyprint source lang-js"><code>var name = stbStorage.key(32);
+    
+        <div class="container-overview">
+        
+            
 
-if ( name ) {
-    console.log('item value:', stbStorage.getItem(name));
-} else {
-    console.log('key was not found');
-}
-</code></pre>
-<p>Remove some item:</p>
-<pre class="prettyprint source lang-js"><code>stbStorage.removeItem('key');
-</code></pre>
-<p>Get all stored items amount:</p>
-<pre class="prettyprint source lang-js"><code>console.log('all stored items amount:', stbStorage.length);
-</code></pre>
-<p>Clear all items:</p>
-<pre class="prettyprint source lang-js"><code>stbStorage.clear();
-</code></pre>
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-tutorial">Tutorials:</dt>
+    <dd class="tag-tutorial">
+        <ul>
+            <li><a href="tutorial-howto-audio.html">Work with audio outputs</a></li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+</dl>
+
+
+
+
+            
+                <div class="description"><p>stbAudioManager global object.</p></div>
+            
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id=".list"><span class="type-signature">(static, readonly) </span>list<span class="type-signature"> :Array.&lt;<a href="stbAudioOutput.html">stbAudioOutput</a>></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Get array of all available stbAudioOutput instances in the system.</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;<a href="stbAudioOutput.html">stbAudioOutput</a>></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>// get audio output #1 instance
+var output = stbAudioManager.list[1];
+// and link it with a player
+output.source = stbPlayerManager.list[1];</code></pre>
+
+
+
+        
+    
+
+    
+
+    
+
+    
 </article>
 
 </section>
+
+
+
 
     
     
